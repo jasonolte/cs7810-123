@@ -5,3 +5,6 @@ Group-123
 Anmol Saini
 Jason Nolte
 Spencer Seals
+
+# course repo
+https://github.com/kastle-lab/cs7810-intro-to-ke

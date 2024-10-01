@@ -20,7 +20,12 @@ Existing KGs:
 - MeSH Medical subject header: https://www.nlm.nih.gov/mesh/meshhome.html
     
 * **Timeliness**: does creating a knowledge graph for this topic address a current event or important (unsolved) problem?
-* **Audience**: broadly, who would be interestd in a knowledge graph for this topic?
+
+  Our goal is to address unanswered questions about trends over time and sociodemographic factors and their relations to healthcare. A knowledge graph on this topic would allow healthcare to be better tailored to the patient based on prior knowledge about their condition and sociodemographic factors.
+  
+* **Audience**: broadly, who would be interested in a knowledge graph for this topic?
+
+  Healthcare personnel would be particularly interested in a knowledge graph on this topic, as it would allow them to identify trends, make predictions about patient conditions, and ultimately provide better care for patients. Patients, being indirectly affected by information obtained from the knowledge graph, would also be interested in its application.
 
 ## Topic 2
 * **Merit**: is the topic intellectually challenging?

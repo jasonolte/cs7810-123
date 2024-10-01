@@ -6,7 +6,7 @@ Date: October 1, 2024
 1. Topic Application
 2. Meeting prep for Thursday
 
-[//] # (## Notes)
+[//] # (## Notes)  
 [//] # (1.) 
 
 ## Action Items

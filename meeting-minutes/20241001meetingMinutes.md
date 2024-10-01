@@ -19,3 +19,4 @@ Date: October 1, 2024
 
 ## Contributors
 * Jason Nolte
+* Spencer Seals

@@ -6,8 +6,8 @@ Date: October 1, 2024
 1. Topic Application
 2. Meeting prep for Thursday
 
-[//] # (## Notes)  
-[//] # (1.)  
+[//]: # (## Notes)  
+[//]: # (1.)  
 
 ## Action Items
 * Group Member Anmol
@@ -16,7 +16,7 @@ Date: October 1, 2024
   * Keep meeting minutes
 * Group Member Spencer
   * Research existing medical knowledge graphs
-[//] # (* ALCON)
+[//]: # (* ALCON)
 
 ## Contributors
 * Jason Nolte

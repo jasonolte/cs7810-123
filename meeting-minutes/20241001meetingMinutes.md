@@ -16,7 +16,7 @@ Date: October 1, 2024
   * Keep meeting minutes
 * Group Member Spencer
   * Research existing medical knowledge graphs
-[//]: # (* ALCON)
+[//]: # (* ALCON)  
 
 ## Contributors
 * Jason Nolte

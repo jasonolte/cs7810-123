@@ -7,12 +7,7 @@
     
 * **Novelty**: is there already a knowledge graph for this topic?
 * 
-  There is not a currently existing knowledge graph... Since several of these questions remain unanwered,
-
-  * smth other people have not done
-  * solves a real world problem
-  * researchers in other domains care
-  * disparate information, the data we have is extendible to out use cases and integration with other data
+ Since several of these questions, focused substantially on the relationships between healthcare and sociodemographic factors and other time-based trends, remain unanwered, our topic posseses at least some level of novelty, There do exist medical knowledge graphs, but they address questions related to other aspects such as ... With our focus on identifying trends over time and the impacts of sociodemographic factors, there is little similar work that has been done before.
     
 * **Timeliness**: does creating a knowledge graph for this topic address a current event or important (unsolved) problem?
 * **Audience**: broadly, who would be interestd in a knowledge graph for this topic?

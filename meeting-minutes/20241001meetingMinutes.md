@@ -7,7 +7,7 @@ Date: October 1, 2024
 2. Meeting prep for Thursday
 
 [//] # (## Notes)  
-[//] # (1.) 
+[//] # (1.)  
 
 ## Action Items
 * Group Member Anmol

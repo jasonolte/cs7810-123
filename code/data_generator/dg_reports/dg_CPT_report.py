@@ -7,10 +7,16 @@
 import random
 
 
-def get_mrn():
-   mrn_high = 1000000
-   mrn = random.randint(0, mrn_high)
-   return mrn
+class DataGenerator(object):
+   
+   def __init__(self):
+      pass
+      
+   def get_mrn():
+   	mrn_high = 1000000
+   	mrn = random.randint(0, mrn_high)
+   	return mrn
+      
 
 def generate_cpt_report(patients, output_filename):
    TODO_var = "TODO"
@@ -25,7 +31,7 @@ def generate_cpt_report(patients, output_filename):
    file_text += '\n'
    
    for patient in patients:
-      mrn = str(get_mrn())
+      mrn = str(gen.get_mrn())
       dc_id = TODO_var
       bill_no = TODO_var
       dc_date = TODO_var
@@ -56,4 +62,5 @@ if __name__ == "__main__":
    date = "10SEP2024"
    output_filename = "cpt_report_" + date + ".csv"
    patients = ['patient1', 'patient2', 'patient3']
+   gen = DataGenerator()
    generate_cpt_report(patients, output_filename)

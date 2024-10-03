@@ -6,16 +6,10 @@
 
 import random
 
-
-class DataGenerator(object):
-   
-   def __init__(self):
-      pass
-      
-   def get_mrn():
-   		mrn_high = 1000000
-   		mrn = random.randint(0, mrn_high)
-   		return mrn
+def get_mrn():
+   mrn_high = 1000000
+   mrn = random.randint(0, mrn_high)
+   return mrn
       
 
 def generate_cpt_report(patients, output_filename):

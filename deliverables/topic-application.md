@@ -18,6 +18,7 @@ Existing KGs:
  - UMLS: https://uts.nlm.nih.gov/uts/umls/semantic-network/T071
 	- https://www.nlm.nih.gov/research/umls/index.html
  - MeSH Medical subject header: https://www.nlm.nih.gov/mesh/meshhome.html
+ - ChEBI: https://www.ebi.ac.uk/chebi/init.do
     
 * **Timeliness**: does creating a knowledge graph for this topic address a current event or important (unsolved) problem?
 

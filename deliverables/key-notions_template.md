@@ -19,6 +19,18 @@
     * Connected Pattern: record (MODL)
     * Source Dataset(s): Primarily PatientAbstract, with details pulled from daily reports.
 * Identifier
-    * Rationale: modeling attributes of patients and recrods
+    * Rationale: modeling attributes of patients and records
     * Connected Pattern: identifier (MODL)
     * Source Dataset(s): Patient attributes primarily come from PatientAbstract. Other classes (drugs, etc), have their own identifiers from their respective daily reports.
+* Temporal-Extent
+    * Rationale: modeling aspects related to time
+    * Connected Pattern: [temporal-extent (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/temporal-extent)
+    * Source Dataset(s): PatientAbstract (ages and admit times)
+* Agent-Role
+    * Rationale: modeling a patient as a role for a person
+    * Connected Pattern: [agent-role (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/agent-role)
+    * Source Dataset(s): PatientAbstract
+* Health
+    * Rationale: modeling health-related aspects (disease, illness, medical condition, medication, symptom, treatment, etc.)
+    * Connected Pattern: [Health (CS-MODL)](https://github.com/kastle-lab/commonsense-micropatterns/blob/master/csmodl/patterns/Health.ttl)
+    * Source Dataset(s): PatientAbstract, PharmacyDaily, Diagnosis

@@ -16,3 +16,4 @@
 
 ## Contributors
 * Jason Nolte
+* Spencer Seals

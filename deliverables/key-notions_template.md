@@ -44,7 +44,7 @@
 
 * Hospitizaltion
     * Rationale: As part of the event chain sympton -> diagnosis -> hospilization, hospitilization is the key event that adds a patient to the particular dataset this project ananlyzes.  The outcome of the hosipitlization is a critcial hospital success and evaluation metric.
-    * Connected Pattern: Event
+    * Connected Pattern: [Event (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/event)
     * Source Dataset(s): PatientAbstract
 
 * Outcome

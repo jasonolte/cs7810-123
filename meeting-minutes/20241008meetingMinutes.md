@@ -7,15 +7,12 @@
 1. Key Notions
 
 ## Notes
-1. Met wit Cogan who suggested both methods in the Key Notions draft as of 8 October
-2. Response to Item 2
-3. Response to Item 3
+1. Met with Cogan who suggested both methods in the Key Notions draft as of 8 October
 
 ## Action Items
-* Group Member `n`
-    * Action Item 1
-    * Action Item 2
-    * Action Item 3
+* All members
+    * Finalize key notions for Thursday's meeting with Cogan
+    * Attend meeting on Thursday
 
 ## Contributors
 * Jason Nolte

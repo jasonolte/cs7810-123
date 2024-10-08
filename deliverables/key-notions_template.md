@@ -34,3 +34,27 @@
     * Rationale: modeling health-related aspects (disease, illness, medical condition, medication, symptom, treatment, etc.)
     * Connected Pattern: [Health (CS-MODL)](https://github.com/kastle-lab/commonsense-micropatterns/blob/master/csmodl/patterns/Health.ttl)
     * Source Dataset(s): PatientAbstract, PharmacyDaily, Diagnosis
+
+# Alternatively:
+
+* Patient
+    * Rationale: The patient is the critical class all healthcare data and studies.  The patient has the symptoms, diagnosis, testing, treatment, and outcomes.  It is the patient outcome that ultimately determines the success or failure of the hospitization.  Potentially for this dataset, patient.hospitalized.
+    * Connected Pattern: [particpant-role (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/participant-role)
+    * Source Dataset(s): PatientAbstract
+
+* Hospitizaltion
+    * Rationale: As part of the event chain sympton -> diagnosis -> hospilization, hospitilization is the key event that adds a patient to the particular dataset this project ananlyzes.  The outcome of the hosipitlization is a critcial hospital success and evaluation metric.
+    * Connected Pattern: Event
+    * Source Dataset(s): PatientAbstract
+
+* Outcome
+    * Rationale: Health outcomes are important to the patient and the hospital
+    * Connected Pattern: [Health (CS-MODL)](https://github.com/kastle-lab/commonsense-micropatterns/blob/master/csmodl/patterns/Health.ttl)
+    * Source Dataset(s): PatientAbstract
+
+# Template
+
+* Key Notion
+    * Rationale: rationale
+    * Connected Pattern: pattern name (pattern source)
+    * Source Dataset(s): dataset n, dataset n+1

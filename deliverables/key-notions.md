@@ -2,19 +2,19 @@
 
 * Event
     * Rationale: non-repeated treatment events
-    * Connected Pattern: event (MODL)
+    * Connected Pattern: [event (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/event)
     * Source Dataset(s): PatientAbstract, Daily hospitalization reports
 * Causal-Event
     * Rationale: modeling repeated treatment events (e.g., competency #3)
-    * Connected Pattern: Causal-Event (MODL)
+    * Connected Pattern: [Causal-Event (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/causal-event)
     * Source Dataset(s): PatientAbstract, Daily hospitalization reports
 * Record
     * Rationale: modeling records associated with treatment events
-    * Connected Pattern: record (MODL)
+    * Connected Pattern: [record (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/record)
     * Source Dataset(s): Primarily PatientAbstract, with details pulled from daily reports.
 * Identifier
     * Rationale: modeling attributes of patients and records
-    * Connected Pattern: identifier (MODL)
+    * Connected Pattern: [identifier (MODL)](https://github.com/kastle-lab/modular-ontology-design-library/tree/master/modl/identifier)
     * Source Dataset(s): Patient attributes primarily come from PatientAbstract. Other classes (drugs, etc), have their own identifiers from their respective daily reports.
 * Temporal-Extent
     * Rationale: modeling aspects related to time

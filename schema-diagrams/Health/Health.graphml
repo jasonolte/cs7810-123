@@ -1,0 +1,836 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="predicate" attr.type="string" />
+  <key id="d5" for="node" attr.name="opla-core:hasPatternName" attr.type="string" />
+  <key id="d4" for="node" attr.name="dc:contributor" attr.type="string" />
+  <key id="d3" for="node" attr.name="dc:creator" attr.type="string" />
+  <key id="d2" for="node" attr.name="label" attr.type="string" />
+  <key id="d1" for="node" attr.name="local" attr.type="boolean" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="https://kastle.cs.wright.edu/csmodl#hasDiagnosis">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasDoctor">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasAilment">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasDisease">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Diseases">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasName">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#suffersFrom">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasHealth">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasIllness">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#disease">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#includesMedication">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#prescribesMedication">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasAge">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasTreatment">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#PhysicalHealthStatus">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#diagnosedWith">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasHeight">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="http://www.w3.org/2001/XMLSchema#float">
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasMentalHealthStatus">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#includesSymptom">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#worksAt">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasPatient">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#prescribedFor">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Medicine">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasMedication">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#receivesTreatment">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasHealthRecord">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#medicationName">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#prescribes">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://archive.org/services/purl/domain/modular_ontology_design_library/Health">
+      <data key="d3">Dr. Pascal Hitzler</data>
+      <data key="d4">Andrew Eells</data>
+      <data key="d5">Health Pattern</data>
+      <data key="d0">owl:Ontology</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#DietRestriction">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Integer">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#manages">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasMentalHealth">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#MentalHealth">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasGymMembership">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasDietRestriction">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Ailment">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasSymptom">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Symptom">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#treatmentFor">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#diagnoses">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#provides">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#HealthCareProvider">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#usedMedication">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#administersTreatment">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasSeverity">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasCondition">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#MedicalCondition">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasSideEffect">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#operatesIn">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#receives">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#HealthRecord">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#treats">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#PhysicalHealth">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasHealthStatus">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Na6c8faa1793241568387aff63ac2d7b4b2">
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Illness">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealth">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#SideEffect">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#GymMembership">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Na6c8faa1793241568387aff63ac2d7b4b1">
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Hospital">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasGender">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealthStatus">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#isFollowingTreatment">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#admittedIn">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Diagnosis">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#Class">
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasPhysicalHeathStatus">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#HealthCondition">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#isTreatedWith">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#prescribedBy">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#hasWeight">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#isDiagnosedWith">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#isTreatedBy">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#takesMedication">
+      <data key="d0">rdf:Property</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <node id="https://kastle.cs.wright.edu/csmodl#MentalHealthStatus">
+      <data key="d0">rdfs:Class</data>
+      <data key="d1">False</data>
+      <data key="d2">notFound</data>
+    </node>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDiagnosis" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDiagnosis" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDiagnosis" target="https://kastle.cs.wright.edu/csmodl#Diagnosis">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDiagnosis" target="https://kastle.cs.wright.edu/csmodl#HealthRecord">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDoctor" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDoctor" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasAilment" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasAilment" target="https://kastle.cs.wright.edu/csmodl#Ailment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDisease" target="https://kastle.cs.wright.edu/csmodl#Diseases">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDisease" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDisease" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDisease" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Diseases" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasName" target="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasName" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#suffersFrom" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#suffersFrom" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Patient" target="https://kastle.cs.wright.edu/csmodl#Na6c8faa1793241568387aff63ac2d7b4b1">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Patient" target="https://kastle.cs.wright.edu/csmodl#Class">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealth" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealth" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasIllness" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasIllness" target="https://kastle.cs.wright.edu/csmodl#Illness">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#disease" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#disease" target="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Health" target="https://kastle.cs.wright.edu/csmodl#Class">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#includesMedication" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#includesMedication" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribesMedication" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribesMedication" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasAge" target="https://kastle.cs.wright.edu/csmodl#Integer">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasAge" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasAge" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasTreatment" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasTreatment" target="https://kastle.cs.wright.edu/csmodl#Ailment">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasTreatment" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#diagnosedWith" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#diagnosedWith" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Disease" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHeight" target="http://www.w3.org/2001/XMLSchema#float">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHeight" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#MentalHealth">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#MentalHealthStatus">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#includesSymptom" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#includesSymptom" target="https://kastle.cs.wright.edu/csmodl#Symptom">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#worksAt" target="https://kastle.cs.wright.edu/csmodl#Hospital">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#worksAt" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPatient" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPatient" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribedFor" target="https://kastle.cs.wright.edu/csmodl#Medicine">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribedFor" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Medicine" target="https://kastle.cs.wright.edu/csmodl#Na6c8faa1793241568387aff63ac2d7b4b2">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMedication" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMedication" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMedication" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#receivesTreatment" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#receivesTreatment" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Treatment" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealthRecord" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealthRecord" target="https://kastle.cs.wright.edu/csmodl#HealthRecord">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#medicationName" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#medicationName" target="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribes" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribes" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribes" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#manages" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#manages" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealth" target="https://kastle.cs.wright.edu/csmodl#MentalHealth">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasMentalHealth" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#MentalHealth" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasGymMembership" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasGymMembership" target="https://kastle.cs.wright.edu/csmodl#GymMembership">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDietRestriction" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasDietRestriction" target="https://kastle.cs.wright.edu/csmodl#DietRestriction">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSymptom" target="https://kastle.cs.wright.edu/csmodl#Symptom">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSymptom" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#Symptom" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#treatmentFor" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#treatmentFor" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#diagnoses" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#diagnoses" target="https://kastle.cs.wright.edu/csmodl#Diseases">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#provides" target="https://kastle.cs.wright.edu/csmodl#HealthCareProvider">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#provides" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#HealthCareProvider" target="https://kastle.cs.wright.edu/csmodl#Class">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#usedMedication" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#usedMedication" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#administersTreatment" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#administersTreatment" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSeverity" target="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSeverity" target="https://kastle.cs.wright.edu/csmodl#Symptom">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasCondition" target="https://kastle.cs.wright.edu/csmodl#MedicalCondition">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasCondition" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasCondition" target="https://kastle.cs.wright.edu/csmodl#HealthCondition">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSideEffect" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasSideEffect" target="https://kastle.cs.wright.edu/csmodl#SideEffect">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#operatesIn" target="https://kastle.cs.wright.edu/csmodl#Hospital">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#operatesIn" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#receives" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#receives" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#receives" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#treats" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#treats" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#PhysicalHealth" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealthStatus" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasHealthStatus" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealth" target="https://kastle.cs.wright.edu/csmodl#PhysicalHealth">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealth" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasGender" target="http://www.w3.org/2001/XMLSchema#string">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasGender" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHealthStatus" target="https://kastle.cs.wright.edu/csmodl#PhysicalHealth">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isFollowingTreatment" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isFollowingTreatment" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#admittedIn" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#admittedIn" target="https://kastle.cs.wright.edu/csmodl#Hospital">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHeathStatus" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasPhysicalHeathStatus" target="https://kastle.cs.wright.edu/csmodl#PhysicalHealthStatus">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#HealthCondition" target="https://kastle.cs.wright.edu/csmodl#Health">
+      <data key="d6">rdfs:subClassOf</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isTreatedWith" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isTreatedWith" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribedBy" target="https://kastle.cs.wright.edu/csmodl#Doctor">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#prescribedBy" target="https://kastle.cs.wright.edu/csmodl#Medicine">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasWeight" target="https://kastle.cs.wright.edu/csmodl#Person">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#hasWeight" target="http://www.w3.org/2001/XMLSchema#float">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isDiagnosedWith" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isDiagnosedWith" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isTreatedBy" target="https://kastle.cs.wright.edu/csmodl#Treatment">
+      <data key="d6">rdfs:range</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#isTreatedBy" target="https://kastle.cs.wright.edu/csmodl#Disease">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#takesMedication" target="https://kastle.cs.wright.edu/csmodl#Patient">
+      <data key="d6">rdfs:domain</data>
+    </edge>
+    <edge source="https://kastle.cs.wright.edu/csmodl#takesMedication" target="https://kastle.cs.wright.edu/csmodl#Medication">
+      <data key="d6">rdfs:range</data>
+    </edge>
+  </graph>
+</graphml>

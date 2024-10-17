@@ -34,7 +34,7 @@
     * Source Dataset(s): PatientAbstract
 * Body (Back, Head, Hand, Eye, Face)
     * Rationale: modeling human body parts for the purpos symptoms and diagnoses
-    * Connected Pattern: [Body (CS-MODL](https://github.com/kastle-lab/commonsense-micropatterns/blob/master/csmodl/patterns/Body.ttl)
+    * Connected Pattern: [Body (CS-MODL)](https://github.com/kastle-lab/commonsense-micropatterns/blob/master/csmodl/patterns/Body.ttl)
     * Source Dataset(s): PatientAbstract
 * Patient
     * Rationale: The patient is the critical class all healthcare data and studies.  The patient has the symptoms, diagnosis, testing, treatment, and outcomes.  It is the patient outcome that ultimately determines the success or failure of the hospitization.  Potentially for this dataset, patient.hospitalized.

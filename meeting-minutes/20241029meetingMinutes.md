@@ -25,4 +25,4 @@
 ## Contributors
 * Jason Nolte
 * Spencer Seals
-* Group Member
+* Anmol Saini

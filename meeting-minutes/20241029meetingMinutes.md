@@ -24,5 +24,5 @@
 
 ## Contributors
 * Jason Nolte
-* Group Member
+* Spencer Seals
 * Group Member

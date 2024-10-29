@@ -1,13 +1,25 @@
 # Schema Diagrams
 
-## Key Notion
-![schema-diagram](./schema-diagram.png)
+## Patient
+![schema-diagram](./Patient/Patient.pdf)
 
-## Key Notion
-![schema-diagram](./schema-diagram.png)
+## Health
+![schema-diagram](./Health/Health.pdf)
 
-## Key Notion
-![schema-diagram](./schema-diagram.png)
+## Body
+![schema-diagram](./Body/Body.pdf)
+
+## Diagnosis
+![schema-diagram](./Diagnosis/Diagnosis.pdf)
+
+## Visit
+![schema-diagram](./Visit/Visit.pdf)
+
+## Drug
+![schema-diagram](./Drug/Drug.pdf)
+
+## Outcome
+![schema-diagram](./Outcome/Outcome.pdf)
 
 ## Integrated Schema
-![schema-diagram](path/to/integrated/schema.png)
+![schema-diagram](./complete/complete.pdf)

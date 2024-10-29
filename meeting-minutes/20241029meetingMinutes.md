@@ -20,7 +20,7 @@
     * Reorient the outcomes diagram for integration into the combined file
 * Group Member `Spencer`
     * Clean up the health and separate out some patterns for clarity
-    * Yeah, the lab stuff is part of that
+    * "Yeah, the lab stuff is part of that."
 
 ## Contributors
 * Jason Nolte

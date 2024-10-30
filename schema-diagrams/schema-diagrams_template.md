@@ -19,7 +19,7 @@
 ![schema-diagram](./Drug/Drug.pdf)
 
 ## Outcome
-![schema-diagram](./Outcome/Outcome.pdf)
+![schema-diagram](./Outcome/Outcome.png)
 
 ## Integrated Schema
 ![schema-diagram](./complete/complete.pdf)

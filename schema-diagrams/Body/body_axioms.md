@@ -1,3 +1,34 @@
+## Body
+![schema-diagram](Body.png)
+
+### Axioms
+`Body`
+2 Disjointness <br />
+* `Body DisjointWith Organ` <br />
+Body implies not Organ.  Organ implies not Body <br />
+altenatives: Leg, Arm, Torso, Head, Weight, Height
+
+`hasOrgan`
+
+`hasLeg`
+
+`hasArm`
+
+`hasTorso`
+
+`hasHead`
+
+`hasHeight`
+
+`hasWeight`
+
+
+### Axioms (in Axiom Number Order)
+2 Disjointness
+* `Body DisjointWith Organ` <br />
+Body implies not Organ.  Organ implies not Body <br />
+altenatives: Leg, Arm, Torso, Head, Weight, Height
+
 
 ### Axioms Templates
 1 Subclass

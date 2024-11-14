@@ -29,6 +29,45 @@ altenatives: Leg, Arm, Torso, Head, Weight, Height
 Body implies not Organ.  Organ implies not Body <br />
 altenatives: Leg, Arm, Torso, Head, Weight, Height
 
+3 Domain
+* `hasOrgan some owl:Thing SubClassOf Body` <br />
+Relationship hasOrgan implies Body <br />
+* `hasLeg some owl:Thing SubClassOf Body` <br />
+Relationship hasLeg implies Body <br />
+* `hasArm some owl:Thing SubClassOf Body` <br />
+Relationship hasArm implies Body <br />
+* `hasTorso some owl:Thing SubClassOf Body` <br />
+Relationship hasTorso implies Body <br />
+* `hasHead some owl:Thing SubClassOf Body` <br />
+Relationship hasHead implies Body <br />
+
+4 Scoped Domain
+* `hasOrgan some Organ SubClassOf Body` <br />
+Relationship hasOrgan with Organ implies Body <br />
+* `hasLeg some Leg SubClassOf Body` <br />
+Relationship hasLeg with Leg implies Body <br />
+* `hasArm some Arm SubClassOf Body` <br />
+Relationship hasArm with Arm implies Body <br />
+* `hasTorso some Torso SubClassOf Body` <br />
+Relationship hasTorso with Torso implies Body <br />
+* `hasHead some Head SubClassOf Body` <br />
+Relationship hasHead with Head implies Body <br />
+
+5 Global Range
+* `owl:Thing SubClassOf hasOrgan only Organ` <br />
+Relationship hasOrgan implies Organ <br />
+* `owl:Thing SubClassOf hasLeg only Leg` <br />
+Relationship hasLeg implies Leg <br />
+* `owl:Thing SubClassOf hasArm only Arm` <br />
+Relationship hasArm implies Arm <br />
+* `owl:Thing SubClassOf hasTorso only Torso` <br />
+Relationship hasTorso implies Torso <br />
+* `owl:Thing SubClassOf hasHead only Head` <br />
+Relationship hasHead implies Head <br />
+* `owl:Thing SubClassOf hasHeight only Height` <br />
+Relationship hasHeight implies Height <br />
+* `owl:Thing SubClassOf hasWeight only Weight` <br />
+Relationship hasWeight implies Weight <br />
 
 ### Axioms Templates
 1 Subclass
@@ -98,3 +137,6 @@ Type B imples either no relationship R or exactly 1 relationship R from type A
 17
 * `A SubClassOf R min 0 B` <br />
 Type A implies may exist relationship R with type B
+
+### Notes
+The use of Body, Organ, Leg, Arm, Torso, and Head in this ontology exclusively refers to Human Body, Human Organ, Human Leg, Human Arm, Human Torso, and Human Head respectively.

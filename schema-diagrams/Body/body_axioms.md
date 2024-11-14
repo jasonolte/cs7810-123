@@ -1,41 +1,69 @@
 
 ### Axioms Templates
-1
+1 Subclass
 * `A SubClassOf B` <br />
-type A implies type B
-2
+Type A implies type B
+
+2 Disjointness
 * `A DisjointWith B` <br />
-type A implies not type B.  type B implies not type A
+Type A implies not type B.  type B implies not type A
 
-3
+3 Domain
 * `R some owl:Thing SubClassOf A` <br />
-relationship R implies type A
+Relationship R implies type A
 
-4
+4 Scoped Domain
 * `R some B SubClassOf A` <br />
-relationship R with type B implies type A
+Relationship R with type B implies type A
 
-5
+5 Global Range
 * `owl:Thing SubClassOf R only B` <br />
-relationship R implies type B
+Relationship R implies type B
 
-6
+6 Scoped Range
 * `A SubClassOf R only B` <br />
-relationship R from type A implies type B
+Relationship R from type A implies type B
 
-7
+7 Existential
 * `A SubClassOf R some B` <br />
-type A imples relationship R with type B
+Type A imples relationship R with type B
 
-8
+8 Inverse Existential
 * `B SubClassOf inverse R some A` <br />
-type B implies relationship R from type A
+Type B implies relationship R from type A
 
-9
+9 Functionality
 * `owl:Thing SubClassOf R max 1 owl:Thing` <br />
-Either no relationship R or exactly 1 relationship R
+Either no relationship R or exactly 1 relationship R out
 
-10
+10 Qualified Functionality
 * `owl:Thing SubClassOf R max 1 B` <br />
 Either no relationship R or exactly 1 relationship R with type B
 
+11 Scoped Functionality
+* `A SubClassOf R max 1 owl:Thing` <br />
+Type A implies either no relationship R or exactly 1 relationship R
+
+12 Qualified Scoped Functionality
+* `A SubClassOf R max 1 B` <br />
+Type A implies either no relationship R or exactly 1 relationship R with type B
+
+13 Inverse Functionality
+* `owl:Thing SubClassOf inverse R max 1 owl:Thing` <br />
+Either no relationship R or exactly 1 relationship R in
+
+14 Inverse Qualified Functionality
+* `owl:Thing SubClassOf inverse R max 1 A` <br />
+Either no relationship R or exactly 1 relationship R from type A
+
+15 Inverse Scoped Functionality
+* `B SubClassOf inverse R max 1 owl:Thing` <br />
+Type B implies either no relationship R or exactly 1 relationship R in
+
+16 Inverse Qualified Scoped Functionality
+* `B SubClassOf inverse R max 1 A` <br />
+Type B imples either no relationship R or exactly 1 relationship R from type A
+
+17
+* `A SubClassOf R min 0 B` <br />
+Type A implies may exist relationship R with type B

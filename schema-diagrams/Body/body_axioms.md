@@ -9,19 +9,52 @@ Body implies not Organ.  Organ implies not Body <br />
 altenatives: Leg, Arm, Torso, Head, Weight, Height
 
 `hasOrgan`
+* `hasOrgan some owl:Thing SubClassOf Body` <br />
+Relationship hasOrgan implies Body <br />
+* `hasOrgan some Organ SubClassOf Body` <br />
+Relationship hasOrgan with Organ implies Body <br />
+* `owl:Thing SubClassOf hasOrgan only Organ` <br />
+Relationship hasOrgan implies Organ <br />
 
 `hasLeg`
+* `hasLeg some owl:Thing SubClassOf Body` <br />
+Relationship hasLeg implies Body <br />
+* `hasLeg some Leg SubClassOf Body` <br />
+Relationship hasLeg with Leg implies Body <br />
+* `owl:Thing SubClassOf hasLeg only Leg` <br />
+Relationship hasLeg implies Leg <br />
 
 `hasArm`
+* `hasArm some owl:Thing SubClassOf Body` <br />
+Relationship hasArm implies Body <br />
+* `hasArm some Arm SubClassOf Body` <br />
+Relationship hasArm with Arm implies Body <br />
+* `owl:Thing SubClassOf hasArm only Arm` <br />
+Relationship hasArm implies Arm <br />
 
 `hasTorso`
+* `hasTorso some owl:Thing SubClassOf Body` <br />
+Relationship hasTorso implies Body <br />
+* `hasTorso some Torso SubClassOf Body` <br />
+Relationship hasTorso with Torso implies Body <br />
+* `owl:Thing SubClassOf hasTorso only Torso` <br />
+Relationship hasTorso implies Torso <br />
 
 `hasHead`
+* `hasHead some owl:Thing SubClassOf Body` <br />
+Relationship hasHead implies Body <br />
+* `hasHead some Head SubClassOf Body` <br />
+Relationship hasHead with Head implies Body <br />
+* `owl:Thing SubClassOf hasHead only Head` <br />
+Relationship hasHead implies Head <br />
 
 `hasHeight`
+* `owl:Thing SubClassOf hasHeight only Height` <br />
+Relationship hasHeight implies Height <br />
 
 `hasWeight`
-
+* `owl:Thing SubClassOf hasWeight only Weight` <br />
+Relationship hasWeight implies Weight <br />
 
 ### Axioms (in Axiom Number Order)
 2 Disjointness

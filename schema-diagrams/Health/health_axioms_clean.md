@@ -178,166 +178,71 @@ For all x where x is of type Health implies there exists a y and a relationship 
 For all x where x is of type Patient implies there exists a y and a relationship recieves with x and y and y is of type Treatment
 	
 8. inverse existential
-	- HealthRecord SubClassOf inverse hasHealthRecord some Health
-	- HealthCondition SubClassOf inverse hasHealthCondition some Health
-		- structure of data, open/closed world assumption issue, we can assume all health conditions in our dataset must be tied to a specific patient's health
-	- hasSymptom: NA because ther are multiple hasSymptom relationships
-	- Severity SubClassOf inverse hasSeverity Symptom
-	- Treatment SubClassOf inverse hasTreatment Disease
-	- Service SubClassOf inverse includesService Treatment
-	- affects:
-		- *patients may not have recieved treatment depending on the timing
-	- PhysicalHealthStatus SubClassOf inverse hasStatus PhysicalHealth
-	- MentalHealthStatus SubClassOf inverse hasStatus MentalHealth
-	- Status SubClassOf inverse hasStatus Health
-	- Health SubClassOf inverse hasHealth Patient
-	- Visit SubClassOf inverse isAssociatedWith some Health
-		- structure of data, open/closed world assumption issue, we can assume all health conditions in our dataset must be tied to a specific patient's health
-	- recieves
-		- *patients may not have recieved treatment depending on the timing
+"HealthRecord SubClassOf inverse hasHealthRecord some Health
+"HealthCondition SubClassOf inverse hasHealthCondition some Health
+"Severity SubClassOf inverse hasSeverity Symptom
+"Treatment SubClassOf inverse hasTreatment Disease
+"Service SubClassOf inverse includesService Treatment
+"PhysicalHealthStatus SubClassOf inverse hasStatus PhysicalHealth
+"MentalHealthStatus SubClassOf inverse hasStatus MentalHealth
+"Status SubClassOf inverse hasStatus Health
+"Health SubClassOf inverse hasHealth Patient
+"Visit SubClassOf inverse isAssociatedWith some Health
 9. Functionality
-	- hasHealthRecord: NA can have more than 1
-	- hasHealthCondition: NA can have more than 1
-	- hasSymptom: NA can have more than 1
-	- hasSymptom: NA can have more than 1 
-	- owl:Thing SubClassOf hasSeverity max 1 owl:Thing
-	- hasTreatment: NA can have more than 1
-	- includesService: NA can have more than 1
-	- owl:Thing SubClassOf affects max 1 owl:Thing
-	- Health hasStatus Status: NA can have more than 1
-	- owl:Thing SubClassOf hasHealth max 1 owl:Thing
-	- isAssociatedWith: NA can have more than 1 and is used more than one time
-	- recieves: NA can have more than 1
-10. Qualified Functionality
-	- hasHealthRecord: NA can have more than 1
-	- hasHealthCondition: NA can have more than 1
-	- hasSymptom: NA can have more than 1
-	- hasSymptom: NA can have more than 1 
-	- owl:Thing SubClassOf hasSeverity max 1 Severity
-	- hasTreatment: NA can have more than 1
-	- includesService: NA can have more than 1
-	- owl:Thing SubClassOf affects max 1 Health
-	- Health hasStatus Status: NA can have more than 1
-	- owl:Thing SubClassOf hasHealth max 1 Health
-	- isAssociatedWith: NA can have more than 1 and is used more than one time
-	- recieves: NA can have more than 1
+"owl:Thing SubClassOf hasSeverity max 1 owl:Thing
+"owl:Thing SubClassOf affects max 1 owl:Thing
+"owl:Thing SubClassOf hasHealth max 1 owl:Thing
+10. Qualified Functionality 
+"owl:Thing SubClassOf hasSeverity max 1 Severity
+"owl:Thing SubClassOf affects max 1 Health
+"owl:Thing SubClassOf hasHealth max 1 Health
+
 
 ## axioms we did not discuss last time:
 11. Scoped Functionality
-	- hasHealthRecord: NA, can have more than 1
-	- hasHealthCondition: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1 
-	- Symptom SubClassOf hasSeverity max 1 owl:Thing
-	- hasTreatment: NA, can have more than 1
-	- includesService: NA, can have more than 1 
-	- Treatment SubClassOf affects max 1 owl:Thing
-	- hasStatus: NA, can have more than 1 
-	- Patient SubClassOf hasHealth max 1 owl:Thing
-	- Health SubClassOf isAssociatedWith max 1 owl:Thing
-		- *because A is known
-	- recieves: NA, can have more than 1
+"Symptom SubClassOf hasSeverity max 1 owl:Thing
+"Treatment SubClassOf affects max 1 owl:Thing
+"Patient SubClassOf hasHealth max 1 owl:Thing
+"Health SubClassOf isAssociatedWith max 1 owl:Thing
 	
 12. Qualified Scoped Functionality
-	- hasHealthRecord: NA, can have more than 1
-	- hasHealthCondition: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1 
-	- Symptom SubClassOf hasSeverity max 1 Severity
-	- hasTreatment: NA, can have more than 1
-	- includesService: NA, can have more than 1
-	- Treatment SubClassOf affects max 1 Health
-	- PhysicalHealth SubClassOf hasStatus max 1 PhysicalHealthStatus
-	- MentalHealth SubClassOf hasStatus max 1 MentalHealthStatus
-	- Health hasStatus status: NA
-	- hasHealth: NA because this link will *always* exist given the structure of the data
-	- isAssociatedWith: NA, can have more than 1
-	- recieves: NA, can have more than 1
+"Symptom SubClassOf hasSeverity max 1 Severity
+"Treatment SubClassOf affects max 1 Health
+"PhysicalHealth SubClassOf hasStatus max 1 PhysicalHealthStatus
+"MentalHealth SubClassOf hasStatus max 1 MentalHealthStatus
 
 13. Inverse Functionality
-	- hasHealthRecord: NA, can have more than 1
-	- hasHealthCondition: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1 
-	- owl:Thing SubClassOf inverse hasSeverity max 1
-	- hasTreatment: NA, can have more than 1
-	- includesService: NA, can have more than 1
-	- owl:Thing SubClassOf inverse affects max 1
-	- None of these apply because multiple statuses
-		- hasStatus: NA, can have more than 1
-		- hasStatus: NA, can have more than 1 
-		- hasStatus: NA, can have more than 1 
-	- hasHealth: NA because the data is such that the relationship will always exist 
-	- isAssociatedWith: NA, can have more than 1
-	- recieves: NA, can have more than 1
+"owl:Thing SubClassOf inverse hasSeverity max 1
+"owl:Thing SubClassOf inverse affects max 1
 14. Inverse Qualified Functionality
-	- hasHealthRecord: NA, can have more than 1
-	- hasHealthCondition: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1 
-	- owl:Thing SubClassOf inverse hasSeverity max 1 Symptom
-	- hasTreatment: NA, can have more than 1
-	- includesService: NA, can have more than 1
-	- owl:Thing SubClassOf inverse affects max 1 Health
-	- None of these apply because multiple statuses
-		- owl:Thing SubClassOf inverse hasStatus max 1 PhysicalHealthStatus
-		- owl:Thing SubClassOf inverse hasStatus max 1 MentalHealthStatus
-		- owl:Thing SubClassOf inverse hasStatus max 1 Health
-	- hasHealth: NA because the data is such that the relationship will always exist 
-	- isAssociatedWith: NA, can have more than 1
-	- recieves: NA, can have more than 1
+"owl:Thing SubClassOf inverse hasSeverity max 1 Symptom
+"owl:Thing SubClassOf inverse affects max 1 Health
 15. Inverse Scoped Functionality
-	- hasHealthRecord: NA, can have more than 1
-	- hasHealthCondition: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1
-	- hasSymptom: NA, can have more than 1 
-	- Severity SubClassOf inverse hasSeverity max 1 owl:Thing
-	- hasTreatment: NA, can have more than 1
-	- includesService: NA, can have more than 1 
-	- affects: NA allowed to have more than 1
-	- Status SubClassOf inverse hasStatus max 1 owl:Thing 
-	- PhysicalHealthStatus SubClassOf inverse hasStatus max 1 owl:Thing
-	- MentalHealthStatus SubClassOf inverse hasStatus max 1 owl:Thing
-	- Health SubClassOf inverse hasHealth max 1 owl:Thing
-	- Visit SubClassOf isAssociatedWith max 1 owl:Thing
-	- recieves: NA, can have more than 1
+"Severity SubClassOf inverse hasSeverity max 1 owl:Thing
+"Status SubClassOf inverse hasStatus max 1 owl:Thing 
+"PhysicalHealthStatus SubClassOf inverse hasStatus max 1 owl:Thing
+"MentalHealthStatus SubClassOf inverse hasStatus max 1 owl:Thing
+"Health SubClassOf inverse hasHealth max 1 owl:Thing
+"Visit SubClassOf isAssociatedWith max 1 owl:Thing
 
 16. Inverse Qualified Scoped Functionality
-	- hasHealthRecord: NA allowed to have more than 1
-	- hasHealthCondition: NA allowed to have more than 1
-	- hasSymptom: NA allowed to have more than 1
-	- hasSymptom: NA allowed to have more than 1 
-	- Severity SubClassOf inverse hasSeverity max 1 Symptom
-	- hasTreatment: NA allowed to have more than 1 
-	- includesService: NA allowed to have more than 1
-	- affects: NA allowed to have more than 1
-	- PhysicalHealthStatus SubClassOf inverse hasStatus max 1 PhysicalHealth
-	- MentalHealthStatus SubClassOf inverse hasStatus max 1 MentalHealth
-	- Status SubClassOf inverse hasStatus max 1 Health
-	- Health SubClassOf inverse hasHealth max 1 Patient
-	- Visit SubClassOf inverse isAssociatedWith max 1 Health
-	- recieves: NA allowed to have more than 1
+"Severity SubClassOf inverse hasSeverity max 1 Symptom
+"PhysicalHealthStatus SubClassOf inverse hasStatus max 1 PhysicalHealth
+"MentalHealthStatus SubClassOf inverse hasStatus max 1 MentalHealth
+"Status SubClassOf inverse hasStatus max 1 Health
+"Health SubClassOf inverse hasHealth max 1 Patient
+"Visit SubClassOf inverse isAssociatedWith max 1 Health
 
 17. 
-	- hasHealthRecord: NA by structure of data, all have at least one
-	- Health SubClassOf hasHealthCondition min 0 HealthCondition
-		- *depends slightly on how we are classifying health conditions
-	- Disease SubClassOf hasSymptom min 0 Symptom
-		- *depends slightly on how you classify symptoms
-	- Health SubClassOf hasSymptom min 0 Symptom
-		- *depends slightly on how you classify symptoms
-	- hasSeverity: NA must have a value
-	- Disease SubClassOf hasTreatment min 0 Treatment
-	- Treatment SubClassOf includesService min 0 Service
-	- Treatment SubClassOf affects min 0 Health
-		- treatments are allowed to have no effects
-	- PhysicalHealth hasStatus PhysicalHealthStatus: NA due to structure of data
-	- Health SubClassOf hasStatus min 0 Status
-	- MentalHealth SubClassOf hasStatus min 0 MentalHealthStatus
-		- mental health status may not exist in data
-	- hasHealth: NA, must exist given structure of data
-	- isAssociatedWith: NA, must exist given structure of data
-	- Patient SubClassOf recieves min 0 Treatment
+"Health SubClassOf hasHealthCondition min 0 HealthCondition",
+"Disease SubClassOf hasSymptom min 0 Symptom",
+"Health SubClassOf hasSymptom min 0 Symptom",
+"Disease SubClassOf hasTreatment min 0 Treatment",
+"Treatment SubClassOf includesService min 0 Service",
+"Treatment SubClassOf affects min 0 Health",
+"Health SubClassOf hasStatus min 0 Status",
+"MentalHealth SubClassOf hasStatus min 0 MentalHealthStatus",
+"Patient SubClassOf recieves min 0 Treatment",
 
 
 

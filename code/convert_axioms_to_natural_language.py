@@ -97,8 +97,8 @@ def convert_functionality(axiom_string):
     r = axiom_string.replace('max 1 owl:Thing', '')
 
     funct = f"For all x implies either there does not exist a y and a relationship "\
-        "{r.strip()} with x and y or there exists exactly 1 y and a relationship "\
-        "{r.strip()} with x and y."
+        f"{r.strip()} with x and y or there exists exactly 1 y and a relationship "\
+        f"{r.strip()} with x and y."
     
     return funct
 

@@ -4,15 +4,15 @@
 ### Axioms
 `Outcome`
 
-'Event'
+`Event`
 
-'Health'
+`Health`
 
-[Health Axioms](https://github.com/jasonolte/cs7810-123/edit/main/schema-diagrams/Health/health_axioms.md)
+* [Health Axioms](https://github.com/jasonolte/cs7810-123/edit/main/schema-diagrams/Health/health_axioms.md)
 
-'Visit'
+`Visit`
 
-[Vist Axioms]
+* [Vist Axioms]
 
 `accordingToWhom`
 

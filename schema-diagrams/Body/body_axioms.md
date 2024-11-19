@@ -102,6 +102,23 @@ Relationship hasHeight implies Height <br />
 * `owl:Thing SubClassOf hasWeight only Weight` <br />
 Relationship hasWeight implies Weight <br />
 
+6 Scoped Range
+* `Body SubClassOf hasOrgan only Organ` <br />
+Relationship hasOrgan from Body implies Organ <br />
+* `Body SubClassOf hasLeg only Leg` <br />
+Relationship hasLeg from Body implies Leg <br />
+* `Body SubClassOf hasArm only Arm` <br />
+Relationship hasArm from Body implies Arm <br />
+* `Body SubClassOf hasTorso only Torso` <br />
+Relationship hasTorso from Body implies Torso <br />
+* `Body SubClassOf hasHead only Head` <br />
+Relationship hasHead from Body implies Head <br />
+* `Body SubClassOf hasHeight only Height` <br />
+Relationship hasHeight from Body implies Height <br />
+* `Body SubClassOf hasWeight only Weight` <br />
+Relationship hasWeight from Body implies Weight <br />
+
+
 ### Axioms Templates
 1 Subclass
 * `A SubClassOf B` <br />

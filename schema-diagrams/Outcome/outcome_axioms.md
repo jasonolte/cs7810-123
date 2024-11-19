@@ -12,6 +12,10 @@
 
 ### Axioms (by Axiom number)
 
+8 Inverse Existential
+* `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />
+An Outcome implies that it results from some Event.
+
 ### Axioms Templates
 1 Subclass
 * `A SubClassOf B` <br />

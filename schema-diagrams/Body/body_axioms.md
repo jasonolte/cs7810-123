@@ -15,6 +15,8 @@ Relationship hasOrgan implies Body <br />
 Relationship hasOrgan with Organ implies Body <br />
 * `owl:Thing SubClassOf hasOrgan only Organ` <br />
 Relationship hasOrgan implies Organ <br />
+* `Body SubClassOf hasOrgan only Organ` <br />
+Relationship hasOrgan from Body implies Organ <br />
 
 `hasLeg`
 * `hasLeg some owl:Thing SubClassOf Body` <br />
@@ -23,6 +25,8 @@ Relationship hasLeg implies Body <br />
 Relationship hasLeg with Leg implies Body <br />
 * `owl:Thing SubClassOf hasLeg only Leg` <br />
 Relationship hasLeg implies Leg <br />
+* `Body SubClassOf hasLeg only Leg` <br />
+Relationship hasLeg from Body implies Leg <br />
 
 `hasArm`
 * `hasArm some owl:Thing SubClassOf Body` <br />
@@ -31,6 +35,8 @@ Relationship hasArm implies Body <br />
 Relationship hasArm with Arm implies Body <br />
 * `owl:Thing SubClassOf hasArm only Arm` <br />
 Relationship hasArm implies Arm <br />
+* `Body SubClassOf hasArm only Arm` <br />
+Relationship hasArm from Body implies Arm <br />
 
 `hasTorso`
 * `hasTorso some owl:Thing SubClassOf Body` <br />
@@ -39,6 +45,8 @@ Relationship hasTorso implies Body <br />
 Relationship hasTorso with Torso implies Body <br />
 * `owl:Thing SubClassOf hasTorso only Torso` <br />
 Relationship hasTorso implies Torso <br />
+* `Body SubClassOf hasTorso only Torso` <br />
+Relationship hasTorso from Body implies Torso <br />
 
 `hasHead`
 * `hasHead some owl:Thing SubClassOf Body` <br />
@@ -47,14 +55,20 @@ Relationship hasHead implies Body <br />
 Relationship hasHead with Head implies Body <br />
 * `owl:Thing SubClassOf hasHead only Head` <br />
 Relationship hasHead implies Head <br />
+* `Body SubClassOf hasHead only Head` <br />
+Relationship hasHead from Body implies Head <br />
 
 `hasHeight`
 * `owl:Thing SubClassOf hasHeight only Height` <br />
 Relationship hasHeight implies Height <br />
+* `Body SubClassOf hasHeight only Height` <br />
+Relationship hasHeight from Body implies Height <br />
 
 `hasWeight`
 * `owl:Thing SubClassOf hasWeight only Weight` <br />
 Relationship hasWeight implies Weight <br />
+* `Body SubClassOf hasWeight only Weight` <br />
+Relationship hasWeight from Body implies Weight <br />
 
 ### Axioms (in Axiom Number Order)
 2 Disjointness

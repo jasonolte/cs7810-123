@@ -4,11 +4,19 @@
 ### Axioms
 `Outcome`
 
+'Event'
+
+'Health'
+
+'Visit'
+
 `accordingToWhom`
 
 `resultsIn`
 
 `hasResultsInRelation`
+* `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />
+An Outcome implies that it results from some Event.
 
 ### Axioms (by Axiom number)
 

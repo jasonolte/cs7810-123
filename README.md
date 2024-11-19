@@ -7,6 +7,7 @@ Group-123
 * `code/` -- project code
 * `deliverables/` -- project deliverables per course requirements
 * `meeting-minutes/` -- minutes from group meetings
+* `nondeliverables/` -- working files, temp files, notes, references, and miscellany
 * `schema-diagrams/` -- diagrams
 * `schema/` -- schema
 

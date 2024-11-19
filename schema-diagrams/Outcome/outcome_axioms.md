@@ -1,4 +1,7 @@
 ## Outcome
+![schema-diagram](Outcomes.png)
+
+### Axioms
 
 ### Axioms Templates
 1 Subclass

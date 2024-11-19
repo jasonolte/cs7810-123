@@ -12,7 +12,7 @@
 
 'Visit'
 
-[Vist Axioms](https://github.com/jasonolte/cs7810-123/edit/main/schema-diagrams/Visit/visit_axioms.md)
+[Vist Axioms]
 
 `accordingToWhom`
 
@@ -22,7 +22,7 @@
 * `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />
 An Outcome implies that it results from some Event.
 
-### Axioms (by Axiom number)
+### Axioms (in Axiom Number Order)
 
 8 Inverse Existential
 * `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />

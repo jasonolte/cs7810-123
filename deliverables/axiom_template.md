@@ -1,6 +1,6 @@
 # Name of Ontology
 
-![all-schemas](relative/path/to/all/schemas)
+![all-schemas](../schema-diagrams/Complete/Complete.png)
 
 ## Name of Module
 ![schema-diagram](relative/path/to/schema/diagram)

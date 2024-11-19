@@ -8,7 +8,11 @@
 
 'Health'
 
+[Health Axioms](https://github.com/jasonolte/cs7810-123/edit/main/schema-diagrams/Health/health_axioms.md)
+
 'Visit'
+
+[Vist Axioms](https://github.com/jasonolte/cs7810-123/edit/main/schema-diagrams/Visit/visit_axioms.md)
 
 `accordingToWhom`
 

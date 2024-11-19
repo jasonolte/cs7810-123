@@ -132,6 +132,15 @@ Relationship hasHeight from Body implies Height <br />
 * `Body SubClassOf hasWeight only Weight` <br />
 Relationship hasWeight from Body implies Weight <br />
 
+7 Existential
+* `Body SubClassOf hasOrgan some Organ` <br />
+Body implies hasOrgan with some Organ
+* `Body SubClassOf hasTorso some Torso` <br />
+Body implies hasTorso with Torso
+* `Body SubClassOf hasHeight some Height` <br />
+Body implies hasHeight with Height
+* `Body SubClassOf hasWeight some Weight` <br />
+Body implies hasWeight with Weight
 
 ### Axioms Templates
 1 Subclass
@@ -160,7 +169,7 @@ Relationship R from type A implies type B
 
 7 Existential
 * `A SubClassOf R some B` <br />
-Type A imples relationship R with type B
+Type A implies relationship R with type B
 
 8 Inverse Existential
 * `B SubClassOf inverse R some A` <br />

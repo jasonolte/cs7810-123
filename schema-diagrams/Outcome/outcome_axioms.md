@@ -2,6 +2,13 @@
 ![schema-diagram](Outcome.png)
 
 ### Axioms
+`Outcome`
+
+`accordingToWhom`
+
+`resultsIn`
+
+`hasResultsInRelation`
 
 ### Axioms (by Axiom number)
 

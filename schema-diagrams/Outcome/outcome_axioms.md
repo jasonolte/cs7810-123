@@ -1,7 +1,9 @@
 ## Outcome
-![schema-diagram](Outcomes.png)
+![schema-diagram](Outcome.png)
 
 ### Axioms
+
+### Axioms (by Axiom number)
 
 ### Axioms Templates
 1 Subclass

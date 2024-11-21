@@ -2,145 +2,73 @@
 ![schema-diagram](Body.png)
 
 ### Axioms
-`Body`
-2 Disjointness <br />
+`Body` <br />
+2. Disjointness <br />
 * `Body DisjointWith Organ` <br />
 Body implies not Organ.  Organ implies not Body <br />
 altenatives: Leg, Arm, Torso, Head, Weight, Height
 
-`hasOrgan`
+`Body hasOrgan Organ` <br />
+3. Domain <br />
 * `hasOrgan some owl:Thing SubClassOf Body` <br />
-Relationship hasOrgan implies Body <br />
-* `hasOrgan some Organ SubClassOf Body` <br />
-Relationship hasOrgan with Organ implies Body <br />
+Relationship hasOrgan implies Body.  Scoped Domain also applicable. <br />
+5. Global Range  <br />
 * `owl:Thing SubClassOf hasOrgan only Organ` <br />
-Relationship hasOrgan implies Organ <br />
-* `Body SubClassOf hasOrgan only Organ` <br />
-Relationship hasOrgan from Body implies Organ <br />
-
-`hasLeg`
-* `hasLeg some owl:Thing SubClassOf Body` <br />
-Relationship hasLeg implies Body <br />
-* `hasLeg some Leg SubClassOf Body` <br />
-Relationship hasLeg with Leg implies Body <br />
-* `owl:Thing SubClassOf hasLeg only Leg` <br />
-Relationship hasLeg implies Leg <br />
-* `Body SubClassOf hasLeg only Leg` <br />
-Relationship hasLeg from Body implies Leg <br />
-
-`hasArm`
-* `hasArm some owl:Thing SubClassOf Body` <br />
-Relationship hasArm implies Body <br />
-* `hasArm some Arm SubClassOf Body` <br />
-Relationship hasArm with Arm implies Body <br />
-* `owl:Thing SubClassOf hasArm only Arm` <br />
-Relationship hasArm implies Arm <br />
-* `Body SubClassOf hasArm only Arm` <br />
-Relationship hasArm from Body implies Arm <br />
-
-`hasTorso`
-* `hasTorso some owl:Thing SubClassOf Body` <br />
-Relationship hasTorso implies Body <br />
-* `hasTorso some Torso SubClassOf Body` <br />
-Relationship hasTorso with Torso implies Body <br />
-* `owl:Thing SubClassOf hasTorso only Torso` <br />
-Relationship hasTorso implies Torso <br />
-* `Body SubClassOf hasTorso only Torso` <br />
-Relationship hasTorso from Body implies Torso <br />
-
-`hasHead`
-* `hasHead some owl:Thing SubClassOf Body` <br />
-Relationship hasHead implies Body <br />
-* `hasHead some Head SubClassOf Body` <br />
-Relationship hasHead with Head implies Body <br />
-* `owl:Thing SubClassOf hasHead only Head` <br />
-Relationship hasHead implies Head <br />
-* `Body SubClassOf hasHead only Head` <br />
-Relationship hasHead from Body implies Head <br />
-
-`hasHeight`
-* `owl:Thing SubClassOf hasHeight only Height` <br />
-Relationship hasHeight implies Height <br />
-* `Body SubClassOf hasHeight only Height` <br />
-Relationship hasHeight from Body implies Height <br />
-
-`hasWeight`
-* `owl:Thing SubClassOf hasWeight only Weight` <br />
-Relationship hasWeight implies Weight <br />
-* `Body SubClassOf hasWeight only Weight` <br />
-Relationship hasWeight from Body implies Weight <br />
-
-### Axioms (in Axiom Number Order)
-2 Disjointness
-* `Body DisjointWith Organ` <br />
-Body implies not Organ.  Organ implies not Body <br />
-altenatives: Leg, Arm, Torso, Head, Weight, Height
-
-3 Domain
-* `hasOrgan some owl:Thing SubClassOf Body` <br />
-Relationship hasOrgan implies Body <br />
-* `hasLeg some owl:Thing SubClassOf Body` <br />
-Relationship hasLeg implies Body <br />
-* `hasArm some owl:Thing SubClassOf Body` <br />
-Relationship hasArm implies Body <br />
-* `hasTorso some owl:Thing SubClassOf Body` <br />
-Relationship hasTorso implies Body <br />
-* `hasHead some owl:Thing SubClassOf Body` <br />
-Relationship hasHead implies Body <br />
-
-4 Scoped Domain
-* `hasOrgan some Organ SubClassOf Body` <br />
-Relationship hasOrgan with Organ implies Body <br />
-* `hasLeg some Leg SubClassOf Body` <br />
-Relationship hasLeg with Leg implies Body <br />
-* `hasArm some Arm SubClassOf Body` <br />
-Relationship hasArm with Arm implies Body <br />
-* `hasTorso some Torso SubClassOf Body` <br />
-Relationship hasTorso with Torso implies Body <br />
-* `hasHead some Head SubClassOf Body` <br />
-Relationship hasHead with Head implies Body <br />
-
-5 Global Range
-* `owl:Thing SubClassOf hasOrgan only Organ` <br />
-Relationship hasOrgan implies Organ <br />
-* `owl:Thing SubClassOf hasLeg only Leg` <br />
-Relationship hasLeg implies Leg <br />
-* `owl:Thing SubClassOf hasArm only Arm` <br />
-Relationship hasArm implies Arm <br />
-* `owl:Thing SubClassOf hasTorso only Torso` <br />
-Relationship hasTorso implies Torso <br />
-* `owl:Thing SubClassOf hasHead only Head` <br />
-Relationship hasHead implies Head <br />
-* `owl:Thing SubClassOf hasHeight only Height` <br />
-Relationship hasHeight implies Height <br />
-* `owl:Thing SubClassOf hasWeight only Weight` <br />
-Relationship hasWeight implies Weight <br />
-
-6 Scoped Range
-* `Body SubClassOf hasOrgan only Organ` <br />
-Relationship hasOrgan from Body implies Organ <br />
-* `Body SubClassOf hasLeg only Leg` <br />
-Relationship hasLeg from Body implies Leg <br />
-* `Body SubClassOf hasArm only Arm` <br />
-Relationship hasArm from Body implies Arm <br />
-* `Body SubClassOf hasTorso only Torso` <br />
-Relationship hasTorso from Body implies Torso <br />
-* `Body SubClassOf hasHead only Head` <br />
-Relationship hasHead from Body implies Head <br />
-* `Body SubClassOf hasHeight only Height` <br />
-Relationship hasHeight from Body implies Height <br />
-* `Body SubClassOf hasWeight only Weight` <br />
-Relationship hasWeight from Body implies Weight <br />
-
-7 Existential
+Relationship hasOrgan implies Organ.  Scoped Range also applicable. <br />
+7 Existential <br />
 * `Body SubClassOf hasOrgan some Organ` <br />
-Body implies hasOrgan with some Organ
+Body implies hasOrgan with some Organ. <br />
+
+`Body hasLeg Leg` <br />
+3. Domain <br />
+* `hasLeg some owl:Thing SubClassOf Body` <br />
+Relationship hasLeg implies Body  Scoped Domain also applicable. <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasLeg only Leg` <br />
+Relationship hasLeg implies Leg.  Scoped Range also applicable. <br />
+
+`Body hasArm Arm` <br />
+3. Domain <br />
+* `hasArm some owl:Thing SubClassOf Body` <br />
+Relationship hasArm implies Body.  Scoped Domain also applicable. <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasArm only Arm` <br />
+Relationship hasArm implies Arm.  Scoped Range also applicable. <br />
+
+`Body hasTorso Torso` <br />
+3. Domain <br />
+* `hasTorso some owl:Thing SubClassOf Body` <br />
+Relationship hasTorso implies Body.  Scoped Domain also applicable. <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasTorso only Torso` <br />
+Relationship hasTorso implies Torso.  Scoped Range also applicable. <br />
+7 Existential <br />
 * `Body SubClassOf hasTorso some Torso` <br />
-Body implies hasTorso with Torso
+Body implies hasTorso with Torso <br />
+
+`Body hasHead Head` <br />
+3. Domain <br />
+* `hasHead some owl:Thing SubClassOf Body` <br />
+Relationship hasHead implies Body.  Scoped Domain also applicable. <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasHead only Head` <br />
+Relationship hasHead implies Head.  Scoped Range also applicable. <br />
+
+`Body hasHeight Height` <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasHeight only Height` <br />
+Relationship hasHeight implies Height.  Scoped Range also applicable. <br />
+7 Existential <br />
 * `Body SubClassOf hasHeight some Height` <br />
-Body implies hasHeight with Height
+Body implies hasHeight with Height <br />
+
+`Body hasWeight Weight` <br />
+5. Global Range  <br />
+* `owl:Thing SubClassOf hasWeight only Weight` <br />
+Relationship hasWeight implies Weight.  Scoped Range also applicable. <br />
+7 Existential <br />
 * `Body SubClassOf hasWeight some Weight` <br />
-Body implies hasWeight with Weight
+Body implies hasWeight with Weight <br />
 
 ### Axioms Templates
 1 Subclass

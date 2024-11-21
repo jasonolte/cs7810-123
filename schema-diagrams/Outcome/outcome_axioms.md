@@ -12,7 +12,7 @@
 
 `Visit`
 
-* [Vist Axioms]
+* [Vist Axioms](https://github.com/jasonolte/cs7810-123/blob/main/schema-diagrams/Visit/visit_axioms.md)
 
 `accordingToWhom`
 

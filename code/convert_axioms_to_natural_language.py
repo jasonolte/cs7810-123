@@ -323,7 +323,7 @@ def print_zipped(orig_list, created_statements):
         print(y)
 
 
-def convert_run_all(relation_list, name_string, final_list):
+def convert_run_all_old(relation_list, name_string, final_list):
             
     final_list.append(f"# {name_string}")
     rl_lst = []
@@ -401,6 +401,96 @@ def convert_run_all(relation_list, name_string, final_list):
     
     final_return = list(zip(relation_list, rl_lst, rl_nl))
     final_list.extend(final_return)
+
+    return final_list
+
+def convert_run_all(relation_list, name_string, final_list):
+    final_list.append(f"# {name_string}")
+    rl_lst = []
+    rl_nl = []
+
+    results_dict = {}
+    for x in relation_list:
+        if name_string == "subclass":
+            rl_lst.append(generate_subclass(x))
+            rl_nl.append(convert_subclass(generate_subclass(x)))
+
+        elif name_string == "disjoint":
+            rl_lst.append(generate_disjoint(x))
+            rl_nl.append(convert_disjoint(generate_disjoint(x)))
+
+        elif name_string == "global domain":
+            rl_lst.append(generate_global_domain(x))
+            rl_nl.append(convert_global_domain(generate_global_domain(x)))
+
+        elif name_string == "scoped domain":
+            rl_lst.append(generate_scoped_domain(x))
+            rl_nl.append(convert_scoped_domain(generate_scoped_domain(x)))
+
+        elif name_string == "global range":
+            rl_lst.append(generate_global_range(x))
+            rl_nl.append(convert_global_range(generate_global_range(x)))
+
+        elif name_string == "scoped range":
+            rl_lst.append(generate_existential(x))
+            rl_nl.append(convert_existential(generate_existential(x)))
+
+        elif name_string == "existential":
+            rl_lst.append(generate_existential(x))
+            rl_nl.append(convert_existential(generate_existential(x)))
+
+        elif name_string == "inverse existential":
+            rl_lst.append(generate_inverse_existential(x))
+            rl_nl.append(convert_inverse_existential(generate_inverse_existential(x)))
+
+        elif name_string == "functionality":
+            rl_lst.append(generate_functionality(x))
+            rl_nl.append(convert_functionality(generate_functionality(x)))
+
+        elif name_string == "qualified functionality":
+            rl_lst.append(generate_qualified_functionality(x))
+            rl_nl.append(convert_qualified_functionality(generate_qualified_functionality(x)))
+
+        elif name_string == "scoped functionality":
+            rl_lst.append(generate_scoped_functionality(x))
+            rl_nl.append(convert_scoped_functionality(generate_scoped_functionality(x)))
+
+        elif name_string == "qualified scoped functionality":
+            rl_lst.append(generate_qualified_scoped_functionality(x))
+            rl_nl.append(convert_qualified_scoped_functionality(generate_qualified_scoped_functionality(x)))
+
+        elif name_string == "inverse functionality":
+            rl_lst.append(generate_inverse_functionality(x))
+            rl_nl.append(convert_inverse_functionality(generate_inverse_functionality(x)))
+
+        elif name_string == "inverse qualified functionality":
+            rl_lst.append(generate_inverse_qualified_functionality(x))
+            rl_nl.append(convert_inverse_qualified_functionality(generate_inverse_qualified_functionality(x)))
+
+        elif name_string == "inverse scoped functionality":
+            rl_lst.append(generate_inverse_scoped_functionality(x))
+            rl_nl.append(convert_inverse_scoped_functionality(generate_inverse_scoped_functionality(x)))
+
+        elif name_string == "inverse qualified scoped functionality":
+            rl_lst.append(generate_inverse_qualified_scoped_functionality(x))
+            rl_nl.append(convert_inverse_qualified_scoped_functionality(generate_inverse_qualified_scoped_functionality(x)))
+
+        elif name_string == "structural tautology":
+            rl_lst.append(generate_structural_tautology(x))
+            rl_nl.append(convert_structural_tautology(generate_structural_tautology(x)))
+
+        results_dict.setdefault(name_string, []).append((x, rl_lst[-1], rl_nl[-1]))
+
+    # Sort results_dict by unique name_strings
+    sorted_results_dict = dict(sorted(results_dict.items()))
+
+
+    print(sorted_results_dict['subclass'])
+
+    # Add all items to final_list
+    for name_string, items in sorted_results_dict.items():
+        for item in items:
+            final_list.append(item)
 
     return final_list
 

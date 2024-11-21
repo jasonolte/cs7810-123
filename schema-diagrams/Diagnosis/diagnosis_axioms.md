@@ -1,87 +1,109 @@
-## Diagnosis Axioms
+# Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+disjoint: `Diagnosis DisjointWith PrincipalDiagnosis`
 
-1. Subclass
-* NA
+existential: `Diagnosis SubClassOf hasPrincipalDiagnosis some PrincipalDiagnosis`
 
-2. Disjointness
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Diagnosis affects Body
-* Diagnosis isAssociatedWith Visit
-* Patient hasDiagnosis Diagnosis
-* Treatment treatmentFor Diagnosis
+functionality: `owl:Thing SubClassOf hasPrincipalDiagnosis max 1 owl:Thing`
 
-3. Global Domain
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Patient hasDiagnosis Diagnosis
-* Treatment treatmentFor Diagnosis
+global domain: `hasPrincipalDiagnosis some owl:Thing SubClassOf Diagnosis`
 
-4. Scoped Domain
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Patient hasDiagnosis Diagnosis
-* Treatment treatmentFor Diagnosis
+global range: `owl:Thing SubClassOf hasPrincipalDiagnosis only PrincipalDiagnosis`
 
-5. Global Range
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Patient hasDiagnosis Diagnosis
+inverse existential: `PrincipalDiagnosis SubClassOf inverse hasPrincipalDiagnosis some Diagnosis`
 
-6. Scoped Range
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Diagnosis affects Body
-* Diagnosis isAssociatedWith Visit
-* Patient hasDiagnosis Diagnosis
+inverse functionality: `owl:Thing SubClassOf inverse hasPrincipalDiagnosis max 1`
 
-7. Existential
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Diagnosis affects Body
-* Diagnosis isAssociatedWith Visit
-* Patient hasDiagnosis Diagnosis
-* Treatment treatmentFor Diagnosis
+inverse qualified functionality: `owl:Thing SubClassOf inverse hasPrincipalDiagnosis max 1 Diagnosis`
 
-8. Inverse Existential
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Patient hasDiagnosis Diagnosis
+inverse qualified scoped functionality: `PrincipalDiagnosis SubClassOf inverse hasPrincipalDiagnosis max 1 Diagnosis`
 
-9. Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+inverse scoped functionality: `PrincipalDiagnosis SubClassOf inverse hasPrincipalDiagnosis max 1 owl:Thing`
 
-10. Qualified Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+qualified functionality: `owl:Thing SubClassOf hasPrincipalDiagnosis max 1 PrincipalDiagnosis`
 
-11. Scoped Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+qualified scoped functionality: `Diagnosis SubClassOf hasPrincipalDiagnosis max 1 PrincipalDiagnosis`
 
-12. Qualified Scoped Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+scoped domain: `hasPrincipalDiagnosis some PrincipalDiagnosis SubClassOf Diagnosis`
 
-13. Inverse Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+scoped functionality: `Diagnosis SubClassOf hasPrincipalDiagnosis max 1 owl:Thing`
 
-14. Inverse Qualified Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+scoped range: `Diagnosis SubClassOf hasPrincipalDiagnosis some PrincipalDiagnosis`
 
-15. Inverse Scoped Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+structural tautology: `PrincipalDiagnosis SubClassOf hasPrincipalDiagnosis min 0 Diagnosis`
 
-16. Inverse Qualified Scoped Functionality
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+# Diagnosis hasDiagnosisTypes DiagnosisTypes
+disjoint: `Diagnosis DisjointWith DiagnosisTypes`
 
-17. Structural Tautology
-* Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
-* Diagnosis hasDiagnosisTypes DiagnosisTypes
-* Diagnosis identifies Disease
-* Diagnosis affects Body
-* Diagnosis isAssociatedWith Visit
-* Patient hasDiagnosis Diagnosis
-* Treatment treatmentFor Diagnosis
+existential: `Diagnosis SubClassOf hasDiagnosisTypes some DiagnosisTypes`
+
+global domain: `hasDiagnosisTypes some owl:Thing SubClassOf Diagnosis`
+
+global range: `owl:Thing SubClassOf hasDiagnosisTypes only DiagnosisTypes`
+
+inverse existential: `DiagnosisTypes SubClassOf inverse hasDiagnosisTypes some Diagnosis`
+
+scoped domain: `hasDiagnosisTypes some DiagnosisTypes SubClassOf Diagnosis`
+
+scoped range: `Diagnosis SubClassOf hasDiagnosisTypes some DiagnosisTypes`
+
+structural tautology: `DiagnosisTypes SubClassOf hasDiagnosisTypes min 0 Diagnosis`
+
+# Diagnosis identifies Disease
+disjoint: `Diagnosis DisjointWith Disease`
+
+existential: `Diagnosis SubClassOf identifies some Disease`
+
+global domain: `identifies some owl:Thing SubClassOf Diagnosis`
+
+scoped domain: `identifies some Disease SubClassOf Diagnosis`
+
+scoped range: `Diagnosis SubClassOf identifies some Disease`
+
+structural tautology: `Disease SubClassOf identifies min 0 Diagnosis`
+
+# Diagnosis affects Body
+disjoint: `Diagnosis DisjointWith Body`
+
+existential: `Diagnosis SubClassOf affects some Body`
+
+scoped range: `Diagnosis SubClassOf affects some Body`
+
+structural tautology: `Body SubClassOf affects min 0 Diagnosis`
+
+# Diagnosis isAssociatedWith Visit
+disjoint: `Diagnosis DisjointWith Visit`
+
+existential: `Diagnosis SubClassOf isAssociatedWith some Visit`
+
+scoped range: `Diagnosis SubClassOf isAssociatedWith some Visit`
+
+structural tautology: `Visit SubClassOf isAssociatedWith min 0 Diagnosis`
+
+# Patient hasDiagnosis Diagnosis
+disjoint: `Patient DisjointWith Diagnosis`
+
+existential: `Patient SubClassOf hasDiagnosis some Diagnosis`
+
+global domain: `hasDiagnosis some owl:Thing SubClassOf Patient`
+
+global range: `owl:Thing SubClassOf hasDiagnosis only Diagnosis`
+
+inverse existential: `Diagnosis SubClassOf inverse hasDiagnosis some Patient`
+
+scoped domain: `hasDiagnosis some Diagnosis SubClassOf Patient`
+
+scoped range: `Patient SubClassOf hasDiagnosis some Diagnosis`
+
+structural tautology: `Diagnosis SubClassOf hasDiagnosis min 0 Patient`
+
+# Treatment treatmentFor Diagnosis
+disjoint: `Treatment DisjointWith Diagnosis`
+
+existential: `Treatment SubClassOf treatmentFor some Diagnosis`
+
+global domain: `treatmentFor some owl:Thing SubClassOf Treatment`
+
+scoped domain: `treatmentFor some Diagnosis SubClassOf Treatment`
+
+structural tautology: `Diagnosis SubClassOf treatmentFor min 0 Treatment`
+

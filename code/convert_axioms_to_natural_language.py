@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 
 def convert_subclass(axiom_string):
 
@@ -189,7 +190,6 @@ def convert_inverse_qualified_scoped_functionality(axiom_string):
 
 
 def convert_structural_tautology(axiom_string):
-
     axiom_string = axiom_string.replace('`', '').replace('`', '')
     a, rb = axiom_string.split('SubClassOf')
     r, b = rb.split('min 0')
@@ -234,7 +234,6 @@ def generate_global_range(axiom_string):
 
 
 def generate_scoped_range(axiom_string):
-    print(axiom_string)
 
     a, r, b = axiom_string.split(' ')
 
@@ -307,10 +306,17 @@ def generate_inverse_qualified_scoped_functionality(axiom_string):
     return f"`{b} SubClassOf inverse {r} max 1 {a}`"
 
 def generate_structural_tautology(axiom_string):
+    
+    if re.search('SubClassOf ', axiom_string):
+        axiom_string = axiom_string.replace('SubClassOf ', '')
 
-    a, r, b = axiom_string.split(' ')
+        a, b = axiom_string.split(' ')
+        r = 'SubClassOf'
+        return f"`{b} SubClassOf min 0 {a}`"
+    else:
+        a, r, b = axiom_string.split(' ')
 
-    return f"`{b} SubClassOf {r} min 0 {a}`"
+        return f"`{b} SubClassOf {r} min 0 {a}`"
 
 def print_zipped(orig_list, created_statements):
     for x,y in zip(orig_list, created_statements):
@@ -441,7 +447,7 @@ def write_file(class_name, class_values, print_list = ['manchester']):
 
 if __name__ == "__main__":
 
-    type_value = "health"
+    type_value = "temporal_extent"
 
     if type_value == "health":
 
@@ -771,9 +777,8 @@ if __name__ == "__main__":
         flist = reorganize_keys(flist)
 
         write_file('drug', class_values = flist, print_list = ['manchester'])
-
-
-    # GOOD
+    
+    
     elif type_value == "imaging":
 
         sc = []
@@ -919,5 +924,433 @@ if __name__ == "__main__":
 
         write_file('labs-imaging', class_values = flist, print_list = ['manchester'])
 
+
+    elif type_value == "visit":
+
+        sc = [
+            'Visit SubClassOf Event',
+            'DischargeID SubClassOf Identifier']
+            
+        dis = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit",
+            "Health isAssociatedWith Visit",
+            "Gender isAssociatedWith Visit",
+            "Ethnicity isAssociatedWith Visit",
+            "Race isAssociatedWith Visit",
+            "Age isAssociatedWith Visit",
+            "PatientType isAssociatedWith Visit",
+            "PriorityOfAdmission isAssociatedWith Visit",
+            "Diagnosis isAssociatedWith Visit"
+        ]
+
+        gd = [
+            "Patient hasVisit Visit"]
+
+        sd = [
+            "Visit leadsTo Labs-Imaging",
+            "Patient hasVisit Visit"
+           ]
+
+        gr = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Patient hasVisit Visit"
+            ]
+
+        sr = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Patient hasVisit Visit",
+            "Health isAssociatedWith Visit",
+            "Gender isAssociatedWith Visit",
+            "Ethnicity isAssociatedWith Visit",
+            "Race isAssociatedWith Visit",
+            "Age isAssociatedWith Visit",
+            "PatientType isAssociatedWith Visit",
+            "PriorityOfAdmission isAssociatedWith Visit",
+            "Diagnosis isAssociatedWith Visit"
+            ]
+
+
+        ex = [       
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Patient hasVisit Visit",
+            "Health isAssociatedWith Visit",
+            "Gender isAssociatedWith Visit",
+            "Ethnicity isAssociatedWith Visit",
+            "Race isAssociatedWith Visit",
+            "Age isAssociatedWith Visit",
+            "PatientType isAssociatedWith Visit",
+            "PriorityOfAdmission isAssociatedWith Visit",
+            "Diagnosis isAssociatedWith Visit"
+        ]
+
+
+        iex = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Patient hasVisit Visit"
+        ]
+
+        fun = [ 
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            ]
+
+
+        qfun = [
+            "Visit hasDischargeID DischargeID",    
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent"]
+
+        sf = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent"]
+
+
+        qsf = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",]
+
+        ifun = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit",]
+
+
+        iqf = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit"]
+
+
+        isf = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit"]
+
+        iqsf = [
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit"]
+
+
+        st = [
+            "Visit SubClassOf Event",
+            "DischargeID SubClassOf Identifier",
+            "Visit hasDischargeID DischargeID",
+            "Visit hasOutcome Outcome",
+            "Visit hasTemporalExtent TemporalExtent",
+            "Visit leadsTo Labs/Imaging",
+            "Patient hasVisit Visit",
+            "Health isAssociatedWith Visit",
+            "Gender isAssociatedWith Visit",
+            "Ethnicity isAssociatedWith Visit",
+            "Race isAssociatedWith Visit",
+            "Age isAssociatedWith Visit",
+            "PatientType isAssociatedWith Visit",
+            "PriorityOfAdmission isAssociatedWith Visit",
+            "Diagnosis isAssociatedWith Visit",
+        ]
+
+        flist = {}
+
+        flist = convert_run_all(sc, "subclass", flist)
+        flist = convert_run_all(dis, "disjoint", flist)
+        flist = convert_run_all(gd, "global domain", flist)
+        flist = convert_run_all(sd, "scoped domain", flist)
+        flist = convert_run_all(gr, "global range", flist)
+        flist = convert_run_all(sr, "scoped range", flist)
+        flist = convert_run_all(ex, "existential", flist)
+        flist = convert_run_all(iex, "inverse existential", flist)
+        flist = convert_run_all(fun, "functionality", flist)
+        flist = convert_run_all(qfun, "qualified functionality", flist)
+        flist = convert_run_all(sf, "scoped functionality", flist)
+        flist = convert_run_all(qsf, "qualified scoped functionality", flist)
+        flist = convert_run_all(ifun, "inverse functionality", flist)
+        flist = convert_run_all(iqf, "inverse qualified functionality", flist)
+        flist = convert_run_all(isf, "inverse scoped functionality", flist)
+        flist = convert_run_all(iqsf, "inverse qualified scoped functionality", flist)
+        flist = convert_run_all(st, "structural tautology", flist)
+
+        flist = reorganize_keys(flist)
+
+        write_file('visit', class_values = flist, print_list = ['manchester'])
+
+    elif type_value == "diagnosis":
+
+        sc = []
+
+        dis = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Diagnosis affects Body",
+            "Diagnosis isAssociatedWith Visit",
+            "Patient hasDiagnosis Diagnosis",
+            "Treatment treatmentFor Diagnosis"
+        ]
+
+        gd = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Patient hasDiagnosis Diagnosis",
+            "Treatment treatmentFor Diagnosis"
+        ]
+
+        sd = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Patient hasDiagnosis Diagnosis",
+            "Treatment treatmentFor Diagnosis"
+        ]
+        
+        gr = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Patient hasDiagnosis Diagnosis"
+        ]
+
+        sr = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Diagnosis affects Body",
+            "Diagnosis isAssociatedWith Visit",
+            "Patient hasDiagnosis Diagnosis",
+        ]
+
+        ex = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Diagnosis affects Body",
+            "Diagnosis isAssociatedWith Visit",
+            "Patient hasDiagnosis Diagnosis",
+            "Treatment treatmentFor Diagnosis"
+        ]
+
+        iex = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Patient hasDiagnosis Diagnosis",
+        ]
+
+        fun = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        qfun = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        sf = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        qsf = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        ifun = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        iqf = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        isf = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+
+        iqsf = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+        ]
+
+        st = [
+            "Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis",
+            "Diagnosis hasDiagnosisTypes DiagnosisTypes",
+            "Diagnosis identifies Disease",
+            "Diagnosis affects Body",
+            "Diagnosis isAssociatedWith Visit",
+            "Patient hasDiagnosis Diagnosis",
+            "Treatment treatmentFor Diagnosis"
+        ]
+
+        flist = {}
+
+        flist = convert_run_all(sc, "subclass", flist)
+        flist = convert_run_all(dis, "disjoint", flist)
+        flist = convert_run_all(gd, "global domain", flist)
+        flist = convert_run_all(sd, "scoped domain", flist)
+        flist = convert_run_all(gr, "global range", flist)
+        flist = convert_run_all(sr, "scoped range", flist)
+        flist = convert_run_all(ex, "existential", flist)
+        flist = convert_run_all(iex, "inverse existential", flist)
+        flist = convert_run_all(fun, "functionality", flist)
+        flist = convert_run_all(qfun, "qualified functionality", flist)
+        flist = convert_run_all(sf, "scoped functionality", flist)
+        flist = convert_run_all(qsf, "qualified scoped functionality", flist)
+        flist = convert_run_all(ifun, "inverse functionality", flist)
+        flist = convert_run_all(iqf, "inverse qualified functionality", flist)
+        flist = convert_run_all(isf, "inverse scoped functionality", flist)
+        flist = convert_run_all(iqsf, "inverse qualified scoped functionality", flist)
+        flist = convert_run_all(st, "structural tautology", flist)
+
+        flist = reorganize_keys(flist)
+
+        write_file('diagnosis', class_values = flist, print_list = ['manchester'])
+
+    elif type_value == "temporal_extent":
+
+        sc = [
+            "TimeInterval SubClassOf ComplexTemporalExtent",
+            "PointInTime SubClassOf ComplexTemporalExtent",
+            "DischargeDate SubClassOf PointInTime",
+            "DateOfStay SubClassOf PointInTime"
+        ]
+
+        dis = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        gd = [
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        sd = [
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+        gr = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        sr = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        ex = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        iex = [
+            "TemporalExtent contains ComplexTemporalExtent"
+        ]
+
+        fun = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        qfun = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        sf = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        qsf = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        ifun = [
+            "Visit hasTemporalExtent TemporalExtent",
+        ]
+
+        iqf = [
+            "Visit hasTemporalExtent TemporalExtent",
+        ]
+
+        isf = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+        ]
+
+        iqsf = [
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+        ]
+
+        st = [
+            "TimeInterval SubClassOf ComplexTemporalExtent",
+            "PointInTime SubClassOf ComplexTemporalExtent",
+            "DischargeDate SubClassOf PointInTime",
+            "DateOfStay SubClassOf PointInTime",
+            "Visit hasTemporalExtent TemporalExtent",
+            "TemporalExtent contains ComplexTemporalExtent",
+            "TimeInterval startsFrom PointInTime",
+            "TimeInterval endsAt PointInTime"
+        ]
+
+        flist = {}
+        flist = convert_run_all(sc, "subclass", flist)
+        flist = convert_run_all(dis, "disjoint", flist)
+        flist = convert_run_all(gd, "global domain", flist)
+        flist = convert_run_all(sd, "scoped domain", flist)
+        flist = convert_run_all(gr, "global range", flist)
+        flist = convert_run_all(sr, "scoped range", flist)
+        flist = convert_run_all(ex, "existential", flist)
+        flist = convert_run_all(iex, "inverse existential", flist)
+        flist = convert_run_all(fun, "functionality", flist)
+        flist = convert_run_all(qfun, "qualified functionality", flist)
+        flist = convert_run_all(sf, "scoped functionality", flist)
+        flist = convert_run_all(qsf, "qualified scoped functionality", flist)
+        flist = convert_run_all(ifun, "inverse functionality", flist)
+        flist = convert_run_all(iqf, "inverse qualified functionality", flist)
+        flist = convert_run_all(isf, "inverse scoped functionality", flist)
+        flist = convert_run_all(iqsf, "inverse qualified scoped functionality", flist)
+        flist = convert_run_all(st, "structural tautology", flist)
+
+        flist = reorganize_keys(flist)
+
+        write_file(type_value, class_values = flist, print_list = ['manchester'])
 
 

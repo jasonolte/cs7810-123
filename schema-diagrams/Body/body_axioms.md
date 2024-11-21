@@ -15,7 +15,7 @@ Relationship hasOrgan implies Body.  Scoped Domain also applicable. <br />
 5. Global Range  <br />
 * `owl:Thing SubClassOf hasOrgan only Organ` <br />
 Relationship hasOrgan implies Organ.  Scoped Range also applicable. <br />
-7 Existential <br />
+7. Existential <br />
 * `Body SubClassOf hasOrgan some Organ` <br />
 Body implies hasOrgan with some Organ. <br />
 
@@ -42,7 +42,7 @@ Relationship hasTorso implies Body.  Scoped Domain also applicable. <br />
 5. Global Range  <br />
 * `owl:Thing SubClassOf hasTorso only Torso` <br />
 Relationship hasTorso implies Torso.  Scoped Range also applicable. <br />
-7 Existential <br />
+7. Existential <br />
 * `Body SubClassOf hasTorso some Torso` <br />
 Body implies hasTorso with Torso <br />
 
@@ -58,7 +58,7 @@ Relationship hasHead implies Head.  Scoped Range also applicable. <br />
 5. Global Range  <br />
 * `owl:Thing SubClassOf hasHeight only Height` <br />
 Relationship hasHeight implies Height.  Scoped Range also applicable. <br />
-7 Existential <br />
+7. Existential <br />
 * `Body SubClassOf hasHeight some Height` <br />
 Body implies hasHeight with Height <br />
 
@@ -66,7 +66,7 @@ Body implies hasHeight with Height <br />
 5. Global Range  <br />
 * `owl:Thing SubClassOf hasWeight only Weight` <br />
 Relationship hasWeight implies Weight.  Scoped Range also applicable. <br />
-7 Existential <br />
+7. Existential <br />
 * `Body SubClassOf hasWeight some Weight` <br />
 Body implies hasWeight with Weight <br />
 

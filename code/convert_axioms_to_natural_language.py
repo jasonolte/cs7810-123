@@ -1,9 +1,4 @@
-#import pandas as pd
-#import numpy as np
-#import os
-#import re
-
-
+# -*- coding: utf-8 -*-
 
 def convert_subclass(axiom_string):
 
@@ -30,7 +25,7 @@ def convert_global_domain(axiom_string):
 
     domain = f"For all x, if there exists a relationship {r.strip()} with x and "\
        f"x is of type {a.strip()}"
-    
+
     return domain
 
 
@@ -42,7 +37,7 @@ def convert_scoped_domain(axiom_string):
 
     domain = f"For all x, if there exists a relationship {r.strip()} with x and "\
         f"y and y is of type {b.strip()} implies x is of type {a.strip()}"
-    
+
     return domain
 
 def convert_global_range(axiom_string):
@@ -53,7 +48,7 @@ def convert_global_range(axiom_string):
 
     range = f"For all x and y, if there exists a relationship {r.strip()} with x "\
         f"and y and implies y is of type {b.strip()}"
-    
+
     return range
 
 def convert_scoped_range(axiom_string):
@@ -64,7 +59,7 @@ def convert_scoped_range(axiom_string):
 
     range = f"For all x, if x is of type {a.strip()} and there exists a relationship "\
         f"{r.strip()} with x and y and implies y is of type {b.strip()}"
-    
+
     return range
 
 def convert_existential(axiom_string):
@@ -75,7 +70,7 @@ def convert_existential(axiom_string):
 
     exist = f"For all x where x is of type {a.strip()} implies there exists a y and a "\
         f"relationship {r.strip()} with x and y and y is of type {b.strip()}"
-    
+
     return exist
 
 def convert_inverse_existential(axiom_string):
@@ -86,7 +81,7 @@ def convert_inverse_existential(axiom_string):
 
     exist = f"For every x that is of type {b.strip()} there has to be an inverse "\
         f"{r.strip()}-filler that connects y and x such that y is of type {a.strip()}"
-    
+
     return exist
 
 
@@ -99,7 +94,7 @@ def convert_functionality(axiom_string):
     funct = f"For all x implies either there does not exist a y and a relationship "\
         f"{r.strip()} with x and y or there exists exactly 1 y and a relationship "\
         f"{r.strip()} with x and y."
-    
+
     return funct
 
 
@@ -112,7 +107,7 @@ def convert_qualified_functionality(axiom_string):
     funct = f"For all x implies either there does not exist a y and a relationship "\
         f"{r.strip()} with x and y or there exists exactly 1 y and a relationship "\
         f"{r.strip()} with x and y and y is of type {b.strip()}."
-    
+
     return funct
 
 
@@ -125,7 +120,7 @@ def convert_scoped_functionality(axiom_string):
     funct = f"For all x where x is of type {a.strip()} implies either there does not "\
         f"exist a y and a relationship {r.strip()} with x and y or there exists exactly "\
         f"1 y and a relationship {r.strip()} with x and y."
-    
+
     return funct
 
 def convert_qualified_scoped_functionality(axiom_string):
@@ -137,7 +132,7 @@ def convert_qualified_scoped_functionality(axiom_string):
     funct = f"For all x where x is of type {a.strip()} implies either there does not "\
         f"exist a y and a relationship {r.strip()} with x and y or there exists exactly "\
         f"1 y and a relationship {r.strip()} with x and y and y is of type {b.strip()}."
-    
+
     return funct
 
 
@@ -150,7 +145,7 @@ def convert_inverse_functionality(axiom_string):
     funct = f"For all y implies either there does not exist a x and an inverse "\
         f"relationship {r.strip()} with y and x or there exists exactly 1 x and "\
         f"an inverse relationship {r.strip()} with y and x."
-    
+
     return funct
 
 def convert_inverse_qualified_functionality(axiom_string):
@@ -162,7 +157,7 @@ def convert_inverse_qualified_functionality(axiom_string):
     funct = f"For all y implies either there does not exist a x and an inverse "\
         f"relationship {r.strip()} with x and y or there exists exactly 1 y and "\
         f"an inverse relationship {r.strip()} with y and x and x is of type {a.strip()}."
-    
+
     return funct
 
 def convert_inverse_scoped_functionality(axiom_string):
@@ -174,7 +169,7 @@ def convert_inverse_scoped_functionality(axiom_string):
     funct = f"For all y where y is of type {b.strip()} implies either there does "\
         f"not exist a x and an inverse relationship {r.strip()} with y and x or "\
         f"there exists exactly 1 x and a relationship {r.strip()} with y and x."
-    
+
     return funct
 
 
@@ -188,7 +183,7 @@ def convert_inverse_qualified_scoped_functionality(axiom_string):
         f"not exist a y and an inverse relationship {r.strip()} with y and x or "\
         f"there exists exactly 1 x and a relationship {r.strip()} with y and x is "\
         f"of type {a.strip()}."
-    
+
     return funct
 
 
@@ -201,7 +196,7 @@ def convert_structural_tautology(axiom_string):
 
     ax17 = f"For all x where x is of type {a.strip()} implies there may exist a y "\
         f"and a relationship {r.strip()} with x and y and y is of type {b.strip()}."
-    
+
     return ax17
 
 
@@ -304,17 +299,17 @@ def generate_inverse_scoped_functionality(axiom_string):
     a, r, b = axiom_string.split(' ')
 
     return f"`{b} SubClassOf inverse {r} max 1 owl:Thing`"
-    
+
 def generate_inverse_qualified_scoped_functionality(axiom_string):
 
     a, r, b = axiom_string.split(' ')
-    
+
     return f"`{b} SubClassOf inverse {r} max 1 {a}`"
-    
+
 def generate_structural_tautology(axiom_string):
 
     a, r, b = axiom_string.split(' ')
-    
+
     return f"`{b} SubClassOf {r} min 0 {a}`"
 
 def print_zipped(orig_list, created_statements):
@@ -322,94 +317,10 @@ def print_zipped(orig_list, created_statements):
         print("`" + x.strip() + "`")
         print(y)
 
-
-def convert_run_all_old(relation_list, name_string, final_list):
-            
-    final_list.append(f"# {name_string}")
-    rl_lst = []
-    rl_nl = []
-    for x in relation_list:
-
-        if name_string == "subclass":
-            rl_lst.append(generate_subclass(x))
-            rl_nl.append(convert_subclass(generate_subclass(x)))
-
-        elif name_string == "disjoint":
-            rl_lst.append(generate_disjoint(x))
-            rl_nl.append(convert_disjoint(generate_disjoint(x)))
-
-        elif name_string == "global domain":
-            rl_lst.append(generate_global_domain(x))
-            rl_nl.append(convert_global_domain(generate_global_domain(x)))
-
-        elif name_string == "scoped domain":
-            rl_lst.append(generate_scoped_domain(x))
-            rl_nl.append(convert_scoped_domain(generate_scoped_domain(x)))
-
-        elif name_string == "global range":
-            rl_lst.append(generate_global_range(x))
-            rl_nl.append(convert_global_range(generate_global_range(x)))
-
-        elif name_string == "scoped range":
-            rl_lst.append(generate_existential(x))
-            rl_nl.append(convert_existential(generate_existential(x)))
-
-        elif name_string == "existential":
-            rl_lst.append(generate_existential(x))
-            rl_nl.append(convert_existential(generate_existential(x)))
-
-        elif name_string == "inverse existential":
-            rl_lst.append(generate_inverse_existential(x))
-            rl_nl.append(convert_inverse_existential(generate_inverse_existential(x)))
-
-        elif name_string == "functionality":
-            rl_lst.append(generate_functionality(x))
-            rl_nl.append(convert_functionality(generate_functionality(x)))
-
-        elif name_string == "qualified functionality":
-            rl_lst.append(generate_qualified_functionality(x))
-            rl_nl.append(convert_qualified_functionality(generate_qualified_functionality(x)))
-
-
-        elif name_string == "scoped functionality":
-            rl_lst.append(generate_scoped_functionality(x))
-            rl_nl.append(convert_scoped_functionality(generate_scoped_functionality(x)))
-
-        elif name_string == "qualified scoped functionality":
-            rl_lst.append(generate_qualified_scoped_functionality(x))
-            rl_nl.append(convert_qualified_scoped_functionality(generate_qualified_scoped_functionality(x)))
-
-        elif name_string == "inverse functionality":
-            rl_lst.append(generate_inverse_functionality(x))
-            rl_nl.append(convert_inverse_functionality(generate_inverse_functionality(x)))
-
-        elif name_string == "inverse qualified functionality":
-            rl_lst.append(generate_inverse_qualified_functionality(x))
-            rl_nl.append(convert_inverse_qualified_functionality(generate_inverse_qualified_functionality(x)))
-
-        elif name_string == "inverse scoped functionality":
-            rl_lst.append(generate_inverse_scoped_functionality(x))
-            rl_nl.append(convert_inverse_scoped_functionality(generate_inverse_scoped_functionality(x)))
-
-        elif name_string == "inverse qualified scoped functionality":
-            rl_lst.append(generate_inverse_qualified_scoped_functionality(x))
-            rl_nl.append(convert_inverse_qualified_scoped_functionality(generate_inverse_qualified_scoped_functionality(x)))
-
-        elif name_string == "structural tautology":
-            rl_lst.append(generate_structural_tautology(x))
-            rl_nl.append(convert_structural_tautology(generate_structural_tautology(x)))
-    
-    final_return = list(zip(relation_list, rl_lst, rl_nl))
-    final_list.extend(final_return)
-
-    return final_list
-
-def convert_run_all(relation_list, name_string, final_list):
-    final_list.append(f"# {name_string}")
+def convert_run_all(relation_list, name_string, results_dict):
     rl_lst = []
     rl_nl = []
 
-    results_dict = {}
     for x in relation_list:
         if name_string == "subclass":
             rl_lst.append(generate_subclass(x))
@@ -484,7 +395,7 @@ def convert_run_all(relation_list, name_string, final_list):
     # Sort results_dict by unique name_strings
     sorted_results_dict = dict(sorted(results_dict.items()))
 
-
+    return sorted_results_dict
     print(sorted_results_dict['subclass'])
 
     # Add all items to final_list
@@ -495,132 +406,44 @@ def convert_run_all(relation_list, name_string, final_list):
     return final_list
 
 
+def reorganize_keys(final_dict):
+    return_dict = {}
+
+    for k, v in final_dict.items():
+        axiom_names = [x[0] for x in v]
+        axiom_manchester = [x[1] for x in v]
+        axiom_natural_language = [x[2] for x in v]
+
+        for index, n in enumerate(axiom_names):
+            return_dict.setdefault(n, {}).setdefault('axiom', []).append(k)
+            return_dict.setdefault(n, {}).setdefault('manchester', []).append(axiom_manchester[index])
+            return_dict.setdefault(n, {}).setdefault('natural_language', []).append( axiom_natural_language[index])
+
+    return return_dict
+
+def write_file(class_name, class_values, print_list = ['manchester']):
+
+    with open(f'{class_name}_axioms.md', 'w') as file:
+        for k,dictvals in class_values.items():
+            file.write(f"# {k}\n")
+
+            for ax_index, ax_value in enumerate(dictvals['axiom']):
+                file.write(f"{ax_value}: ")
+
+                if 'manchester' in print_list:
+                    file.write(f"{dictvals['manchester'][ax_index]}\n")
+                    file.write("\n")
+
+                if 'natural_language' in print_list:
+                    file.write(f"{dictvals['natural_language'][ax_index]}\n")
+                    file.write("\n")
+
+
 if __name__ == "__main__":
 
     type_value = "health"
-    
+
     if type_value == "health":
-        healthSubclass = [
-            "MentalHealth SubClassOf Health",
-            "MentalHealthStatus SubClassOf Status",
-            "PhysicalHealth SubClassOf Health",
-            "PhysicalHealthStatus SubClassOf Status",
-            "Disease SubClassOf Health"]
-
-
-        healthDomain = [
-            "hasHealthRecord some owl:Thing SubClassOf Health",
-        "hasHealthCondition some owl:Thing SubClassOf Health",
-        "hasSeverity some owl:Thing SubClassOf Symptom",
-        "hasTreatment some owl:Thing SubClassOf Disease",
-        "includesService some owl:Thing SubClassOf Treatment",
-        "hasHealth some owl:Thing SubClassOf Patient",
-        "recieves some owl:Thing SubClassOf Patient"
-        ]
-
-
-        healthGlobalRange = [
-            "owl:Thing SubClassOf hasHealthRecord only Health",
-        "owl:Thing SubClassOf hasHealthCondition only Health",
-        "owl:Thing SubClassOf hasSeverity only Severity",
-        "owl:Thing SubClassOf hasTreatment only Treatment",
-        "owl:Thing SubClassOf includesService only Service",
-        "owl:Thing SubClassOf hasHealth only Health",
-        "owl:Thing SubClassOf recieves only Patient "
-        ]
-
-        # for x in healthSubclass:
-        #     print(convert_subclass(x))
-
-        # for x in healthDomain:
-        #     print(convert_domain(x))
-
-
-        # print('-'*90)
-
-
-
-        healthScopedDomain = ["hasHealthRecord some HealthRecord SubClassOf Health",
-            "hasHealthCondition some HealthCondition SubClassOf Health",
-            "hasSymptom some Symptom SubClassOf Health",
-            "hasSymptom some Symptom SubClassOf Disease",
-            "hasSeverity some Severity SubClassOf Symptom",
-            "hasTreatment some Treatment SubClassOf Disease",
-            "includesService some Service SubClassOf Treatment",
-            "affects some Health SubClassOf Treatment",
-            "hasStatus some PhysicalHealthStatus SubClassOf PhysicalHealth", 
-            "hasStatus some MentalHealthStatus SubClassOf MentalHealth", 
-            "hasStatus some Status SubClassOf Health", 
-            "hasHealth some Health SubClassOf Patient",
-            "recieves some Treatment SubClassOf Patient"]
-
-        # for x in healthScopedDomain:
-        #     print(convert_scoped_domain(x))
-
-
-        # return_list = []
-        # #gr_nl = []
-        # for x in healthGlobalRange:
-        #     return_list.append(convert_global_range(x))
-        # #    gr_nl.append(generate_global_range(convert_global_range(x)))
-        # print_zipped(healthGlobalRange, return_list)
-
-
-
-        print('-'*200)
-        healthScopedRange = [
-            "Health SubClassOf hasHealthRecord only HealthRecord",
-            "Health SubClassOf hasHealthCondition only HealthCondition",
-            "Health SubClassOf hasSymptom only Symptom",
-            "Disease SubClassOf hasSymptom only Symptom",
-            "Symptom SubClassOf hasSeverity only Severity",
-            "Disease SubClassOf hasTreatment only Treatment",
-            "Treatment SubClassOf includesService only Service",
-            "Treatment SubClassOf affects only Health",
-            "PhysicalHealth SubClassOf hasStatus only PhysicalHealthStatus",
-            "MentalHealth SubClassOf hasStatus only MentalHealthStatus",
-            "Health SubClassOf hasStatus only Status",
-            "Patient SubClassOf hasHealth only Health",
-            "Patient SubClassOf recieves only Treatment"
-        ]
-            
-        # return_list = []
-        # sr_nl = []
-        # for x in healthScopedRange:
-        #     return_list.append(convert_scoped_range(x))
-        #     sr_nl.append(generate_scoped_range(convert_scoped_range(x)))
-        # print_zipped(healthScopedRange, return_list, sr_nl)
-
-        print('-'*200)
-
-
-        healthExistential = [
-            "Health SubClassOf hasHealthRecord some HealthRecord",
-            "Health SubClassOf hasHealthCondition some HealthCondition",
-            "Health SubClassOf hasSymptom some Symptom",
-            "Disease SubClassOf hasSymptom some Symptom",
-            "Symptom SubClassOf hasSeverity some Severity",
-            "Disease SubClassOf hasTreatment some Treatment",
-            "Treatment SubClassOf includesService some Service", 
-            "Treatment SubClassOf affects some Health",
-            "Health SubClassOf hasStatus some status",
-            "MentalHealth SubClassOf hasStatus some MentalHealthStatus",
-            "PhysicalHealth SubClassOf hasStatus some PhysicalHealthStatus",
-            "Patient SubClassOf hasHealth some Health",
-            "Health SubClassOf isAssociatedWith some Visit",
-            "Patient SubClassOf recieves some Treatment"
-        ]
-
-        # return_list = []
-        # ex_nl = []
-        # for x in healthExistential:
-        #     return_list.append(convert_existential(x))
-        #     ex_nl.append(generate_existential(convert_existential(x)))
-        # print_zipped(healthExistential, return_list, ex_nl)
-
-
-
-
 
         sc = [
             "MentalHealth SubClassOf Health",
@@ -632,13 +455,13 @@ if __name__ == "__main__":
 
 
         dis = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Health hasSymptom Symptom",
             "Disease hasSymptom Symptom",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Treatment affects Health",
             "Health hasStatus Status",
             "PhysicalHealth hasStatus PhysicalHealthStatus",
@@ -649,24 +472,24 @@ if __name__ == "__main__":
         ]
 
         gd = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Patient hasHealth Health",
             "Patient recieves Treatment"
         ]
 
 
         sd = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Health hasSymptom Symptom",
             "Disease hasSymptom Symptom",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Treatment affects Health",
             "Health hasStatus Status",
             "PhysicalHealth hasStatus PhysicalHealthStatus",
@@ -676,24 +499,24 @@ if __name__ == "__main__":
         ]
 
         gr = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Patient hasHealth Health",
             "Health isAssociatedWith Visit",
             "Patient recieves Treatment"
         ]
 
         sr = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Health hasSymptom Symptom",
             "Disease hasSymptom Symptom",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Treatment affects Health",
             "Health hasStatus Status",
             "PhysicalHealth hasStatus PhysicalHealthStatus",
@@ -704,13 +527,13 @@ if __name__ == "__main__":
 
 
         ex = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Health hasSymptom Symptom",
             "Disease hasSymptom Symptom",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Treatment affects Health",
             "Health hasStatus Status",
             "PhysicalHealth hasStatus PhysicalHealthStatus",
@@ -722,11 +545,11 @@ if __name__ == "__main__":
 
 
         iex = [
-            "Health hasHealthRecord HealthRecord", 
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthRecord HealthRecord",
+            "Health hasHealthCondition HealthCondition",
             "Symptom hasSeverity Severity",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Health hasStatus Status",
             "PhysicalHealth hasStatus PhysicalHealthStatus",
             "MentalHealth hasStatus MentalHealthStatus",
@@ -791,17 +614,17 @@ if __name__ == "__main__":
         ]
 
         st = [
-            "Health hasHealthCondition HealthCondition", 
+            "Health hasHealthCondition HealthCondition",
             "Health hasSymptom Symptom",
             "Disease hasSymptom Symptom",
             "Disease hasTreatment Treatment",
-            "Treatment includesService Service", 
+            "Treatment includesService Service",
             "Treatment affects Health",
             "Health hasStatus Status",
             "MentalHealth hasStatus MentalHealthStatus",
             "Patient recieves Treatment"]
 
-        flist = []
+        flist = {}
 
         flist = convert_run_all(sc, "subclass", flist)
         flist = convert_run_all(dis, "disjoint", flist)
@@ -823,25 +646,17 @@ if __name__ == "__main__":
 
 
 
-        with open('health_class.txt', 'w') as file:
-            for ln in flist:
-                if type(ln) == str:
-                    file.write(f"{ln}\n")
-                else:
-                    file.write("\n")
-                    for item in ln:
-                        file.write(f"{item}\n")
+        flist = reorganize_keys(flist)
+
+        write_file('health', class_values = flist, print_list = ['manchester'])
 
 
-       
 
 
 
 
     if type_value == "drug":
-        flist = []
-        
-        disjointness = [
+        dis = [
             "patient isAdministered Dosage",
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
@@ -856,16 +671,8 @@ if __name__ == "__main__":
             "Drug hasDrugClass DrugClass"
         ]
 
-        flist.append('# Disjointness')
-        dis_list = []
-        dis_nl = []
-        for x in disjointness:
-            dis_list.append(generate_disjoint(x))
-            dis_nl.append(convert_disjoint(generate_disjoint(x)))
-        dis_return = list(zip(disjointness, dis_list, dis_nl))
-        flist.extend(dis_return)
 
-        global_domain = [
+        gd = [
             "Drug hasDosage Dosage",
             "Drug hasRouteOfAdministration RouteOfAdministration",
             "patient isAdministered Dosage",
@@ -876,17 +683,9 @@ if __name__ == "__main__":
             "Drug hasDrugClass DrugClass"
         ]
 
-        flist.append('# Global domain')
-        gd_list = []
-        gd_nl = []
-        for x in global_domain:
-            print(x)
-            gd_list.append(generate_global_domain(x))
-            gd_nl.append(convert_global_domain(generate_global_domain(x)))
-        gd_return = list(zip(global_domain, gd_list, gd_nl))
-        flist.extend(gd_return)
 
-        scoped_domain = [
+
+        sd = [
             "patient isAdministered Dosage",
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
@@ -896,17 +695,8 @@ if __name__ == "__main__":
             "Drug hasDrugClass DrugClass"
         ]
 
-        flist.append('# scoped domain')
-        sd_list = []
-        sd_nl = []
-        for x in scoped_domain:
-            sd_list.append(generate_scoped_domain(x))
-            sd_nl.append(convert_scoped_domain(generate_scoped_domain(x)))
-        sd_return = list(zip(scoped_domain, sd_list, sd_nl))
-        flist.extend(sd_return)
 
-
-        global_range = [
+        gr = [
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
             "Drug hasDosage Dosage",
@@ -915,17 +705,8 @@ if __name__ == "__main__":
             "Drug hasDrugClass DrugClass"
         ]
 
-        flist.append('# global range')
-        gr_list = []
-        gr_nl = []
-        for x in global_range:
-            gr_list.append(generate_global_range(x))
-            gr_nl.append(convert_global_range(generate_global_range(x)))
-        gr_return = list(zip(global_range, gr_list, gr_nl))
-        flist.extend(gr_return)
 
-
-        scoped_range = [
+        sr = [
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
             "Drug hasDosage Dosage",
@@ -938,16 +719,7 @@ if __name__ == "__main__":
             "Dosage hasQuantity Quantity"
         ]
 
-        flist.append('# scoped range')
-        sr_list = []
-        sr_nl = []
-        for x in scoped_range:
-            sr_list.append(generate_scoped_range(x))
-            sr_nl.append(convert_scoped_range(generate_scoped_range(x)))
-        sr_return = list(zip(scoped_range, sr_list, sr_nl))
-        flist.extend(sr_return)
-
-        existential = [
+        ex = [
             "Dosage hasQuantity Quantity",
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
@@ -960,16 +732,8 @@ if __name__ == "__main__":
             "Drug hasSideEffect SideEffect",
             "SideEffect affects Health"
         ]
-        flist.append('# existential')
-        ex_list = []
-        ex_nl = []
-        for x in existential:
-            ex_list.append(generate_existential(x))
-            ex_nl.append(convert_existential(generate_existential(x)))
-        ex_return = list(zip(existential, ex_list, ex_nl))
-        flist.extend(ex_return)
 
-        inverse_existential = [
+        iex = [
             "patient isAdministered Dosage",
             "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
@@ -978,168 +742,160 @@ if __name__ == "__main__":
             "Drug hasDrugClass DrugClass",
             "Drug hasRouteOfAdministration RouteOfAdministration"
         ]
-        flist.append('# inverse existential')
-        ie_lst = []
-        ie_nl = []
-        for x in inverse_existential:
-            ie_lst.append(generate_inverse_existential(x))
-            ie_nl.append(convert_inverse_existential(generate_inverse_existential(x)))
-        ie_return = list(zip(inverse_existential, ie_lst, ie_nl))
-        flist.extend(ie_return)
-    
-        structural_tautology = [
+
+        st = [
             "patient isAdministered Dosage",
-	        "Dosage hasDosageStrength DosageStrength",
+            "Dosage hasDosageStrength DosageStrength",
             "Dosage hasDosageForm DosageForm",
-	        "Dosage hasQuantity Quantity",
-	        "Drug hasDosage Dosage",
+            "Dosage hasQuantity Quantity",
+            "Drug hasDosage Dosage",
             "Drug hasRouteOfAdministration RouteOfAdministration",
             "Drug affects Body_or_Health",
             "Drug hasSideEffect SideEffect",
             "SideEffect affects Health",
             "Drug hasDrugName DrugName",
             "Drug hasDrugClass DrugClass"]
-        
-        flist.append('# structural tautology')
-        st_lst = []
-        st_nl = []
-        for x in structural_tautology:
-            st_lst.append(generate_structural_tautology(x))
-            st_nl.append(convert_structural_tautology(generate_structural_tautology(x)))
-        st_return = list(zip(structural_tautology, st_lst, st_nl))
-        flist.extend(st_return)
 
-        with open('drug_class.txt', 'w') as file:
-            for ln in flist:
-                if type(ln) == str:
-                    file.write(f"{ln}\n")
-                else:
-                    file.write("\n")
-                    for item in ln:
-                        file.write(f"{item}\n")
 
+        flist = {}
+
+        flist = convert_run_all(dis, "disjoint", flist)
+        flist = convert_run_all(gd, "global domain", flist)
+        flist = convert_run_all(sd, "scoped domain", flist)
+        flist = convert_run_all(gr, "global range", flist)
+        flist = convert_run_all(sr, "scoped range", flist)
+        flist = convert_run_all(ex, "existential", flist)
+        flist = convert_run_all(iex, "inverse existential", flist)
+        flist = convert_run_all(st, "structural tautology", flist)
+
+        flist = reorganize_keys(flist)
+
+        write_file('drug', class_values = flist, print_list = ['manchester'])
+
+
+    # GOOD
     elif type_value == "imaging":
 
         sc = []
 
         dis = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment",
-            "Visit leadsTo Labs/Imaging"]
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment",
+            "Visit leadsTo Labs-Imaging"]
 
 
         gd = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment"]
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment"]
 
         sd = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment"]
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment"]
 
 
 
         gr = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment",
             ]
-        
+
         sr = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment"]
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment"]
 
 
         ex = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",]
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",]
 
 
         iex = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment",
-            "Visit leadsTo Labs/Imaging"
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment",
+            "Visit leadsTo Labs-Imaging"
         ]
 
         fun = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment",
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment",
             ]
 
         qfun = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
         ]
 
         sf = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/ImagingType createdByEquipment Equipment",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-ImagingType createdByEquipment Equipment",
         ]
 
         qsf = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
         ]
 
         ifun = [
-            "Labs/Imaging assesses Body",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/ImagingType createdByEquipment Equipment",
+            "Labs-Imaging assesses Body",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-ImagingType createdByEquipment Equipment",
         ]
 
         iqf = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasLabs/ImagingResult Labs/ImagingResult",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType"]
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasLabsImagingResult Labs-ImagingResult",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType"]
 
         isf = [
 
-            "Labs/ImagingType createdByEquipment Equipment",
-            "Labs/Imaging hasLabs/ImagingType Labs/ImagingType",
-            "Labs/Imaging hasResult Labs/ImagingResult",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging assesses Body",
-            "Visit leadsTo Labs/Imaging"
+            "Labs-ImagingType createdByEquipment Equipment",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-Imaging hasResult Labs-ImagingResult",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging assesses Body",
+            "Visit leadsTo Labs-Imaging"
         ]
 
         iqsf = [
-            "Labs/ImagingType createdByEquipment Equipment", 
-            "Labs/Imaging, hasLabs/ImagingType Labs/ImagingType",
-            "Labs/Imaging hasResult Result",
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging assesses Body",
-            "Visit leadsTo Labs/Imaging"]
+            "Labs-ImagingType createdByEquipment Equipment",
+            "Labs-Imaging hasLabsImagingType Labs-ImagingType",
+            "Labs-Imaging hasResult Result",
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging assesses Body",
+            "Visit leadsTo Labs-Imaging"]
 
         st = [
-            "Labs/Imaging hasContrast Contrast",
-            "Labs/Imaging hasResult Result",
-	        "Labs/Imaging hasType Type",
-	        "Type hasEquipment Equipment",
-	        "Labs/Imaging assesses Body"]
+            "Labs-Imaging hasContrast Contrast",
+            "Labs-Imaging hasResult Result",
+            "Labs-Imaging hasType Type",
+            "Type hasEquipment Equipment",
+            "Labs-Imaging assesses Body"]
 
 
-        flist = []
+        flist = {}
 
         flist = convert_run_all(sc, "subclass", flist)
         flist = convert_run_all(dis, "disjoint", flist)
@@ -1159,14 +915,9 @@ if __name__ == "__main__":
         flist = convert_run_all(iqsf, "inverse qualified scoped functionality", flist)
         flist = convert_run_all(st, "structural tautology", flist)
 
+        flist = reorganize_keys(flist)
+
+        write_file('labs-imaging', class_values = flist, print_list = ['manchester'])
 
 
-        with open('imaging_class.txt', 'w') as file:
-            for ln in flist:
-                if type(ln) == str:
-                    file.write(f"{ln}\n")
-                else:
-                    file.write("\n")
-                    for item in ln:
-                        file.write(f"{item}\n")
 

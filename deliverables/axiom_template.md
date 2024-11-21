@@ -1,4 +1,4 @@
-# Name of Ontology
+# DCH Medical Data Ontology
 
 ![all-schemas](../schema-diagrams/Complete/Complete.png)
 

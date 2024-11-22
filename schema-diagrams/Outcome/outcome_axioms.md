@@ -4,7 +4,9 @@
 ### Axioms
 `Outcome`
 
-`Event`
+`Event (Concrete)`
+
+`Event (Abstract)`
 
 `Health`
 
@@ -14,13 +16,20 @@
 
 * [Vist Axioms](https://github.com/jasonolte/cs7810-123/blob/main/schema-diagrams/Visit/visit_axioms.md)
 
-`accordingToWhom`
+`Outcome accordingToWhom Doctor`
 
-`resultsIn`
+`Outcome resultsIn Health`
 
-`hasResultsInRelation`
+`Event (Concrete) hasResultsInRelation Outcome`
+8 Inverse Existential
 * `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />
 An Outcome implies that it results from some Event.
+
+`Heaath Indicates Event (Concrete)`
+
+`Observation accordingToWhom Doctor`
+
+`PossiblyCausesRelation accordingToWhom Doctor`
 
 ### Axioms (in Axiom Number Order)
 

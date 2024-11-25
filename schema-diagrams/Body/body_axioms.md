@@ -35,12 +35,18 @@ global range: `owl:Thing SubClassOf hasTorso only Torso` <br />
 
 existential: `Body SubClassOf hasTorso some Torso` <br />
 
+inverse existential: `Torso SubClassOf inverse hasTorso some Body` <br />
+
+qualified scoped functionality: `Body SubClassOf hasTorso max 1 Torso` <br />
+
 ## `Body hasHead Head` <br />
 disjoint: `Body DisjointWith Head`
 
 domain: `hasHead some owl:Thing SubClassOf Body` <br />
 
 global range: `owl:Thing SubClassOf hasHead only Head` <br />
+
+qualified scoped functionality: `Body SubClassOf hasHead max 1 Head` <br />
 
 ## `Body hasHeight Height` <br />
 disjoint: `Body DisjointWith Height`
@@ -49,12 +55,16 @@ global range: `owl:Thing SubClassOf hasHeight only Height` <br />
 
 existential: `Body SubClassOf hasHeight some Height` <br />
 
+qualified functionality: `owl:Thing SubClassOf hasHeight max 1 Height` <br />
+
 ## `Body hasWeight Weight` <br />
 disjoint: `Body DisjointWith Weight`
 
 global range: `owl:Thing SubClassOf hasWeight only Weight` <br />
 
 existential: `Body SubClassOf hasWeight some Weight` <br />
+
+qualified functionality: `owl:Thing SubClassOf hasWeight max 1 Weight` <br />
 
 ### Axioms Templates
 subclass: `A SubClassOf B` <br />

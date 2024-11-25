@@ -89,7 +89,7 @@ inverse scoped functionality: `B SubClassOf inverse R max 1 owl:Thing` <br />
 
 inverse qualified scoped functionality: `B SubClassOf inverse R max 1 A` <br />
 
-tautological: `A SubClassOf R min 0 B` <br />
+structural tautology: `A SubClassOf R min 0 B` <br />
 
 ### Notes
 The use of Body, Organ, Leg, Arm, Torso, and Head in this ontology exclusively refers to Human Body, Human Organ, Human Leg, Human Arm, Human Torso, and Human Head respectively.

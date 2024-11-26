@@ -285,7 +285,7 @@ def generate_inverse_functionality(axiom_string):
 
     a, r, b = axiom_string.split(' ')
 
-    return f"`owl:Thing SubClassOf inverse {r} max 1`"
+    return f"`owl:Thing SubClassOf inverse {r} max 1 owl:Thing`"
 
 def generate_inverse_qualified_functionality(axiom_string):
 

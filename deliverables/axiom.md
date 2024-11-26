@@ -7,7 +7,7 @@
 
 ### Axioms
 
-## `Body hasOrgan Organ` <br />
+## Body hasOrgan Organ <br />
 disjoint: `Body DisjointWith Organ`
 
 domain: `hasOrgan some owl:Thing SubClassOf Body` <br />
@@ -16,21 +16,21 @@ global range: `owl:Thing SubClassOf hasOrgan only Organ` <br />
 
 existential: `Body SubClassOf hasOrgan some Organ` <br />
 
-## `Body hasLeg Leg` <br />
+## Body hasLeg Leg <br />
 disjoint: `Body DisjointWith Leg`
 
 domain: `hasLeg some owl:Thing SubClassOf Body` <br />
 
 global range: `owl:Thing SubClassOf hasLeg only Leg` <br />
 
-## `Body hasArm Arm` <br />
+## Body hasArm Arm <br />
 disjoint: `Body DisjointWith Arm`
 
 domain: `hasArm some owl:Thing SubClassOf Body` <br />
 
 global Range: `owl:Thing SubClassOf hasArm only Arm` <br />
 
-## `Body hasTorso Torso` <br />
+## Body hasTorso Torso <br />
 disjoint: `Body DisjointWith Torso`
 
 domain: `hasTorso some owl:Thing SubClassOf Body` <br />
@@ -43,7 +43,7 @@ inverse existential: `Torso SubClassOf inverse hasTorso some Body` <br />
 
 qualified scoped functionality: `Body SubClassOf hasTorso max 1 Torso` <br />
 
-## `Body hasHead Head` <br />
+## Body hasHead Head <br />
 disjoint: `Body DisjointWith Head`
 
 domain: `hasHead some owl:Thing SubClassOf Body` <br />
@@ -52,7 +52,7 @@ global range: `owl:Thing SubClassOf hasHead only Head` <br />
 
 qualified scoped functionality: `Body SubClassOf hasHead max 1 Head` <br />
 
-## `Body hasHeight Height` <br />
+## Body hasHeight Height <br />
 disjoint: `Body DisjointWith Height`
 
 global range: `owl:Thing SubClassOf hasHeight only Height` <br />
@@ -61,7 +61,7 @@ existential: `Body SubClassOf hasHeight some Height` <br />
 
 qualified functionality: `owl:Thing SubClassOf hasHeight max 1 Height` <br />
 
-## `Body hasWeight Weight` <br />
+## Body hasWeight Weight <br />
 disjoint: `Body DisjointWith Weight`
 
 global range: `owl:Thing SubClassOf hasWeight only Weight` <br />

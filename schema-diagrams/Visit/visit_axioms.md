@@ -14,7 +14,7 @@ global range: `owl:Thing SubClassOf hasDischargeID only DischargeID`
 
 inverse existential: `DischargeID SubClassOf inverse hasDischargeID some Visit`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasDischargeID max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasDischargeID max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasDischargeID max 1 Visit`
 
@@ -43,7 +43,7 @@ global range: `owl:Thing SubClassOf hasOutcome only Outcome`
 
 inverse existential: `Outcome SubClassOf inverse hasOutcome some Visit`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasOutcome max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasOutcome max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasOutcome max 1 Visit`
 
@@ -70,7 +70,7 @@ functionality: `owl:Thing SubClassOf hasTemporalExtent max 1 owl:Thing`
 
 global range: `owl:Thing SubClassOf hasTemporalExtent only TemporalExtent`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1 Visit`
 
@@ -91,7 +91,7 @@ structural tautology: `TemporalExtent SubClassOf hasTemporalExtent min 0 Visit`
 ## Visit leadsTo Labs/Imaging
 disjoint: `Visit DisjointWith Labs/Imaging`
 
-inverse functionality: `owl:Thing SubClassOf inverse leadsTo max 1`
+inverse functionality: `owl:Thing SubClassOf inverse leadsTo max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse leadsTo max 1 Visit`
 
@@ -112,7 +112,7 @@ global range: `owl:Thing SubClassOf hasVisit only Visit`
 
 inverse existential: `Visit SubClassOf inverse hasVisit some Patient`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasVisit max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasVisit max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasVisit max 1 Patient`
 

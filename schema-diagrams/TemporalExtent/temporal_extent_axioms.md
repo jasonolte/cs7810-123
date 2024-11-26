@@ -12,7 +12,7 @@ functionality: `owl:Thing SubClassOf hasTemporalExtent max 1 owl:Thing`
 
 global range: `owl:Thing SubClassOf hasTemporalExtent only TemporalExtent`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasTemporalExtent max 1 Visit`
 

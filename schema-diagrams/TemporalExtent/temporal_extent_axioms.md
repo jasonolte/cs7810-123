@@ -1,4 +1,9 @@
-# Visit hasTemporalExtent TemporalExtent
+## Temporal Extent
+![schema-diagram](../Visit/Visit.png)
+
+### Axioms
+
+## Visit hasTemporalExtent TemporalExtent
 disjoint: `Visit DisjointWith TemporalExtent`
 
 existential: `Visit SubClassOf hasTemporalExtent some TemporalExtent`
@@ -25,7 +30,7 @@ scoped range: `Visit SubClassOf hasTemporalExtent some TemporalExtent`
 
 structural tautology: `TemporalExtent SubClassOf hasTemporalExtent min 0 Visit`
 
-# TemporalExtent contains ComplexTemporalExtent
+## TemporalExtent contains ComplexTemporalExtent
 disjoint: `TemporalExtent DisjointWith ComplexTemporalExtent`
 
 existential: `TemporalExtent SubClassOf contains some ComplexTemporalExtent`
@@ -48,7 +53,7 @@ scoped range: `TemporalExtent SubClassOf contains some ComplexTemporalExtent`
 
 structural tautology: `ComplexTemporalExtent SubClassOf contains min 0 TemporalExtent`
 
-# TimeInterval startsFrom PointInTime
+## TimeInterval startsFrom PointInTime
 disjoint: `TimeInterval DisjointWith PointInTime`
 
 existential: `TimeInterval SubClassOf startsFrom some PointInTime`
@@ -71,7 +76,7 @@ scoped range: `TimeInterval SubClassOf startsFrom some PointInTime`
 
 structural tautology: `PointInTime SubClassOf startsFrom min 0 TimeInterval`
 
-# TimeInterval endsAt PointInTime
+## TimeInterval endsAt PointInTime
 disjoint: `TimeInterval DisjointWith PointInTime`
 
 existential: `TimeInterval SubClassOf endsAt some PointInTime`
@@ -94,22 +99,22 @@ scoped range: `TimeInterval SubClassOf endsAt some PointInTime`
 
 structural tautology: `PointInTime SubClassOf endsAt min 0 TimeInterval`
 
-# TimeInterval SubClassOf ComplexTemporalExtent
+## TimeInterval SubClassOf ComplexTemporalExtent
 structural tautology: `ComplexTemporalExtent SubClassOf min 0 TimeInterval`
 
 subclass: `TimeInterval SubClassOf ComplexTemporalExtent`
 
-# PointInTime SubClassOf ComplexTemporalExtent
+## PointInTime SubClassOf ComplexTemporalExtent
 structural tautology: `ComplexTemporalExtent SubClassOf min 0 PointInTime`
 
 subclass: `PointInTime SubClassOf ComplexTemporalExtent`
 
-# DischargeDate SubClassOf PointInTime
+## DischargeDate SubClassOf PointInTime
 structural tautology: `PointInTime SubClassOf min 0 DischargeDate`
 
 subclass: `DischargeDate SubClassOf PointInTime`
 
-# DateOfStay SubClassOf PointInTime
+## DateOfStay SubClassOf PointInTime
 structural tautology: `PointInTime SubClassOf min 0 DateOfStay`
 
 subclass: `DateOfStay SubClassOf PointInTime`

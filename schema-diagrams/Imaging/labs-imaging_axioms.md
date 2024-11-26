@@ -10,7 +10,7 @@ existential: `Labs-Imaging SubClassOf assesses some Body`
 
 functionality: `owl:Thing SubClassOf assesses max 1 owl:Thing`
 
-inverse functionality: `owl:Thing SubClassOf inverse assesses max 1`
+inverse functionality: `owl:Thing SubClassOf inverse assesses max 1 owl:Thing`
 
 inverse qualified scoped functionality: `Body SubClassOf inverse assesses max 1 Labs-Imaging`
 
@@ -33,7 +33,7 @@ global range: `owl:Thing SubClassOf hasContrast only Contrast`
 
 inverse existential: `Contrast SubClassOf inverse hasContrast some Labs-Imaging`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasContrast max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasContrast max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasContrast max 1 Labs-Imaging`
 
@@ -66,7 +66,7 @@ global range: `owl:Thing SubClassOf hasLabsImagingResult only Labs-ImagingResult
 
 inverse existential: `Labs-ImagingResult SubClassOf inverse hasLabsImagingResult some Labs-Imaging`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasLabsImagingResult max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasLabsImagingResult max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasLabsImagingResult max 1 Labs-Imaging`
 
@@ -91,7 +91,7 @@ global range: `owl:Thing SubClassOf hasLabsImagingType only Labs-ImagingType`
 
 inverse existential: `Labs-ImagingType SubClassOf inverse hasLabsImagingType some Labs-Imaging`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasLabsImagingType max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasLabsImagingType max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasLabsImagingType max 1 Labs-Imaging`
 
@@ -118,7 +118,7 @@ global range: `owl:Thing SubClassOf createdByEquipment only Equipment`
 
 inverse existential: `Equipment SubClassOf inverse createdByEquipment some Labs-ImagingType`
 
-inverse functionality: `owl:Thing SubClassOf inverse createdByEquipment max 1`
+inverse functionality: `owl:Thing SubClassOf inverse createdByEquipment max 1 owl:Thing`
 
 inverse qualified scoped functionality: `Equipment SubClassOf inverse createdByEquipment max 1 Labs-ImagingType`
 

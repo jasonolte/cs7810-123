@@ -24,9 +24,9 @@
 ## Event (Concrete) hasResultsInRelation Outcome
 inverse existential: `Outcome SubClassOf inverse hasResultsInRelationship some Event` <br />
 
-`Heaath Indicates Event (Concrete)`
+## Health Indicates Event (Concrete)
 
-`Observation accordingToWhom Doctor`
+## Observation accordingToWhom Doctor
 
-`PossiblyCausesRelation accordingToWhom Doctor`
+## PossiblyCausesRelation accordingToWhom Doctor
 

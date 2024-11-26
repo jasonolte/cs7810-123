@@ -1,4 +1,9 @@
-# Patient hasGender Gender
+## Patient
+![schema-diagram](Patient.png)
+
+### Axioms
+
+## Patient hasGender Gender
 disjoint: `Patient DisjointWith Gender`
 
 existential: `Patient SubClassOf hasGender some Gender`
@@ -19,7 +24,7 @@ scoped functionality: `Patient SubClassOf hasGender max 1 owl:Thing`
 
 scoped range: `Patient SubClassOf hasGender some Gender`
 
-# Patient hasEthnicity Ethnicity
+## Patient hasEthnicity Ethnicity
 disjoint: `Patient DisjointWith Ethnicity`
 
 existential: `Patient SubClassOf hasEthnicity some Ethnicity`
@@ -30,7 +35,7 @@ inverse qualified scoped functionality: `Ethnicity SubClassOf inverse hasEthnici
 
 scoped range: `Patient SubClassOf hasEthnicity some Ethnicity`
 
-# Patient hasRace Race
+## Patient hasRace Race
 disjoint: `Patient DisjointWith Race`
 
 existential: `Patient SubClassOf hasRace some Race`
@@ -41,7 +46,7 @@ inverse qualified scoped functionality: `Race SubClassOf inverse hasRace max 1 P
 
 scoped range: `Patient SubClassOf hasRace some Race`
 
-# Patient hasAge Age
+## Patient hasAge Age
 disjoint: `Patient DisjointWith Age`
 
 existential: `Patient SubClassOf hasAge some Age`
@@ -56,7 +61,7 @@ inverse qualified scoped functionality: `Age SubClassOf inverse hasAge max 1 Pat
 
 scoped range: `Patient SubClassOf hasAge some Age`
 
-# Patient hasVisit Visit
+## Patient hasVisit Visit
 disjoint: `Patient DisjointWith Visit`
 
 existential: `Patient SubClassOf hasVisit some Visit`
@@ -75,7 +80,7 @@ scoped domain: `hasVisit some Visit SubClassOf Patient`
 
 scoped range: `Patient SubClassOf hasVisit some Visit`
 
-# Patient hasPatientType PatientType
+## Patient hasPatientType PatientType
 disjoint: `Patient DisjointWith PatientType`
 
 existential: `Patient SubClassOf hasPatientType some PatientType`
@@ -98,7 +103,7 @@ scoped domain: `hasPatientType some PatientType SubClassOf Patient`
 
 scoped range: `Patient SubClassOf hasPatientType some PatientType`
 
-# Patient hasPriorityofAdmission PriorityofAdmission
+## Patient hasPriorityofAdmission PriorityofAdmission
 disjoint: `Patient DisjointWith PriorityofAdmission`
 
 existential: `Patient SubClassOf hasPriorityofAdmission some PriorityofAdmission`
@@ -127,7 +132,7 @@ scoped functionality: `Patient SubClassOf hasPriorityofAdmission max 1 owl:Thing
 
 scoped range: `Patient SubClassOf hasPriorityofAdmission some PriorityofAdmission`
 
-# Patient hasMedicalRecordNumber MedicalRecordNumber
+## Patient hasMedicalRecordNumber MedicalRecordNumber
 disjoint: `Patient DisjointWith MedicalRecordNumber`
 
 existential: `Patient SubClassOf hasMedicalRecordNumber some MedicalRecordNumber`
@@ -156,7 +161,7 @@ scoped functionality: `Patient SubClassOf hasMedicalRecordNumber max 1 owl:Thing
 
 scoped range: `Patient SubClassOf hasMedicalRecordNumber some MedicalRecordNumber`
 
-# Patient hasDiagnosis Diagnosis
+## Patient hasDiagnosis Diagnosis
 disjoint: `Patient DisjointWith Diagnosis`
 
 existential: `Patient SubClassOf hasDiagnosis some Diagnosis`
@@ -175,7 +180,7 @@ scoped domain: `hasDiagnosis some Diagnosis SubClassOf Patient`
 
 scoped range: `Patient SubClassOf hasDiagnosis some Diagnosis`
 
-# Patient isAdministeredDosage Dosage
+## Patient isAdministeredDosage Dosage
 disjoint: `Patient DisjointWith Dosage`
 
 existential: `Patient SubClassOf isAdministeredDosage some Dosage`
@@ -196,7 +201,7 @@ scoped range: `Patient SubClassOf isAdministeredDosage some Dosage`
 
 structural tautology: `Dosage SubClassOf isAdministeredDosage min 0 Patient`
 
-# Age hasQuantity Quantity
+## Age hasQuantity Quantity
 disjoint: `Age DisjointWith Quantity`
 
 existential: `Age SubClassOf hasQuantity some Quantity`
@@ -213,7 +218,7 @@ scoped functionality: `Age SubClassOf hasQuantity max 1 owl:Thing`
 
 scoped range: `Age SubClassOf hasQuantity some Quantity`
 
-# Race hasRaceTypes RaceTypes
+## Race hasRaceTypes RaceTypes
 disjoint: `Race DisjointWith RaceTypes`
 
 existential: `Race SubClassOf hasRaceTypes some RaceTypes`
@@ -230,7 +235,7 @@ scoped domain: `hasRaceTypes some RaceTypes SubClassOf Race`
 
 scoped range: `Race SubClassOf hasRaceTypes some RaceTypes`
 
-# Ethnicity hasEthnicityTypes EthnicityTypes
+## Ethnicity hasEthnicityTypes EthnicityTypes
 disjoint: `Ethnicity DisjointWith EthnicityTypes`
 
 existential: `Ethnicity SubClassOf hasEthnicityTypes some EthnicityTypes`
@@ -247,7 +252,7 @@ scoped domain: `hasEthnicityTypes some EthnicityTypes SubClassOf Ethnicity`
 
 scoped range: `Ethnicity SubClassOf hasEthnicityTypes some EthnicityTypes`
 
-# Gender hasGenderTypes GenderTypes
+## Gender hasGenderTypes GenderTypes
 disjoint: `Gender DisjointWith GenderTypes`
 
 existential: `Gender SubClassOf hasGenderTypes some GenderTypes`
@@ -278,32 +283,32 @@ scoped functionality: `Gender SubClassOf hasGenderTypes max 1 owl:Thing`
 
 scoped range: `Gender SubClassOf hasGenderTypes some GenderTypes`
 
-# Age isAssociatedWith Visit
+## Age isAssociatedWith Visit
 disjoint: `Age DisjointWith Visit`
 
 existential: `Age SubClassOf isAssociatedWith some Visit`
 
-# Race isAssociatedWith Visit
+## Race isAssociatedWith Visit
 disjoint: `Race DisjointWith Visit`
 
 existential: `Race SubClassOf isAssociatedWith some Visit`
 
-# Ethnicity isAssociatedWith Visit
+## Ethnicity isAssociatedWith Visit
 disjoint: `Ethnicity DisjointWith Visit`
 
 existential: `Ethnicity SubClassOf isAssociatedWith some Visit`
 
-# Gender isAssociatedWith Visit
+## Gender isAssociatedWith Visit
 disjoint: `Gender DisjointWith Visit`
 
 existential: `Gender SubClassOf isAssociatedWith some Visit`
 
-# MedicalRecordNumber SubClassOf Identifier
+## MedicalRecordNumber SubClassOf Identifier
 subclass: `MedicalRecordNumber SubClassOf Identifier`
 
-# Patient SubClassOf Person
+## Patient SubClassOf Person
 subclass: `Patient SubClassOf Person`
 
-# Patient SubClassOf Agent
+## Patient SubClassOf Agent
 subclass: `Patient SubClassOf Agent`
 

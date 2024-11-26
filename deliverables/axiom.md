@@ -70,41 +70,6 @@ existential: `Body SubClassOf hasWeight some Weight` <br />
 
 qualified functionality: `owl:Thing SubClassOf hasWeight max 1 Weight` <br />
 
-### Axioms Templates
-subclass: `A SubClassOf B` <br />
-
-disjointness: `A DisjointWith B` <br />
-
-domain: `R some owl:Thing SubClassOf A` <br />
-
-scoped domain: `R some B SubClassOf A` <br />
-
-global range: `owl:Thing SubClassOf R only B` <br />
-
-scoped range: `A SubClassOf R only B` <br />
-
-existential: `A SubClassOf R some B` <br />
-
-inverse existential: `B SubClassOf inverse R some A` <br />
-
-functionality: `owl:Thing SubClassOf R max 1 owl:Thing` <br />
-
-qualified functionality: `owl:Thing SubClassOf R max 1 B` <br />
-
-scoped functionality: `A SubClassOf R max 1 owl:Thing` <br />
-
-qualified scoped functionality: `A SubClassOf R max 1 B` <br />
-
-inverse functionality: `owl:Thing SubClassOf inverse R max 1 owl:Thing` <br />
-
-inverse qualified functionality: `owl:Thing SubClassOf inverse R max 1 A` <br />
-
-inverse scoped functionality: `B SubClassOf inverse R max 1 owl:Thing` <br />
-
-inverse qualified scoped functionality: `B SubClassOf inverse R max 1 A` <br />
-
-structural tautology: `A SubClassOf R min 0 B` <br />
-
 ## Diagnosis
 ![schema-diagram](../schema-diagrams/Diagnosis/Diagnosis.png)
 

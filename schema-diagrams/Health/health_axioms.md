@@ -70,7 +70,7 @@ global range: `owl:Thing SubClassOf hasSeverity only Severity`
 
 inverse existential: `Severity SubClassOf inverse hasSeverity some Symptom`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasSeverity max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasSeverity max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasSeverity max 1 Symptom`
 
@@ -129,7 +129,7 @@ existential: `Treatment SubClassOf affects some Health`
 
 functionality: `owl:Thing SubClassOf affects max 1 owl:Thing`
 
-inverse functionality: `owl:Thing SubClassOf inverse affects max 1`
+inverse functionality: `owl:Thing SubClassOf inverse affects max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse affects max 1 Treatment`
 

@@ -1,4 +1,9 @@
-# Health hasHealthRecord HealthRecord
+## Health
+![schema-diagram](Health.png)
+
+### Axioms
+
+## Health hasHealthRecord HealthRecord
 disjoint: `Health DisjointWith HealthRecord`
 
 existential: `Health SubClassOf hasHealthRecord some HealthRecord`
@@ -13,7 +18,7 @@ scoped domain: `hasHealthRecord some HealthRecord SubClassOf Health`
 
 scoped range: `Health SubClassOf hasHealthRecord some HealthRecord`
 
-# Health hasHealthCondition HealthCondition
+## Health hasHealthCondition HealthCondition
 disjoint: `Health DisjointWith HealthCondition`
 
 existential: `Health SubClassOf hasHealthCondition some HealthCondition`
@@ -30,7 +35,7 @@ scoped range: `Health SubClassOf hasHealthCondition some HealthCondition`
 
 structural tautology: `HealthCondition SubClassOf hasHealthCondition min 0 Health`
 
-# Health hasSymptom Symptom
+## Health hasSymptom Symptom
 disjoint: `Health DisjointWith Symptom`
 
 existential: `Health SubClassOf hasSymptom some Symptom`
@@ -41,7 +46,7 @@ scoped range: `Health SubClassOf hasSymptom some Symptom`
 
 structural tautology: `Symptom SubClassOf hasSymptom min 0 Health`
 
-# Disease hasSymptom Symptom
+## Disease hasSymptom Symptom
 disjoint: `Disease DisjointWith Symptom`
 
 existential: `Disease SubClassOf hasSymptom some Symptom`
@@ -52,7 +57,7 @@ scoped range: `Disease SubClassOf hasSymptom some Symptom`
 
 structural tautology: `Symptom SubClassOf hasSymptom min 0 Disease`
 
-# Symptom hasSeverity Severity
+## Symptom hasSeverity Severity
 disjoint: `Symptom DisjointWith Severity`
 
 existential: `Symptom SubClassOf hasSeverity some Severity`
@@ -65,7 +70,7 @@ global range: `owl:Thing SubClassOf hasSeverity only Severity`
 
 inverse existential: `Severity SubClassOf inverse hasSeverity some Symptom`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasSeverity max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasSeverity max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasSeverity max 1 Symptom`
 
@@ -83,7 +88,7 @@ scoped functionality: `Symptom SubClassOf hasSeverity max 1 owl:Thing`
 
 scoped range: `Symptom SubClassOf hasSeverity some Severity`
 
-# Disease hasTreatment Treatment
+## Disease hasTreatment Treatment
 disjoint: `Disease DisjointWith Treatment`
 
 existential: `Disease SubClassOf hasTreatment some Treatment`
@@ -100,7 +105,7 @@ scoped range: `Disease SubClassOf hasTreatment some Treatment`
 
 structural tautology: `Treatment SubClassOf hasTreatment min 0 Disease`
 
-# Treatment includesService Service
+## Treatment includesService Service
 disjoint: `Treatment DisjointWith Service`
 
 existential: `Treatment SubClassOf includesService some Service`
@@ -117,14 +122,14 @@ scoped range: `Treatment SubClassOf includesService some Service`
 
 structural tautology: `Service SubClassOf includesService min 0 Treatment`
 
-# Treatment affects Health
+## Treatment affects Health
 disjoint: `Treatment DisjointWith Health`
 
 existential: `Treatment SubClassOf affects some Health`
 
 functionality: `owl:Thing SubClassOf affects max 1 owl:Thing`
 
-inverse functionality: `owl:Thing SubClassOf inverse affects max 1`
+inverse functionality: `owl:Thing SubClassOf inverse affects max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse affects max 1 Treatment`
 
@@ -140,7 +145,7 @@ scoped range: `Treatment SubClassOf affects some Health`
 
 structural tautology: `Health SubClassOf affects min 0 Treatment`
 
-# Health hasStatus Status
+## Health hasStatus Status
 disjoint: `Health DisjointWith Status`
 
 existential: `Health SubClassOf hasStatus some Status`
@@ -155,7 +160,7 @@ scoped range: `Health SubClassOf hasStatus some Status`
 
 structural tautology: `Status SubClassOf hasStatus min 0 Health`
 
-# PhysicalHealth hasStatus PhysicalHealthStatus
+## PhysicalHealth hasStatus PhysicalHealthStatus
 disjoint: `PhysicalHealth DisjointWith PhysicalHealthStatus`
 
 existential: `PhysicalHealth SubClassOf hasStatus some PhysicalHealthStatus`
@@ -172,7 +177,7 @@ scoped domain: `hasStatus some PhysicalHealthStatus SubClassOf PhysicalHealth`
 
 scoped range: `PhysicalHealth SubClassOf hasStatus some PhysicalHealthStatus`
 
-# MentalHealth hasStatus MentalHealthStatus
+## MentalHealth hasStatus MentalHealthStatus
 disjoint: `MentalHealth DisjointWith MentalHealthStatus`
 
 existential: `MentalHealth SubClassOf hasStatus some MentalHealthStatus`
@@ -191,7 +196,7 @@ scoped range: `MentalHealth SubClassOf hasStatus some MentalHealthStatus`
 
 structural tautology: `MentalHealthStatus SubClassOf hasStatus min 0 MentalHealth`
 
-# Patient hasHealth Health
+## Patient hasHealth Health
 disjoint: `Patient DisjointWith Health`
 
 existential: `Patient SubClassOf hasHealth some Health`
@@ -216,7 +221,7 @@ scoped functionality: `Patient SubClassOf hasHealth max 1 owl:Thing`
 
 scoped range: `Patient SubClassOf hasHealth some Health`
 
-# Health isAssociatedWith Visit
+## Health isAssociatedWith Visit
 disjoint: `Health DisjointWith Visit`
 
 existential: `Health SubClassOf isAssociatedWith some Visit`
@@ -229,7 +234,7 @@ inverse qualified scoped functionality: `Visit SubClassOf inverse isAssociatedWi
 
 inverse scoped functionality: `Visit SubClassOf inverse isAssociatedWith max 1 owl:Thing`
 
-# Patient recieves Treatment
+## Patient recieves Treatment
 disjoint: `Patient DisjointWith Treatment`
 
 existential: `Patient SubClassOf recieves some Treatment`
@@ -244,18 +249,18 @@ scoped range: `Patient SubClassOf recieves some Treatment`
 
 structural tautology: `Treatment SubClassOf recieves min 0 Patient`
 
-# MentalHealth SubClassOf Health
+## MentalHealth SubClassOf Health
 subclass: `MentalHealth SubClassOf Health`
 
-# MentalHealthStatus SubClassOf Status
+## MentalHealthStatus SubClassOf Status
 subclass: `MentalHealthStatus SubClassOf Status`
 
-# PhysicalHealth SubClassOf Health
+## PhysicalHealth SubClassOf Health
 subclass: `PhysicalHealth SubClassOf Health`
 
-# PhysicalHealthStatus SubClassOf Status
+## PhysicalHealthStatus SubClassOf Status
 subclass: `PhysicalHealthStatus SubClassOf Status`
 
-# Disease SubClassOf Health
+## Disease SubClassOf Health
 subclass: `Disease SubClassOf Health`
 

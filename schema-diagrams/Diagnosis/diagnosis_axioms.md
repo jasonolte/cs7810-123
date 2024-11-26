@@ -1,4 +1,9 @@
-# Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
+## Diagnosis
+![schema-diagram](Diagnosis.png)
+
+### Axioms
+
+## Diagnosis hasPrincipalDiagnosis PrincipalDiagnosis
 disjoint: `Diagnosis DisjointWith PrincipalDiagnosis`
 
 existential: `Diagnosis SubClassOf hasPrincipalDiagnosis some PrincipalDiagnosis`
@@ -11,7 +16,7 @@ global range: `owl:Thing SubClassOf hasPrincipalDiagnosis only PrincipalDiagnosi
 
 inverse existential: `PrincipalDiagnosis SubClassOf inverse hasPrincipalDiagnosis some Diagnosis`
 
-inverse functionality: `owl:Thing SubClassOf inverse hasPrincipalDiagnosis max 1`
+inverse functionality: `owl:Thing SubClassOf inverse hasPrincipalDiagnosis max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse hasPrincipalDiagnosis max 1 Diagnosis`
 
@@ -31,7 +36,7 @@ scoped range: `Diagnosis SubClassOf hasPrincipalDiagnosis some PrincipalDiagnosi
 
 structural tautology: `PrincipalDiagnosis SubClassOf hasPrincipalDiagnosis min 0 Diagnosis`
 
-# Diagnosis hasDiagnosisTypes DiagnosisTypes
+## Diagnosis hasDiagnosisTypes DiagnosisTypes
 disjoint: `Diagnosis DisjointWith DiagnosisTypes`
 
 existential: `Diagnosis SubClassOf hasDiagnosisTypes some DiagnosisTypes`
@@ -48,7 +53,7 @@ scoped range: `Diagnosis SubClassOf hasDiagnosisTypes some DiagnosisTypes`
 
 structural tautology: `DiagnosisTypes SubClassOf hasDiagnosisTypes min 0 Diagnosis`
 
-# Diagnosis identifies Disease
+## Diagnosis identifies Disease
 disjoint: `Diagnosis DisjointWith Disease`
 
 existential: `Diagnosis SubClassOf identifies some Disease`
@@ -61,7 +66,7 @@ scoped range: `Diagnosis SubClassOf identifies some Disease`
 
 structural tautology: `Disease SubClassOf identifies min 0 Diagnosis`
 
-# Diagnosis affects Body
+## Diagnosis affects Body
 disjoint: `Diagnosis DisjointWith Body`
 
 existential: `Diagnosis SubClassOf affects some Body`
@@ -70,7 +75,7 @@ scoped range: `Diagnosis SubClassOf affects some Body`
 
 structural tautology: `Body SubClassOf affects min 0 Diagnosis`
 
-# Diagnosis isAssociatedWith Visit
+## Diagnosis isAssociatedWith Visit
 disjoint: `Diagnosis DisjointWith Visit`
 
 existential: `Diagnosis SubClassOf isAssociatedWith some Visit`
@@ -79,7 +84,7 @@ scoped range: `Diagnosis SubClassOf isAssociatedWith some Visit`
 
 structural tautology: `Visit SubClassOf isAssociatedWith min 0 Diagnosis`
 
-# Patient hasDiagnosis Diagnosis
+## Patient hasDiagnosis Diagnosis
 disjoint: `Patient DisjointWith Diagnosis`
 
 existential: `Patient SubClassOf hasDiagnosis some Diagnosis`
@@ -96,7 +101,7 @@ scoped range: `Patient SubClassOf hasDiagnosis some Diagnosis`
 
 structural tautology: `Diagnosis SubClassOf hasDiagnosis min 0 Patient`
 
-# Treatment treatmentFor Diagnosis
+## Treatment treatmentFor Diagnosis
 disjoint: `Treatment DisjointWith Diagnosis`
 
 existential: `Treatment SubClassOf treatmentFor some Diagnosis`

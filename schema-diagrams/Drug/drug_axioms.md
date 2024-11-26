@@ -1,4 +1,9 @@
-# patient isAdministered Dosage
+## Drug
+![schema-diagram](Drug.png)
+
+### Axioms
+
+## patient isAdministered Dosage
 disjoint: `patient DisjointWith Dosage`
 
 global domain: `isAdministered some owl:Thing SubClassOf patient`
@@ -9,7 +14,7 @@ scoped domain: `isAdministered some Dosage SubClassOf patient`
 
 structural tautology: `Dosage SubClassOf isAdministered min 0 patient`
 
-# Dosage hasDosageStrength DosageStrength
+## Dosage hasDosageStrength DosageStrength
 disjoint: `Dosage DisjointWith DosageStrength`
 
 existential: `Dosage SubClassOf hasDosageStrength some DosageStrength`
@@ -26,7 +31,7 @@ scoped range: `Dosage SubClassOf hasDosageStrength some DosageStrength`
 
 structural tautology: `DosageStrength SubClassOf hasDosageStrength min 0 Dosage`
 
-# Dosage hasDosageForm DosageForm
+## Dosage hasDosageForm DosageForm
 disjoint: `Dosage DisjointWith DosageForm`
 
 existential: `Dosage SubClassOf hasDosageForm some DosageForm`
@@ -43,7 +48,7 @@ scoped range: `Dosage SubClassOf hasDosageForm some DosageForm`
 
 structural tautology: `DosageForm SubClassOf hasDosageForm min 0 Dosage`
 
-# Dosage hasQuantity Quantity
+## Dosage hasQuantity Quantity
 disjoint: `Dosage DisjointWith Quantity`
 
 existential: `Dosage SubClassOf hasQuantity some Quantity`
@@ -52,7 +57,7 @@ scoped range: `Dosage SubClassOf hasQuantity some Quantity`
 
 structural tautology: `Quantity SubClassOf hasQuantity min 0 Dosage`
 
-# Drug hasDosage Dosage
+## Drug hasDosage Dosage
 disjoint: `Drug DisjointWith Dosage`
 
 existential: `Drug SubClassOf hasDosage some Dosage`
@@ -69,7 +74,7 @@ scoped range: `Drug SubClassOf hasDosage some Dosage`
 
 structural tautology: `Dosage SubClassOf hasDosage min 0 Drug`
 
-# Drug hasRouteOfAdministration RouteOfAdministration
+## Drug hasRouteOfAdministration RouteOfAdministration
 disjoint: `Drug DisjointWith RouteOfAdministration`
 
 existential: `Drug SubClassOf hasRouteOfAdministration some RouteOfAdministration`
@@ -86,17 +91,17 @@ scoped range: `Drug SubClassOf hasRouteOfAdministration some RouteOfAdministrati
 
 structural tautology: `RouteOfAdministration SubClassOf hasRouteOfAdministration min 0 Drug`
 
-# Drug affects Body
+## Drug affects Body
 disjoint: `Drug DisjointWith Body`
 
 existential: `Drug SubClassOf affects some Body`
 
-# Drug affects Health
+## Drug affects Health
 disjoint: `Drug DisjointWith Health`
 
 existential: `Drug SubClassOf affects some Health`
 
-# Drug hasSideEffect SideEffect
+## Drug hasSideEffect SideEffect
 disjoint: `Drug DisjointWith SideEffect`
 
 existential: `Drug SubClassOf hasSideEffect some SideEffect`
@@ -107,7 +112,7 @@ scoped range: `Drug SubClassOf hasSideEffect some SideEffect`
 
 structural tautology: `SideEffect SubClassOf hasSideEffect min 0 Drug`
 
-# SideEffect affects Health
+## SideEffect affects Health
 disjoint: `SideEffect DisjointWith Health`
 
 existential: `SideEffect SubClassOf affects some Health`
@@ -116,14 +121,14 @@ scoped range: `SideEffect SubClassOf affects some Health`
 
 structural tautology: `Health SubClassOf affects min 0 SideEffect`
 
-# Drug hasName DrugName
+## Drug hasName DrugName
 disjoint: `Drug DisjointWith DrugName`
 
 global domain: `hasName some owl:Thing SubClassOf Drug`
 
 scoped domain: `hasName some DrugName SubClassOf Drug`
 
-# Drug hasDrugClass DrugClass
+## Drug hasDrugClass DrugClass
 disjoint: `Drug DisjointWith DrugClass`
 
 existential: `Drug SubClassOf hasDrugClass some DrugClass`
@@ -140,7 +145,7 @@ scoped range: `Drug SubClassOf hasDrugClass some DrugClass`
 
 structural tautology: `DrugClass SubClassOf hasDrugClass min 0 Drug`
 
-# Drug hasDrugName DrugName
+## Drug hasDrugName DrugName
 existential: `Drug SubClassOf hasDrugName some DrugName`
 
 global range: `owl:Thing SubClassOf hasDrugName only DrugName`
@@ -151,7 +156,7 @@ scoped range: `Drug SubClassOf hasDrugName some DrugName`
 
 structural tautology: `DrugName SubClassOf hasDrugName min 0 Drug`
 
-# Drug affects Body_or_Health
+## Drug affects Body_or_Health
 scoped range: `Drug SubClassOf affects some Body_or_Health`
 
 structural tautology: `Body_or_Health SubClassOf affects min 0 Drug`

@@ -1,0 +1,399 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#assesses
+:assesses rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#createdByEquipment
+:createdByEquipment rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#hasContrast
+:hasContrast rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#hasLabsImagingResult
+:hasLabsImagingResult rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#hasLabsImagingType
+:hasLabsImagingType rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#leadsTo
+:leadsTo rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Visit
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Visit> rdf:type owl:Class ;
+                                                                                       owl:disjointWith :Labs-Imaging .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Body
+:Body rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf :assesses
+                                       ] ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Labs-Imaging
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf :assesses
+                                       ] ;
+                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
+      owl:disjointWith :Labs-Imaging .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Contrast
+:Contrast rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasContrast
+                                           ] ;
+                            owl:someValuesFrom :Labs-Imaging
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasContrast
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-Imaging
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasContrast
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          owl:disjointWith :Labs-Imaging .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Equipment
+:Equipment rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :createdByEquipment
+                                            ] ;
+                             owl:someValuesFrom :Labs-ImagingType
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :createdByEquipment
+                                            ] ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Labs-ImagingType
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :createdByEquipment
+                                            ] ;
+                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           owl:disjointWith :Labs-ImagingType .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Labs-Imaging
+:Labs-Imaging rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :assesses ;
+                                owl:someValuesFrom :Body
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasContrast ;
+                                owl:someValuesFrom :Contrast
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasLabsImagingResult ;
+                                owl:someValuesFrom :Labs-ImagingResult
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasLabsImagingType ;
+                                owl:someValuesFrom :Labs-ImagingType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :leadsTo
+                                               ] ;
+                                owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Visit>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :assesses ;
+                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Body
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasContrast ;
+                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Contrast
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasLabsImagingResult ;
+                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Labs-ImagingResult
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasContrast ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Contrast
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasContrast ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasLabsImagingResult ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Labs-ImagingResult
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasLabsImagingType ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Labs-ImagingType
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :leadsTo
+                                               ] ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Visit>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :leadsTo
+                                               ] ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              owl:disjointWith :Labs-ImagingResult ,
+                               :Labs-ImagingType .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Labs-ImagingResult
+:Labs-ImagingResult rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasLabsImagingResult
+                                                     ] ;
+                                      owl:someValuesFrom :Labs-Imaging
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasLabsImagingResult
+                                                     ] ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :Labs-Imaging
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasLabsImagingResult
+                                                     ] ;
+                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Labs-ImagingType
+:Labs-ImagingType rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :createdByEquipment ;
+                                    owl:someValuesFrom :Equipment
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty [ owl:inverseOf :hasLabsImagingType
+                                                   ] ;
+                                    owl:someValuesFrom :Labs-Imaging
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :createdByEquipment ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty [ owl:inverseOf :hasLabsImagingType
+                                                   ] ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Labs-Imaging
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty [ owl:inverseOf :hasLabsImagingType
+                                                   ] ;
+                                    owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                  ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-16#Visit
+:Visit rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :createdByEquipment ;
+                            owl:allValuesFrom :Equipment
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasContrast ;
+                            owl:allValuesFrom :Contrast
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingResult ;
+                            owl:allValuesFrom :Labs-ImagingResult
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingType ;
+                            owl:allValuesFrom :Labs-ImagingType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :assesses ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Body
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :assesses ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :createdByEquipment ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasContrast ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Contrast
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasContrast ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingResult ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-ImagingResult
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingResult ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingType ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-ImagingType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasLabsImagingType ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :assesses
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :createdByEquipment
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasContrast
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-Imaging
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasContrast
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasLabsImagingResult
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-Imaging
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasLabsImagingResult
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasLabsImagingType
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Labs-Imaging
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasLabsImagingType
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :assesses ;
+  owl:someValuesFrom :Body ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :createdByEquipment ;
+  owl:someValuesFrom :Equipment ;
+  rdfs:subClassOf :Labs-ImagingType
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :createdByEquipment ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Labs-ImagingType
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasContrast ;
+  owl:someValuesFrom :Contrast ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasContrast ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasLabsImagingResult ;
+  owl:someValuesFrom :Labs-ImagingResult ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasLabsImagingResult ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasLabsImagingType ;
+  owl:someValuesFrom :Labs-ImagingType ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasLabsImagingType ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Labs-Imaging
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

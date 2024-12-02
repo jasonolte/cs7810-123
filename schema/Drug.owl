@@ -1,0 +1,405 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#affects
+:affects rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasDosage
+:hasDosage rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasDosageForm
+:hasDosageForm rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasDosageStrength
+:hasDosageStrength rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasDrugClass
+:hasDrugClass rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasDrugName
+:hasDrugName rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasRouteOfAdministration
+:hasRouteOfAdministration rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#hasSideEffect
+:hasSideEffect rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#influences
+:influences rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#isAdministered
+:isAdministered rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#treats
+:treats rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Body
+:Body rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Diagnosis
+:Diagnosis rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Dosage
+:Dosage rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDosageForm ;
+                          owl:someValuesFrom :DosageForm
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDosageStrength ;
+                          owl:someValuesFrom :DosageStrength
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasQuantity ;
+                          owl:someValuesFrom :Quantity
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasDosage
+                                         ] ;
+                          owl:someValuesFrom :Drug
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :isAdministered
+                                         ] ;
+                          owl:someValuesFrom :Patient
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDosageForm ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :DosageForm
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDosageStrength ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :DosageStrength
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasQuantity ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Quantity
+                        ] ;
+        owl:disjointWith :DosageForm ,
+                         :DosageStrength ,
+                         :Drug ,
+                         :Patient ,
+                         :Quantity .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#DosageForm
+:DosageForm rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty [ owl:inverseOf :hasDosageForm
+                                             ] ;
+                              owl:someValuesFrom :Dosage
+                            ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#DosageStrength
+:DosageStrength rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf :hasDosageStrength
+                                                 ] ;
+                                  owl:someValuesFrom :Dosage
+                                ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Drug
+:Drug rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :affects ;
+                        owl:someValuesFrom :Body
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :affects ;
+                        owl:someValuesFrom :Health
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDosage ;
+                        owl:someValuesFrom :Dosage
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDrugClass ;
+                        owl:someValuesFrom :DrugClass
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDrugName ;
+                        owl:someValuesFrom :DrugName
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRouteOfAdministration ;
+                        owl:someValuesFrom :RouteOfAdministration
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSideEffect ;
+                        owl:someValuesFrom :SideEffect
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :affects ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Body
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :affects ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Health
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDosage ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Dosage
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDrugClass ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :DrugClass
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRouteOfAdministration ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :RouteOfAdministration
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSideEffect ;
+                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                        owl:onClass :SideEffect
+                      ] ;
+      owl:disjointWith :DrugClass ,
+                       :DrugName ,
+                       :Health ,
+                       :RouteOfAdministration ,
+                       :SideEffect .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#DrugClass
+:DrugClass rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :hasDrugClass
+                                            ] ;
+                             owl:someValuesFrom :Drug
+                           ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#DrugName
+:DrugName rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasDrugName
+                                           ] ;
+                            owl:someValuesFrom :Drug
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDrugName ;
+                            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Drug
+                          ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Health
+:Health rdf:type owl:Class ;
+        owl:disjointWith :SideEffect .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Patient
+:Patient rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAdministered ;
+                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Dosage
+                         ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#Quantity
+:Quantity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#RouteOfAdministration
+:RouteOfAdministration rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty [ owl:inverseOf :hasRouteOfAdministration
+                                                        ] ;
+                                         owl:someValuesFrom :Drug
+                                       ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-13#SideEffect
+:SideEffect rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :affects ;
+                              owl:someValuesFrom :Health
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :affects ;
+                              owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Health
+                            ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDosage ;
+                            owl:allValuesFrom :Dosage
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDosageForm ;
+                            owl:allValuesFrom :DosageForm
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDosageStrength ;
+                            owl:allValuesFrom :DosageStrength
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDrugClass ;
+                            owl:allValuesFrom :DrugClass
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDrugName ;
+                            owl:allValuesFrom :DrugName
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasRouteOfAdministration ;
+                            owl:allValuesFrom :RouteOfAdministration
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosage ;
+  owl:someValuesFrom :Dosage ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosage ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosageForm ;
+  owl:someValuesFrom :DosageForm ;
+  rdfs:subClassOf :Dosage
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosageForm ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Dosage
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosageStrength ;
+  owl:someValuesFrom :DosageStrength ;
+  rdfs:subClassOf :Dosage
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDosageStrength ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Dosage
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDrugClass ;
+  owl:someValuesFrom :DrugClass ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDrugClass ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDrugName ;
+  owl:someValuesFrom :DrugName ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDrugName ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasRouteOfAdministration ;
+  owl:someValuesFrom :RouteOfAdministration ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasRouteOfAdministration ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSideEffect ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Drug
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :isAdministered ;
+  owl:someValuesFrom :Dosage ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :isAdministered ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

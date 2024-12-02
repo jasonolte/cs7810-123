@@ -1,0 +1,629 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#affects
+:affects rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasHealth
+:hasHealth rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasHealthCondition
+:hasHealthCondition rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasHealthRecord
+:hasHealthRecord rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasSeverity
+:hasSeverity rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasStatus
+:hasStatus rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasSymptom
+:hasSymptom rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#hasTreatment
+:hasTreatment rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#includesService
+:includesService rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#isAssociatedWith
+:isAssociatedWith rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#recieves
+:recieves rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasSymptom ;
+                                                                                                           owl:someValuesFrom :Symptom
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasTreatment ;
+                                                                                                           owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasSymptom ;
+                                                                                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                           owl:onClass :Symptom
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasTreatment ;
+                                                                                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                           owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                                                                                                         ] ;
+                                                                                         owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment> ,
+                                                                                                          :Symptom .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasHealth ;
+                                                                                                           owl:someValuesFrom :Health
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :recieves ;
+                                                                                                           owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :recieves ;
+                                                                                                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                           owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :hasHealth ;
+                                                                                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                         ] ;
+                                                                                         owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment> ,
+                                                                                                          :Health .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :affects ;
+                                                                                                             owl:someValuesFrom :Health
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :includesService ;
+                                                                                                             owl:someValuesFrom :Service
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty [ owl:inverseOf :hasTreatment
+                                                                                                                            ] ;
+                                                                                                             owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease>
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :affects ;
+                                                                                                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass :Health
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :includesService ;
+                                                                                                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass :Service
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :affects ;
+                                                                                                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass :Health
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :affects ;
+                                                                                                             owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                           ] ;
+                                                                                           owl:disjointWith :Health ,
+                                                                                                            :Service .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Disease
+:Disease rdf:type owl:Class ;
+         rdfs:subClassOf :Health .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Health
+:Health rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith> ;
+                          owl:someValuesFrom :Visit
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasHealthCondition ;
+                          owl:someValuesFrom :HealthCondition
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasHealthRecord ;
+                          owl:someValuesFrom :HealthRecord
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasStatus ;
+                          owl:someValuesFrom :Status
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSymptom ;
+                          owl:someValuesFrom :Symptom
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasHealth
+                                         ] ;
+                          owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasHealthCondition ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :HealthCondition
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasStatus ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Status
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSymptom ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Symptom
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasHealth
+                                         ] ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasHealth
+                                         ] ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        owl:disjointWith :HealthCondition ,
+                         :HealthRecord ,
+                         :Status ,
+                         :Symptom ,
+                         :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#HealthCondition
+:HealthCondition rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty [ owl:inverseOf :hasHealthCondition
+                                                  ] ;
+                                   owl:someValuesFrom :Health
+                                 ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#HealthRecord
+:HealthRecord rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :hasHealthRecord
+                                               ] ;
+                                owl:someValuesFrom :Health
+                              ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#MentalHealth
+:MentalHealth rdf:type owl:Class ;
+              rdfs:subClassOf :Health ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasStatus ;
+                                owl:someValuesFrom :MentalHealthStatus
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasStatus ;
+                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                owl:onClass :MentalHealthStatus
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasStatus ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :MentalHealthStatus
+                              ] ;
+              owl:disjointWith :MentalHealthStatus .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#MentalHealthStatus
+:MentalHealthStatus rdf:type owl:Class ;
+                    rdfs:subClassOf :Status ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasStatus
+                                                     ] ;
+                                      owl:someValuesFrom :MentalHealth
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasStatus
+                                                     ] ;
+                                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :MentalHealth
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty [ owl:inverseOf :hasStatus
+                                                     ] ;
+                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Patient
+:Patient rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#PhysicalHealth
+:PhysicalHealth rdf:type owl:Class ;
+                rdfs:subClassOf :Health ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStatus ;
+                                  owl:someValuesFrom :PhysicalHealthStatus
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStatus ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :PhysicalHealthStatus
+                                ] ;
+                owl:disjointWith :PhysicalHealthStatus .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#PhysicalHealthStatus
+:PhysicalHealthStatus rdf:type owl:Class ;
+                      rdfs:subClassOf :Status ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf :hasStatus
+                                                       ] ;
+                                        owl:someValuesFrom :PhysicalHealth
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf :hasStatus
+                                                       ] ;
+                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass :PhysicalHealth
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf :hasStatus
+                                                       ] ;
+                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                      ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :includesService
+                                          ] ;
+                           owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                         ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Severity
+:Severity rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasSeverity
+                                           ] ;
+                            owl:someValuesFrom :Symptom
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasSeverity
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Symptom
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasSeverity
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          owl:disjointWith :Symptom .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Status
+:Status rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasStatus
+                                         ] ;
+                          owl:someValuesFrom :Health
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasStatus
+                                         ] ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Symptom
+:Symptom rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasSeverity ;
+                           owl:someValuesFrom :Severity
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasSeverity ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Severity
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasSeverity ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Treatment
+:Treatment rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-15#Visit
+:Visit rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith>
+                                        ] ;
+                         owl:someValuesFrom :Health
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith>
+                                        ] ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Health
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith>
+                                        ] ;
+                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                       ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#isAssociatedWith> ;
+                            owl:allValuesFrom :Visit
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHealth ;
+                            owl:allValuesFrom :Health
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHealthCondition ;
+                            owl:allValuesFrom :HealthCondition
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHealthRecord ;
+                            owl:allValuesFrom :HealthRecord
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSeverity ;
+                            owl:allValuesFrom :Severity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTreatment ;
+                            owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :includesService ;
+                            owl:allValuesFrom :Service
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :recieves ;
+                            owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :affects ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Health
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :affects ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHealth ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Health
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHealth ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSeverity ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Severity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSeverity ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :affects
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :affects
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasSeverity
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Symptom
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasSeverity
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :affects ;
+  owl:someValuesFrom :Health ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealth ;
+  owl:someValuesFrom :Health ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealth ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealthCondition ;
+  owl:someValuesFrom :HealthCondition ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealthCondition ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealthRecord ;
+  owl:someValuesFrom :HealthRecord ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasHealthRecord ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSeverity ;
+  owl:someValuesFrom :Severity ;
+  rdfs:subClassOf :Symptom
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSeverity ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Symptom
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasStatus ;
+  owl:someValuesFrom :MentalHealthStatus ;
+  rdfs:subClassOf :MentalHealth
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasStatus ;
+  owl:someValuesFrom :PhysicalHealthStatus ;
+  rdfs:subClassOf :PhysicalHealth
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasStatus ;
+  owl:someValuesFrom :Status ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSymptom ;
+  owl:someValuesFrom :Symptom ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasSymptom ;
+  owl:someValuesFrom :Symptom ;
+  rdfs:subClassOf :Health
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasTreatment ;
+  owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment> ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasTreatment ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Disease>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :includesService ;
+  owl:someValuesFrom :Service ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :includesService ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :recieves ;
+  owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Treatment> ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :recieves ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-14#Patient>
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

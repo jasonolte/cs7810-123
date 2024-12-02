@@ -88,18 +88,18 @@ scoped range: `Visit SubClassOf hasTemporalExtent some TemporalExtent`
 
 structural tautology: `TemporalExtent SubClassOf hasTemporalExtent min 0 Visit`
 
-## Visit leadsTo Labs/Imaging
-disjoint: `Visit DisjointWith Labs/Imaging`
+## Visit leadsTo Labs-Imaging
+disjoint: `Visit DisjointWith Labs-Imaging`
 
 inverse functionality: `owl:Thing SubClassOf inverse leadsTo max 1 owl:Thing`
 
 inverse qualified functionality: `owl:Thing SubClassOf inverse leadsTo max 1 Visit`
 
-inverse qualified scoped functionality: `Labs/Imaging SubClassOf inverse leadsTo max 1 Visit`
+inverse qualified scoped functionality: `Labs-Imaging SubClassOf inverse leadsTo max 1 Visit`
 
-inverse scoped functionality: `Labs/Imaging SubClassOf inverse leadsTo max 1 owl:Thing`
+inverse scoped functionality: `Labs-Imaging SubClassOf inverse leadsTo max 1 owl:Thing`
 
-structural tautology: `Labs/Imaging SubClassOf leadsTo min 0 Visit`
+structural tautology: `Labs-Imaging SubClassOf leadsTo min 0 Visit`
 
 ## Patient hasVisit Visit
 disjoint: `Patient DisjointWith Visit`

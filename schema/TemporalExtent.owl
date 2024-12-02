@@ -1,0 +1,212 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#contains
+:contains rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#endsAt
+:endsAt rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#startsFrom
+:startsFrom rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#hasValue
+:hasValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#ComplexTemporalExtent
+:ComplexTemporalExtent rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty [ owl:inverseOf :contains
+                                                        ] ;
+                                         owl:someValuesFrom :TemporalExtent
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :contains ;
+                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :TemporalExtent
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty [ owl:inverseOf :contains
+                                                        ] ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :TemporalExtent
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty [ owl:inverseOf :contains
+                                                        ] ;
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] ;
+                       owl:disjointWith :TemporalExtent .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#DateOfStay
+:DateOfStay rdf:type owl:Class ;
+            rdfs:subClassOf :PointInTime .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#DischargeDate
+:DischargeDate rdf:type owl:Class ;
+               rdfs:subClassOf :PointInTime .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#PointInTime
+:PointInTime rdf:type owl:Class ;
+             rdfs:subClassOf :ComplexTemporalExtent ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :endsAt ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                               owl:onClass :TimeInterval
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :startsFrom ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                               owl:onClass :TimeInterval
+                             ] ;
+             owl:disjointWith :TimeInterval .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#TemporalExtent
+:TemporalExtent rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :contains ;
+                                  owl:someValuesFrom :ComplexTemporalExtent
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :contains ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :ComplexTemporalExtent
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :contains ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/10/untitled-ontology-11#TimeInterval
+:TimeInterval rdf:type owl:Class ;
+              rdfs:subClassOf :ComplexTemporalExtent ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :endsAt ;
+                                owl:someValuesFrom :PointInTime
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :startsFrom ;
+                                owl:someValuesFrom :PointInTime
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :endsAt ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PointInTime
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :endsAt ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :startsFrom ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :PointInTime
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :startsFrom ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :endsAt ;
+                            owl:allValuesFrom :PointInTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :startsFrom ;
+                            owl:allValuesFrom :PointInTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :contains ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ComplexTemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :endsAt ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :PointInTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :endsAt ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :startsFrom ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :PointInTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :startsFrom ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :contains ;
+  owl:someValuesFrom :ComplexTemporalExtent ;
+  rdfs:subClassOf :TemporalExtent
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :endsAt ;
+  owl:someValuesFrom :PointInTime ;
+  rdfs:subClassOf :TimeInterval
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :endsAt ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :TimeInterval
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :startsFrom ;
+  owl:someValuesFrom :PointInTime ;
+  rdfs:subClassOf :TimeInterval
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :startsFrom ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :TimeInterval
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

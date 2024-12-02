@@ -1,0 +1,576 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasAge
+:hasAge rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasDiagnosis
+:hasDiagnosis rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasEthnicity
+:hasEthnicity rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasGender
+:hasGender rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasMedicalRecordNumber
+:hasMedicalRecordNumber rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasPatientType
+:hasPatientType rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasPriorityofAdmission
+:hasPriorityofAdmission rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasQuantity
+:hasQuantity rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasRace
+:hasRace rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#hasVisit
+:hasVisit rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#isAdministeredDosage
+:isAdministeredDosage rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#isAssociatedWith
+:isAssociatedWith rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Age
+:Age rdf:type owl:Class ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasQuantity ;
+                       owl:someValuesFrom :Quantity
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :isAssociatedWith ;
+                       owl:someValuesFrom :Visit
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasQuantity ;
+                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty [ owl:inverseOf :hasAge
+                                      ] ;
+                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Patient
+                     ] ;
+     owl:disjointWith :Patient ,
+                      :Quantity ,
+                      :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Agent
+:Agent rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Diagnosis
+:Diagnosis rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :hasDiagnosis
+                                            ] ;
+                             owl:someValuesFrom :Patient
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :hasDiagnosis
+                                            ] ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Patient
+                           ] ;
+           owl:disjointWith :Patient .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Dosage
+:Dosage rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :isAdministeredDosage
+                                         ] ;
+                          owl:someValuesFrom :Patient
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :isAdministeredDosage
+                                         ] ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Patient
+                        ] ;
+        owl:disjointWith :Patient .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Ethnicity
+:Ethnicity rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAssociatedWith ;
+                             owl:someValuesFrom :Visit
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty [ owl:inverseOf :hasEthnicity
+                                            ] ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Patient
+                           ] ;
+           owl:disjointWith :Patient ,
+                            :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :isAssociatedWith ;
+                          owl:someValuesFrom :Visit
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasGender
+                                         ] ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Patient
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :hasGender
+                                         ] ;
+                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                        ] ;
+        owl:disjointWith :Patient ,
+                         :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Identifier
+:Identifier rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#MedicalRecordNumber
+:MedicalRecordNumber rdf:type owl:Class ;
+                     rdfs:subClassOf :Identifier ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasMedicalRecordNumber
+                                                      ] ;
+                                       owl:someValuesFrom :Patient
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasMedicalRecordNumber
+                                                      ] ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Patient
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasMedicalRecordNumber
+                                                      ] ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     owl:disjointWith :Patient .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Patient
+:Patient rdf:type owl:Class ;
+         rdfs:subClassOf :Agent ,
+                         :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAge ;
+                           owl:someValuesFrom :Age
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDiagnosis ;
+                           owl:someValuesFrom :Diagnosis
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEthnicity ;
+                           owl:someValuesFrom :Ethnicity
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGender ;
+                           owl:someValuesFrom :Gender
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMedicalRecordNumber ;
+                           owl:someValuesFrom :MedicalRecordNumber
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPatientType ;
+                           owl:someValuesFrom :PatientType
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPriorityofAdmission ;
+                           owl:someValuesFrom :PriorityofAdmission
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRace ;
+                           owl:someValuesFrom :Race
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasVisit ;
+                           owl:someValuesFrom :Visit
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAdministeredDosage ;
+                           owl:someValuesFrom :Dosage
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAdministeredDosage ;
+                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Dosage
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGender ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Gender
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGender ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMedicalRecordNumber ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :MedicalRecordNumber
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMedicalRecordNumber ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPriorityofAdmission ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :PriorityofAdmission
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPriorityofAdmission ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         owl:disjointWith :PatientType ,
+                          :PriorityofAdmission ,
+                          :Race ,
+                          :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#PatientType
+:PatientType rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasPatientType
+                                              ] ;
+                               owl:someValuesFrom :Patient
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasPatientType
+                                              ] ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Patient
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasPatientType
+                                              ] ;
+                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#PriorityofAdmission
+:PriorityofAdmission rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasPriorityofAdmission
+                                                      ] ;
+                                       owl:someValuesFrom :Patient
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasPriorityofAdmission
+                                                      ] ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :Patient
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty [ owl:inverseOf :hasPriorityofAdmission
+                                                      ] ;
+                                       owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                     ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Quantity
+:Quantity rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasQuantity
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Age
+                          ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Race
+:Race rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isAssociatedWith ;
+                        owl:someValuesFrom :Visit
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty [ owl:inverseOf :hasRace
+                                       ] ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Patient
+                      ] ;
+      owl:disjointWith :Visit .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit
+:Visit rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf :hasVisit
+                                        ] ;
+                         owl:someValuesFrom :Patient
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty [ owl:inverseOf :hasVisit
+                                        ] ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Patient
+                       ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAge ;
+                            owl:allValuesFrom :Age
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDiagnosis ;
+                            owl:allValuesFrom :Diagnosis
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEthnicity ;
+                            owl:allValuesFrom :Ethnicity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGender ;
+                            owl:allValuesFrom :Gender
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMedicalRecordNumber ;
+                            owl:allValuesFrom :MedicalRecordNumber
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPatientType ;
+                            owl:allValuesFrom :PatientType
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPriorityofAdmission ;
+                            owl:allValuesFrom :PriorityofAdmission
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasQuantity ;
+                            owl:allValuesFrom :Quantity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasRace ;
+                            owl:allValuesFrom :Race
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasVisit ;
+                            owl:allValuesFrom :Visit
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isAdministeredDosage ;
+                            owl:allValuesFrom :Dosage
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAge ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGender ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Gender
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasGender ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMedicalRecordNumber ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :MedicalRecordNumber
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMedicalRecordNumber ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPatientType ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPriorityofAdmission ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :PriorityofAdmission
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPriorityofAdmission ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasQuantity ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Quantity
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasQuantity ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasAge
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasDiagnosis
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasMedicalRecordNumber
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasPatientType
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasPriorityofAdmission
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasVisit
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :isAdministeredDosage
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDiagnosis ;
+  owl:someValuesFrom :Diagnosis ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasDiagnosis ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasMedicalRecordNumber ;
+  owl:someValuesFrom :MedicalRecordNumber ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasMedicalRecordNumber ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasPatientType ;
+  owl:someValuesFrom :PatientType ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasPatientType ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasPriorityofAdmission ;
+  owl:someValuesFrom :PriorityofAdmission ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasPriorityofAdmission ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasVisit ;
+  owl:someValuesFrom :Visit ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasVisit ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :isAdministeredDosage ;
+  owl:someValuesFrom :Dosage ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :isAdministeredDosage ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

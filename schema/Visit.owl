@@ -1,0 +1,522 @@
+@prefix : <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18> .
+
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#hasDischargeID
+:hasDischargeID rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#hasOutcome
+:hasOutcome rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#hasTemporalExtent
+:hasTemporalExtent rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#hasVisit
+:hasVisit rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#isAssociatedWith
+:isAssociatedWith rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#leadsTo
+:leadsTo rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Age
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Age> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty :isAssociatedWith ;
+                                                                                                       owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                     ] ,
+                                                                                                     [ rdf:type owl:Restriction ;
+                                                                                                       owl:onProperty :isAssociatedWith ;
+                                                                                                       owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                       owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                     ] ;
+                                                                                     owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Diagnosis
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Diagnosis> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ;
+                                                                                           owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Ethnicity
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Ethnicity> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ,
+                                                                                                           [ rdf:type owl:Restriction ;
+                                                                                                             owl:onProperty :isAssociatedWith ;
+                                                                                                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                             owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                           ] ;
+                                                                                           owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Gender
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Gender> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty :isAssociatedWith ;
+                                                                                                          owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty :isAssociatedWith ;
+                                                                                                          owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                        ] ,
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty :isAssociatedWith ;
+                                                                                                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                          owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                        ] ;
+                                                                                        owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Race
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Race> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty :isAssociatedWith ;
+                                                                                                        owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty :isAssociatedWith ;
+                                                                                                        owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                      ] ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty :isAssociatedWith ;
+                                                                                                        owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                        owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                                                                                      ] ;
+                                                                                      owl:disjointWith <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit
+<http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf :Event ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasDischargeID ;
+                                                                                                         owl:someValuesFrom :DischargeID
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasOutcome ;
+                                                                                                         owl:someValuesFrom :Outcome
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasTemporalExtent ;
+                                                                                                         owl:someValuesFrom :TemporalExtent
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty [ owl:inverseOf :hasVisit
+                                                                                                                        ] ;
+                                                                                                         owl:someValuesFrom :Patient
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasDischargeID ;
+                                                                                                         owl:allValuesFrom :DischargeID
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasOutcome ;
+                                                                                                         owl:allValuesFrom :Outcome
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasTemporalExtent ;
+                                                                                                         owl:allValuesFrom :TemporalExtent
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasDischargeID ;
+                                                                                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :DischargeID
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasOutcome ;
+                                                                                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :Outcome
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasTemporalExtent ;
+                                                                                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :TemporalExtent
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :isAssociatedWith ;
+                                                                                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :PriorityOfAdmission
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :leadsTo ;
+                                                                                                         owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :Labs-Imaging
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasDischargeID ;
+                                                                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :DischargeID
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasDischargeID ;
+                                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasOutcome ;
+                                                                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :Outcome
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasOutcome ;
+                                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasTemporalExtent ;
+                                                                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :TemporalExtent
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty :hasTemporalExtent ;
+                                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty [ owl:inverseOf :hasVisit
+                                                                                                                        ] ;
+                                                                                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                         owl:onClass :Patient
+                                                                                                       ] ,
+                                                                                                       [ rdf:type owl:Restriction ;
+                                                                                                         owl:onProperty [ owl:inverseOf :hasVisit
+                                                                                                                        ] ;
+                                                                                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                                                                       ] ;
+                                                                                       owl:disjointWith :DischargeID ,
+                                                                                                        :Health ,
+                                                                                                        :Labs-Imaging ,
+                                                                                                        :Outcome ,
+                                                                                                        :Patient ,
+                                                                                                        :PatientType ,
+                                                                                                        :PriorityOfAdmission ,
+                                                                                                        :TemporalExtent .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Age
+:Age rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Diagnosis
+:Diagnosis rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#DischargeID
+:DischargeID rdf:type owl:Class ;
+             rdfs:subClassOf :Identifier ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasDischargeID
+                                              ] ;
+                               owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasDischargeID
+                                              ] ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty [ owl:inverseOf :hasDischargeID
+                                              ] ;
+                               owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Ethnicity
+:Ethnicity rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Event
+:Event rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Gender
+:Gender rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Health
+:Health rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :isAssociatedWith ;
+                          owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isAssociatedWith ;
+                          owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isAssociatedWith ;
+                          owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                          owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                        ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Identifier
+:Identifier rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Labs-Imaging
+:Labs-Imaging rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :leadsTo
+                                               ] ;
+                                owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty [ owl:inverseOf :leadsTo
+                                               ] ;
+                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                              ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Outcome
+:Outcome rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :hasOutcome
+                                          ] ;
+                           owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :hasOutcome
+                                          ] ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty [ owl:inverseOf :hasOutcome
+                                          ] ;
+                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Patient
+:Patient rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasVisit ;
+                           owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasVisit ;
+                           owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasVisit ;
+                           owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                           owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                         ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#PatientType
+:PatientType rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :isAssociatedWith ;
+                               owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isAssociatedWith ;
+                               owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isAssociatedWith ;
+                               owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                               owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                             ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#PriorityOfAdmission
+:PriorityOfAdmission rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isAssociatedWith ;
+                                       owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isAssociatedWith ;
+                                       owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                     ] .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#Race
+:Race rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-18#TemporalExtent
+:TemporalExtent rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf :hasTemporalExtent
+                                                 ] ;
+                                  owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty [ owl:inverseOf :hasTemporalExtent
+                                                 ] ;
+                                  owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                ] .
+
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDischargeID ;
+                            owl:allValuesFrom :DischargeID
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOutcome ;
+                            owl:allValuesFrom :Outcome
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTemporalExtent ;
+                            owl:allValuesFrom :TemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasVisit ;
+                            owl:allValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDischargeID ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :DischargeID
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDischargeID ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOutcome ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Outcome
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOutcome ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTemporalExtent ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :TemporalExtent
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTemporalExtent ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasDischargeID
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasDischargeID
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasOutcome
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasOutcome
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasTemporalExtent
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasTemporalExtent
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasVisit
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Patient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :hasVisit
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :leadsTo
+                                           ] ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :leadsTo
+                                           ] ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasVisit ;
+  owl:someValuesFrom <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit> ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasVisit ;
+  owl:someValuesFrom owl:Thing ;
+  rdfs:subClassOf :Patient
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :leadsTo ;
+  owl:someValuesFrom :Labs-Imaging ;
+  rdfs:subClassOf <http://www.semanticweb.org/jasonhnolte/ontologies/2024/11/untitled-ontology-17#Visit>
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

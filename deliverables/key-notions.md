@@ -63,4 +63,4 @@
 
 - Open globe injuries: factors associated with pediatric open globe injuries 
 - MVC-bike injuries: factors associated with motor vehicle vs bicycle injuries 
-- Trauma Recidivism: factors associated with pediatric trauma hospitalizations returning to the ED 
+- Thinking we should go with this one: Trauma Recidivism: factors associated with pediatric trauma hospitalizations returning to the ED 

@@ -1,0 +1,95 @@
+metadata:
+  name: "Pharmacy Daily Mapping"
+  source_ext: "csv"
+
+# cvs:
+
+# For each row, create an Earthquake with specified URI.
+root:
+  type: ["dc-ont:Patient", "dc-ont:Person", "dc-ont:Agent"]
+  uri: "dcr:patient"
+  varids: ["Medical_Record_Number"] # this will be a . joined string (i.e., 1.a.BA), where each element comes from the field indicated in the list
+  connections:
+    - p: "dc-ont:isAdministeredDosage"
+      o:
+        type: ["dc-ont:Dosage"]
+        uri: "dcr:dosage"
+        varids: ["DI_DOS_Code"]
+        connections:
+          - p: "dc-ont:isDosageOf"
+            inv: "dc-ont:hasDosage"
+            o:
+              type: ["dc-ont:Drug"]
+              uri: "dcr:drug"
+              varids: ["Generic_Drug"]
+              connections:
+                - p: "dc-ont:hasDrugName"
+                  o:
+                    type: ["dc-ont:DrugName"]
+                    uri: "dcr:drugName"
+                    varids: ["Generic_Drug"]
+                    connections:
+                      - p: "dc-ont:asString"
+                        o:
+                          datatype: "xsd:string"
+                          val_source: "Generic_Drug_Title"
+                - p: "dc-ont:hasDrugClass"
+                  o:
+                    type: [dc-ont:DrugClass]
+                    uri: "dcr:drugClass"
+                    varids: ["Drug_Class"]
+                    connections:
+                      - p: "dc-ont:asString"
+                        o:
+                          datatype: "xsd:string"
+                          val_source: "Drug_Class_Title"
+                - p: "dc-ont:affects"
+                  o:
+                    type: ["dc-ont:Body"]
+                    uri: "dcr:body"
+                    varids: ["Medical_Record_Number"]
+                - p: "dc-ont:hasRouteOfAdministration"
+                  o:
+                    type: ["dc-ont:RouteOfAdministration"]
+                    uri: "dcr:routeOfAdministration"
+                    varids: ["Route_Of_Administration"]
+                    connections:
+                      - p: "dc-ont:asString"
+                        o:
+                          datatype: "xsd:string"
+                          val_source: "Route_Of_Administration_Title"
+          - p: "dc-ont:hasDosageForm"
+            o:
+              type: ["dc-ont:DosageForm"]
+              uri: "dcr:dosageForm"
+              varids: ["Dosage_Form"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Dosage_Form_Title"
+                - p: "dc-ont:influences"
+                  o:
+                    type: ["dc-ont:DosageStrength"]
+                    uri: "dcr:dosageStrength"
+                    varids: ["Dosage_Strength"]
+          - p: "dc-ont:hasDosageStrength"
+            o:
+              type: ["dc-ont:DosageStrength"]
+              uri: "dcr:dosageStrength"
+              varids: ["Dosage_Strength"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Dosage_Strength_Title"
+          - p: "dc-ont:hasUnitOfMeasure"
+            o:
+              type: ["dc-ont:UnitOfMeasure"]
+              uri: "dcr:unitOfMeasure"
+              varids: ["Unit_Of_Measure"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Unit_Of_Measure_Title"

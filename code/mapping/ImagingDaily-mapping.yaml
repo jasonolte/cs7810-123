@@ -1,0 +1,47 @@
+metadata:
+  name: "Pharmacy Daily Mapping"
+  source_ext: "csv"
+
+# cvs:
+
+# For each row, create an Earthquake with specified URI.
+root:
+  type: ["dc-ont:Visit", "dc-ont:Event"]
+  uri: "dcr:visit"
+  varids: ["Discharge_ID"] # this will be a . joined string (i.e., 1.a.BA), where each element comes from the field indicated in the list
+  connections:
+    - p: "dc-ont:leadsTo"
+      o:
+        type: ["dc-ont:Labs-Imaging"]
+        uri: "dcr:labs-Imaging"
+        varids: ["Imaging_Procedure"]
+        connections:
+          - p: "dc-ont:asString"
+            o:
+              datatype: "xsd:string"
+              val_source: "Imaging_Procedure_Title"
+          - p: "dc-ont:assesses"
+            o:
+              type: ["dc-ont:Body"]
+              uri: "dcr:body"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasLabs-ImagingType"
+            o:
+              type: [dc-ont:Labs-ImagingType]
+              uri: "dcr:labs-ImagingType"
+              varids: ["Imaging_Technique"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Imaging_Technique_Title"
+          - p: "dc-ont:hasContrast"
+            o:
+              type: ["dc-ont:Contrast"]
+              uri: "dcr:contrast"
+              varids: [Contrast_Media]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Contrast_Media_Title"

@@ -1,0 +1,296 @@
+metadata:
+  name: "Patient Abstract Mapping"
+  source_ext: "csv"
+
+cvs:
+  # - cv: 
+  #   type: "dc-ont:MedicalObservableProperty" 
+  #   uri: "dcr:medicalObservableProperty"
+  #   instances: ["Gender_Title", "Ethnicity_Title", "Race_White", "Race_Black", "Race_Asian", "Race_Pacific_Islander", "Race_American_Indian", "Race_Other", "Patient_Type_Title", "Priority_Of_Admission_Title"]
+  #     # male, female
+  - cv: 
+    type: "dc-ont:Gender" 
+    uri: "dcr:gender"
+    instances: ["Unknown", "Male", "Female"]
+  - cv: 
+    type: "dc-ont:Ethnicity" 
+    uri: "dcr:ethnicity"
+    instances: ["HispanicOrLatino", "NotHispanicOrLatino", "Unknown"]
+  - cv: 
+    type: "dc-ont:PatientType" 
+    uri: "dcr:patientType"
+    instances: ["Inpatient", "EDVisit", "AmbSurg", "ObsUnit", "ClinicVisit", "Other"]
+  - cv: 
+    type: "dc-ont:PriorityOfAdmission" 
+    uri: "dcr:priorityOfAdmission"
+    instances: ["Emergency", "Urgent", "Elective", "Newborn", "Trauma", "InformationNotAvailable"]
+
+
+# For each row, create an Earthquake with specified URI.
+root:
+  # type: ["dc-ont:Healthcare"]
+  # uri: "dcr:healthcare"
+  # varids: ["Discharge_ID"] # this will be a . joined string (i.e., 1.a.BA), where each element comes from the field indicated in the list
+  # connections:
+  #   - p: "dc-ont:hasPatient"
+  #     o:
+  type: ["dc-ont:Patient", "dc-ont:Person", "dc-ont:Agent"]
+  uri: "dcr:patient"
+  varids: ["Medical_Record_Number"]
+  connections:
+    - p: "dc-ont:hasMedicalRecordNumber"
+      o: 
+        type: ["dc-ont:MedicalRecordNumber", "dc-ont:Identifier"]
+        uri: "dcr:medicalRecordNumber"
+        varids: ["Medical_Record_Number"]
+        connections:
+          - p: "dc-ont:asInteger"
+            o:
+              datatype: "xsd:integer"
+              val_source: "Medical_Record_Number"
+    - p: "dc-ont:hasGender"
+      o:
+        type: ["dc-ont:Gender"]
+        uri: "dcr:gender"
+        varids: ["Gender"]
+        connections:
+          - p: "dc-ont:asString"
+            o:
+              datatype: "xsd:string"
+              val_source: "Gender_Title"
+    - p: "dc-ont:hasEthnicity"
+      o:
+        type: ["dc-ont:Ethnicity"]
+        uri: "dcr:ethnicity"
+        varids: [Ethnicity]
+        connections:
+          - p: "dc-ont:asString"
+            o:
+              datatype: "xsd:string"
+              val_source: "Ethnicity_Title"
+    - p: "dc-ont:hasRace"
+      o:
+        type: ["dc-ont:Race"]
+        uri: "dcr:race"
+        varids: [Discharge_ID]
+        connections:
+          - p: "dc-ont:raceWhite"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_White"
+          - p: "dc-ont:raceBlack"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_Black"
+          - p: "dc-ont:raceAsian"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_Asian"
+          - p: "dc-ont:racePacificIslander"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_Pacific_Islander"
+          - p: "dc-ont:raceAmericanIndian"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_American_Indian"
+          - p: "dc-ont:raceOther"
+            o:
+              datatype: "xsd:string"
+              val_source: "Race_Other"
+    - p: "dc-ont:hasAge"
+      o:
+        type: ["dc-ont:Age", "dc-ont:Quantity"]
+        uri: "dcr:age"
+        varids: ["Discharge_ID"]
+        connections:
+          - p: "dc-ont:ageInYears"
+            o:
+              datatype: "xsd:integer"
+              val_source: "Admit_Age_In_Years"
+          - p: "dc-ont:ageInDays"
+            o:
+              datatype: "xsd:integer"
+              val_source: "Admit_Age_In_Days"
+    - p: "dc-ont:hasPatientType"
+      o:
+        type: ["dc-ont:PatientType"]
+        uri: "dcr:patientType"
+        varids: ["Patient_Type"]
+        connections:
+          - p: "dc-ont:asString"
+            o:
+              datatype: "xsd:string"
+              val_source: "Patient_Type_Title"
+    - p: "dc-ont:hasPriorityOfAdmission"
+      o:
+        type: ["dc-ont:PriorityOfAdmission"]
+        uri: dcr:priorityOfAdmission
+        varids: ["Priority_Of_Admission"]
+        connections:
+          - p: "dc-ont:asString"
+            o:
+              datatype: "xsd:string"
+              val_source: "Priority_Of_Admission_Title"
+    - p: "dc-ont:hasBody"
+      o: 
+        type: ["dc-ont:Body"]
+        uri: "dcr:body"
+        varids: ["Medical_Record_Number"]
+        connections:
+          - p: "dc-ont:hasHead"
+            o:
+              type: ["dc-ont:Head"]
+              uri: "dcr:head"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasTorso"
+            o:
+              type: ["dc-ont:Torso"]
+              uri: "dcr:torso"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasArm"
+            o:
+              type: ["dc-ont:Arm"]
+              uri: "dcr:arm"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasLimbs"
+            o:
+              type: ["dc-ont:Limbs"]
+              uri: "dcr:limbs"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasOrgan"
+            o:
+              type: ["dc-ont:Organ"]
+              uri: "dcr:organ"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasHeight"
+            o:
+              type: ["dc-ont:Height"]
+              uri: "dcr:height"
+              varids: ["Medical_Record_Number"]
+          - p: "dc-ont:hasWeight"
+            o:
+              type: ["dc-ont:Weight"]
+              uri: "dcr:weight"
+              varids: ["Medical_Record_Number"]
+    - p: "dc-ont:hasDiagnosis"
+      o:
+        type: ["dc-ont:Diagnosis"]
+        uri: "dcr:diagnosis"
+        varids: ["Discharge_ID"]
+        connections:
+          - p: "dc-ont:hasPrincipalDiagnosis"
+            o:
+              type: ["dc-ont:PrincipalDiagnosis"]
+              uri: "dcr:principalDiagnosis"
+              varids: ["Principal_Dx"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Principal_Dx_Title"
+    # - p: "dc-ont:hasDiagnosisTypes"
+    #   o:
+    #     type: ["dc-ont:DiagnosisTypes"]
+    #     uri: "dcr:diagnosisTypes"
+    #     varids: ["Discharge_ID"]
+    #     connections:
+          - p: "dc-ont:cardiovascularDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Cardiovascular_Flag"
+          - p: "dc-ont:gastrointestinalDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Gastrointestinal_Flag"
+          - p: "dc-ont:hematologicOrImmunologicDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Hematologic_or_Immunologic_Flag"
+          - p: "dc-ont:malignancyDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Malignancy_Flag"
+          - p: "dc-ont:metabolicDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Metabolic_Flag"
+          - p: "dc-ont:neurologicAndNeuromuscularDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Neurologic_and_Neuromuscular_Flag"
+          - p: "dc-ont:congenitalOrGeneticDefectDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Congenital_or_Genetic_Defect_Flg"
+          - p: "dc-ont:renalAndUrologicDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Renal_and_Urologic_Flag"
+          - p: "dc-ont:respiratoryDiagnosis"
+            o:
+              datatype: "xsd:string"
+              val_source: "Respiratory_Flag"
+          - p: "dc-ont:affects"
+            o:
+              type: ["dc-ont:Body"]
+              uri: "dcr:body"
+              varids: ["Medical_Record_Number"]
+    - p: "dc-ont:hasVisit"
+      o:
+        type: ["dc-ont:Visit", "dc-ont:Event"]
+        uri: "dcr:visit"
+        varids: ["Discharge_ID"]
+        connections:
+          - p: "dc-ont:hasDischargeID"
+            o:
+              type: ["dc-ont:DischargeID", "dc-ont:Identifier"]
+              uri: "dcr:dischargeID"
+              varids: ["Discharge_ID"]
+              connections:
+                - p: "dc-ont:asString"
+                  o:
+                    datatype: "xsd:string"
+                    val_source: "Discharge_ID"
+          - p: "dc-ont:hasTemporalExtent"
+            o:
+              type: ["dc-ont:TemporalExtent"]
+              uri: "dcr:temporalExtent"
+              varids: ["Discharge_ID"]
+              connections:
+                - p: "dc-ont:contains"
+                  o:
+                    type: ["dc-ont:TimeInterval", "dc-ont:ComplexTemporalExtent"]
+                    uri: "dcr:timeInterval"
+                    varids: ["Discharge_ID"]
+                    connections:
+                      - p: "dc-ont:startFrom"
+                        o: 
+                          type: ["dc-ont:AdmitDate", "dc-ont:PointInTime", "dc-ont:ComplexTemporalExtent"]
+                          uri: "dcr:admitDate"
+                          varids: ["Discharge_ID"]
+                          connections:
+                            - p: "dc-ont:asDate"
+                              o:
+                                datatype: "xsd:date"
+                                val_source: "Admit_Date"
+                      - p: "dc-ont:endsAt"
+                        o: 
+                          type: ["dc-ont:DischargeDate", "dc-ont:PointInTime", "dc-ont:ComplexTemporalExtent"]
+                          uri: "dcr:dischargeDate"
+                          varids: ["Discharge_ID"]
+                          connections:
+                            - p: "dc-ont:asDate"
+                              o:
+                                datatype: "xsd:date"
+                                val_source: "Discharge_Date"
+                - p: "dc-ont:contains"
+                  o:
+                    type: ["dc-ont:AdmitDate", "dc-ont:PointInTime", "dc-ont:ComplexTemporalExtent"]
+                    uri: "dcr:admitDate"
+                    varids: ["Discharge_ID"]
+                - p: "dc-ont:contains"
+                  o:
+                    type: ["dc-ont:DischargeDate", "dc-ont:PointInTime", "dc-ont:ComplexTemporalExtent"]
+                    uri: "dcr:dischargeDate"
+                    varids: ["Discharge_ID"]

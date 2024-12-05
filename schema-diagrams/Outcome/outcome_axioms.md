@@ -15,9 +15,9 @@
 
 disjoint: Outcome DisjointWith Doctor
 
-scoped range: Outcome SubClassOf accodingToWhom only Doctor
+scoped range: Outcome SubClassOf accordingToWhom only Doctor
 
-structural tautology: Outcome SubClassOf accodingToWhom min 0 Doctor
+structural tautology: Outcome SubClassOf accordingToWhom min 0 Doctor
 
 ## Outcome resultsIn Health
 
@@ -39,15 +39,15 @@ structural tautology: Health SubClassOf indicates min 0 Event
 
 disjoint: Observation DisjointWith Doctor
 
-scoped range: Outcome SubClassOf accodingToWhom only Doctor
+scoped range: Outcome SubClassOf accordingToWhom only Doctor
 
-structural tautology: Observation SubClassOf accodingToWhom min 0 Doctor
+structural tautology: Observation SubClassOf accordingToWhom min 0 Doctor
 
 ## PossiblyCausesRelation accordingToWhom Doctor
 
 disjoint: PossiblyCausesRelation DisjointWith Doctor
 
-scoped range: Outcome SubClassOf accodingToWhom only Doctor
+scoped range: Outcome SubClassOf accordingToWhom only Doctor
 
-structural tautology: PossiblyCausesRelation SubClassOf accodingToWhom min 0 Doctor
+structural tautology: PossiblyCausesRelation SubClassOf accordingToWhom min 0 Doctor
 
